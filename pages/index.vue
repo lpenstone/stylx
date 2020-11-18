@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section as="hero">
+    <x-section as="hero" id="hero">
       <x-content>
         <div class="margin--top-40">
           <h1>Hello 👋</h1>
@@ -115,7 +115,7 @@ export default {}
 
 <style lang="stylus" scoped>
 
->>>.section--bg-hero
+>>>#hero
   padding-top: 0
   padding-bottom: 0
   height: 90vh
@@ -143,7 +143,7 @@ export default {}
       background-image: none
 
 .mode--dark
-  .section--bg-hero
+  #hero
     .container
       background-image: url('~@/assets/images/index/hero-dm.png')
 
