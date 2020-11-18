@@ -16,13 +16,13 @@
               <img src="~@/assets/images/art/print1.png" alt="">
             </x-grid-item>
             <x-grid-item>
-              <img src="~@/assets/images/art/print2.jpg" alt="">
+              <img src="~@/assets/images/art/print2.png" alt="">
             </x-grid-item>
             <x-grid-item>
               <img src="~@/assets/images/art/print3.png" alt="">
             </x-grid-item>
             <x-grid-item>
-              <img src="~@/assets/images/art/print4.jpg" alt="">
+              <img src="~@/assets/images/art/print4.png" alt="">
             </x-grid-item>
             <x-grid-item>
               <img src="~@/assets/images/art/create1.png" alt="">
