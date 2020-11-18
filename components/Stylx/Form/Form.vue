@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" method="POST">
     <slot></slot>
     <x-button size="lg" type="submit" class="margin--center-block">Submit</x-button>
   </form>
