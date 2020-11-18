@@ -1,0 +1,85 @@
+@import '~@/assets/styles/variables'
+
+/* ----- COLORS ----- */
+
+.section--bg-standard
+  background-color: $bg-standard
+
+.mode--dark
+  .section--bg-standard
+    background-color: $bg-standard-dm
+
+.section--bg-alt
+  background-color: $bg-alt
+
+.mode--dark
+  .section--bg-alt
+    background-color: $bg-alt-dm
+
+.section--bg-dark
+  background-color: $bg-dark
+
+.mode--dark
+  .section--bg-dark
+    background-color: $bg-dark-dm
+
+.section--bg-brand-highlight, .section--bg-hero
+  background-color: $bg-brand-highlight
+
+.mode--dark
+  .section--bg-brand-highlight, .section--bg-hero
+    background-color: $bg-brand-highlight-dm
+
+.section--bg-brand-lowlight
+  background-color: $bg-brand-lowlight
+
+.section--bg-secondary-highlight
+  background-color: $bg-secondary-highlight
+
+.mode--dark
+  .section--bg-secondary-highlight
+    background-color: $bg-secondary-highlight-dm
+
+.section--bg-secondary-lowlight
+  background-color: $bg-secondary-lowlight
+
+/* ----- SIZES ----- */
+
+.section 
+  position: relative
+  padding: 70px 20px
+
+.section--sm
+  padding: 40px 20px
+
+  @media only screen and (max-width: 767px)
+    padding: 30px 10px
+
+.section--md
+  padding: 70px 20px
+
+  @media only screen and (max-width: 767px)
+    padding: 50px 10px
+
+.section--lg
+  padding: 100px 20px
+
+  @media only screen and (max-width: 767px)
+    padding: 70px 10px
+
+.section--flat-bottom
+  padding-bottom: 0px
+
+.section--flat-top
+  padding-top: 0px
+
+.section--flat
+  padding-top: 0px
+  padding-bottom: 0px
+
+.section__inner-wrap
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+
+dump_media_cache()

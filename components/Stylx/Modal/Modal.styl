@@ -1,0 +1,72 @@
+@import '~@/assets/styles/variables'
+
+.modal-button__wrap
+  display: inline-block
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100
+  display: flex
+  align-items: center
+  padding-top: 0
+
+  @media(max-width: 676px)
+    align-items: center
+
+.modal__screen
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 0
+  opacity: 1
+  background: rgba(0,0,0,0.5)
+
+.modal__wrap
+  width: 100%
+  text-align: center
+  margin: auto
+
+  @media(max-width: 676px)
+    margin: auto
+
+  &.modal__wrap--sm
+    max-width: 550px
+
+  &.modal__wrap--md
+    max-width: 750px
+
+  &.modal__wrap--lg
+    max-width: 1200px
+
+.modal__box
+  display: block
+  margin: 0 auto
+  z-index: 1
+  width: 95%
+  position: relative
+  overflow: hidden
+  background-color: $bg-standard
+  border-radius: $size-radius
+
+.mode--dark
+  .modal__box
+    background-color: $bg-standard-dm
+
+.modal__close
+  position: absolute
+  top: 8px
+  right: 8px
+
+.modal__content
+  margin: 0px auto 0px
+  padding: 30px 50px 35px
+  @media(max-width: 676px)
+    padding: 30px 7%
+
+dump_media_cache()

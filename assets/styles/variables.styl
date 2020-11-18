@@ -1,0 +1,113 @@
+json('../../stylx.config.json')
+
+/* ----- GENERAL ------ */
+
+$font-headings = defaultHeadingsFamily
+$font-copy = defaultCopyFamily
+
+/* ----- SIZES ------ */
+
+$size-copy = defaultCopySize || 18px
+$size-radius = elBorderRadiusDefault || 10px
+$size-btn-radius = btnBorderRadiusDefault || 8px
+
+/* ----- COLORS ------ */
+
+$black = #000000
+$white = #FFFFFF
+$med-grey = #394754
+$dark-grey = #1a1a1a
+$dark-wave = #171f26
+
+// BRAND
+$brand = brandColor
+$brand-light = brandColorsOverride-light || lighten($brand, 12%)
+$brand-xlight = brandColorsOverride-xlight || lighten($brand, 40%)
+$brand-xxlight = brandColorsOverride-xxlight || lighten($brand, 90%)
+$brand-dark = brandColorsOverride-dark || darken($brand, 10%)
+$brand-xdark = brandColorsOverride-xdark || darken($brand, 30%)
+$brand-xxdark = brandColorsOverride-xxdark || darken($brand, 60%)
+
+// SECONDARY
+$secondary = secondaryColor || brandColor
+$secondary-light = secondaryColorsOverride-light || lighten($secondary, 15%)
+$secondary-xlight = secondaryColorsOverride-xlight || lighten($secondary, 40%)
+$secondary-xxlight = secondaryColorsOverride-xxlight || lighten($secondary, 80%)
+$secondary-dark = secondaryColorsOverride-dark || darken($secondary, 10%)
+$secondary-xdark = secondaryColorsOverride-xdark || darken($secondary, 30%)
+$secondary-xxdark = secondaryColorsOverride-xxdark || darken($secondary, 60%)
+
+// NEUTRAL
+$standard = $white
+$standard-dark = darken($standard, 3%)
+$standard-xdark = darken($standard, 8%)
+$standard-xxdark = darken($standard, 15%)
+// dark mode
+$standard-dm = $dark-wave
+$standard-dark-dm = darken($standard-dm, 9%)
+$standard-xdark-dm = darken($standard-dm, 15%)
+$standard-xxdark-dm = darken($standard-dm, 20%)
+
+
+/* ----- ELEMENTS ------ */
+
+// BUTTONS
+$btn = $brand
+$btn-hover = darken($btn, 10%)
+$btn-light = $brand-light
+$btn-light-hover = darken($btn-light, 10%)
+$btn-secondary = $secondary
+$btn-secondary-hover = darken($btn-secondary, 10%)
+$btn-icon = rgba(0, 0, 0, 0.1)
+$btn-icon-hover = rgba(0, 0, 0, 0.15)
+// dark mode
+$btn-dm = $brand-xdark
+$btn-hover-dm = darken($btn-dm, 10%)
+$btn-light-dm = $brand-light
+$btn-light-hover-dm = darken($btn-light-dm, 10%)
+$btn-secondary-dm = $secondary-xlight
+$btn-secondary-hover-dm = darken($btn-secondary-dm, 10%)
+$btn-icon-dm = rgba(0, 0, 0, 0.4)
+$btn-icon-hover-dm = rgba(0, 0, 0, 0.5)
+
+// BACKGROUNDS
+$bg-standard = $standard
+$bg-alt = $standard-dark
+$bg-dark = $standard-xdark
+$bg-secondary-highlight = $secondary-xxlight
+$bg-secondary-lowlight = $secondary-xxdark
+$bg-brand-highlight = $brand-xxlight
+$bg-brand-lowlight = $brand-xxdark
+// dark mode
+$bg-standard-dm = $standard-dm
+$bg-alt-dm = $standard-dark-dm
+$bg-dark = $standard-xdark-dm
+$bg-brand-highlight-dm = $brand-xxdark
+$bg-secondary-highlight-dm = $secondary-xxdark
+
+// HEADINDS & COPY
+$heading = $black
+$heading-alt = $med-grey
+$copy = $dark-grey
+$copy-dark = $dark-grey
+$copy-light = $white
+// dark mode
+$copy-dm = $white
+$heading-dm = $white
+$heading-alt-dm = $brand-xxlight
+
+// FORMS
+$form-border = $standard-xxdark
+$form-border-focus = $brand-dark
+$form-selector = $standard-xxdark
+$form-selector-focus = darken($form-selector, 10%)
+// dark mode
+$form-border-dm = $standard-xlight
+$form-border-focus = $brand-xlight
+
+// CARD
+$card = $standard-dark
+$card-standard = $standard
+// dark mode
+$card-dm = $standard-xxdark-dm
+$card-standard-dm = $standard-dm

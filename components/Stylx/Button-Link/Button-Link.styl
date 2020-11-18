@@ -1,0 +1,168 @@
+@import '~@/assets/styles/variables'
+
+.btn
+  font-family: $font-copy
+  padding: 10px 15px
+  line-height: 1.0em
+  font-size: 1.0em
+  border-radius: $size-btn-radius
+  outline: none
+  text-decoration: none
+  border: 2px solid
+  display: inline-block
+
+  &:hover
+    cursor: pointer
+
+a:not(.btn), .btn--link
+  display: inline-block
+  background-color: transparent 
+  outline: none 
+  border: 0px
+  border-bottom: 2px solid $btn-secondary
+  padding: 0px
+  margin: 0px
+  border-radius: 0px
+  text-decoration: none
+  line-height: inherit
+  color: $copy
+  font-weight: 600
+
+  &.btn--md, &.btn--md, &.btn--sm
+    padding: 0px
+
+  &:hover
+    border-color: $btn-hover
+
+.mode--dark
+  a:not(.btn), .btn--link
+    color: $copy-dm
+
+.btn--standard
+  border-color: $btn
+  background-color: $btn
+  color: white 
+
+  &:hover
+    color: $white
+    background-color: $btn-hover
+    border-color: $btn-hover
+
+.mode--dark
+  .btn--standard
+    border-color: $btn-dm
+    background-color: $btn-dm
+    color: white
+
+    &:hover
+      color: $white
+      background-color: $btn-hover-dm
+      border-color: $btn-hover-dm
+
+.btn--light
+  border-color: $btn-light
+  background-color: $btn-light
+  color: $copy-light
+
+  &:hover
+    color: $copy-light
+    background-color: $btn-light-hover
+    border-color: $btn-light-hover
+
+.btn--hollow
+  background-color: transparent 
+  color: $btn
+
+  &:hover
+    color: $btn-hover
+    border-color: $btn-hover
+
+.btn--plain
+  color: inherit 
+  padding: 0 !important
+  border: 0
+  opacity: 1
+  background-color: transparent 
+  border-radius: 0
+
+  &:hover
+    opacity: 0.9
+
+.mode--dark
+  .btn--hollow
+    color: $btn-light-dm
+
+    &:hover
+      color: $btn-light-hover-dm
+      border-color: $btn-light-hover-dm
+
+
+.btn--sm
+  font-size: 0.8em
+  padding: 5px 8px
+
+.btn--md
+  padding: 12px 20px
+
+.btn--lg
+  padding: 15px 30px
+  font-size: 1.2em
+
+.btn--center
+  display: inline-block
+  margin-left: auto 
+  margin-right: auto
+
+.btn--icon
+  border-color: transparent
+  background-color: $btn-icon
+  color: $copy
+  border-radius: 50%
+  padding: 0px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    background-color: $btn-icon-hover
+  
+  &.btn--sm
+    width: 25px
+    height: 25px
+
+  &.btn--md
+    width: 40px
+    height: 40px
+
+  &.btn--lg
+    width: 55px
+    height: 55px
+
+.mode--dark
+  .btn--icon
+    color: $copy-dm
+    background-color: $btn-icon-dm
+
+    &:hover
+      background-color: $btn-icon-hover-dm
+
+
+.btn--close
+  display: block
+  // background-image: url('~@/assets/images/icons/close-grey.svg')
+  background-color: transparent
+  background-size: 20px 20px
+  padding: 0
+  border: 0
+  border-radius: 50%
+  width: 20px
+  height: 20px
+  opacity: 0.8
+
+  &:hover, &:focus
+    background-color: transparent
+    border: 0
+    outline: 0
+    opacity: 1.0
+
+dump_media_cache()

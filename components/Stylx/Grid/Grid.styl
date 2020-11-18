@@ -1,0 +1,80 @@
+@import '~@/assets/styles/variables'
+
+$mp = 2 // margin, in percent
+
+.grid__window
+  position: relative
+  display: flex
+  justify-content: center
+  align-item: center
+
+.grid
+  display: flex
+  flex-wrap: wrap
+  margin-left: -20px
+  margin-right: -20px
+  align-items: center
+  justify-content: flex-start
+
+  @media(max-width: 676px)
+    margin-left: -10px
+    margin-right: -10px
+
+.grid--zoomable, .grid--gallery
+  >>>.item
+    img
+      cursor: zoom-in
+
+  >>>.item--zoom
+    img
+      cursor: zoom-out
+
+.grid--gallery
+  >>>.item
+    border-radius: 10px
+    overflow: hidden
+
+    img
+      display: block
+
+.item
+  display: inline-block
+  margin: ($mp)%
+  width: 100%
+
+  &.item--zoom
+    position: relative
+    width: 50% !important
+
+    @media(max-width: 991px)
+      width: 100% !important
+  
+  >>>.secret
+    display: none
+
+for num in (1..6)
+  .grid--{num}
+    >>>.item
+      width: ((100 / num) - (2 * $mp))%
+
+for num in (4..6)
+  .grid--{num}
+    >>>.item
+      @media(max-width: 991px)
+        width: ((100 / 3) - (2 * $mp))%
+
+for num in (3..6)
+  .grid--{num}
+    >>>.item
+      @media(max-width: 767px)
+        width: ((100 / 2) - (2 * $mp))%
+
+for num in (1..6)
+  .grid--{num}
+    >>>.item
+      @media(max-width: 424px)
+        width: 100%
+
+
+
+dump_media_cache()

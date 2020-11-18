@@ -1,0 +1,75 @@
+@import '~@/assets/styles/variables'
+
+
+.input__wrap
+  display: flex
+  align-items: center
+  margin-bottom: 10px
+
+.input__label
+  align-items: center
+  font-size: 1.0em
+  display: inline-block
+  position: relative
+  padding-left: 35px
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  &:focus .input__item ~ .input__selector
+    background-color: $form-selector-focus
+
+  &:hover .input__item ~ .input__selector
+    background-color: $form-selector-focus
+
+.input__item
+  font-family: $font-copy
+  font-size: 1.0em
+  padding: 0
+  margin: 0
+  margin-right: 10px
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+  &:checked ~ .input__selector
+    background-color: $brand !important
+
+    &:after
+      display: block
+
+  &:checked ~ .input__selector--radio
+    border: 5px solid $form-selector
+
+    &:after
+      display: none
+
+.input__selector
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+  border-radius: 3px
+  background-color: $form-selector
+
+  &.input__selector--radio
+    border-radius: 50%
+
+  &:after
+    display: none
+    content: "\2714"
+    position: absolute
+    left: 0px
+    top: 0px
+    color: white
+    width: 25px
+    height: 25px
+    text-align: center
+
+
+dump_media_cache()

@@ -1,0 +1,51 @@
+{
+	"name": "Laura Penstone",
+	"brandColor": "#121fde",
+	"brandColorsOverride": {
+		"light": "",
+		"xlight": "",
+		"xxlight": "",
+		"dark": "",
+		"xdark": "",
+		"xxdark": ""
+	},
+	"secondaryColor": "#de4212",
+	"secondaryColorsOverride": {
+		"light": "",
+		"xlight": "",
+		"xxlight": "",
+		"dark": "",
+		"xdark": "",
+		"xxdark": ""
+	},
+	"baseColorsOverride": {
+		"standard": "",
+		"alternate": "",
+		"dark": ""
+	},
+	"errorColor": "",
+	"successColor": "",
+	"warnColor": "",
+	"defaultDarkMode": false,
+	"allowModeToggle": true,
+	"elBorderRadiusDefault": "10px",
+	"btnBorderRadiusDefault": "30px",
+	"btnDefaultSize": "md",
+	"linkStyleUnderline": true,
+	"modalDefaultSize": "md",
+	"sectionDefaultSize": "lg",
+	"defaultCopySize": "18px",
+	"defaultHeadingsFamily": "Noto Sans JP",
+	"defaultCopyFamily": "Nunito",
+	"socials": {
+		"linkedin": "https://www.linkedin.com/in/laura-penstone-073431111/",
+		"facebook": "",
+		"instagram": "https://instagram.com/laurapenstone",
+		"dribbble": "",
+		"github": "https://github.com/lpenstone",
+		"twitter": "",
+		"pinterest": "",
+		"tiktok": "",
+		"youtube": ""
+	}
+}

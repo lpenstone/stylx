@@ -1,0 +1,63 @@
+@import '~@/assets/styles/variables'
+
+.carousel
+  width: 100%
+  position: relative
+
+.carousel__content
+  max-width: 85%
+  margin: auto
+
+  @media(max-width: 676px)
+    max-width: 100%
+
+.carousel__btn
+  display: inline-block
+  position: absolute
+  top: 40%
+  transition 0.3s transform ease-in-out
+  opacity: 0.9
+
+  @media(max-width: 676px)
+    display: none
+
+.carousel__btn--previous
+  left: -10px
+
+  &:hover
+    transform: translateX(-7px)
+
+.carousel__btn--next
+  right: -10px
+
+  &:hover
+    transform: translateX(7px)
+
+.carousel__dots-wrap 
+  width: 100%
+  margin-top: 2rem
+  text-align: center
+
+.carousel__dots
+  display: inline-block
+
+/* ----- DISPLAY ITEMS ----- */
+
+>>>.item
+  display: none
+
+  .secret
+    display: block !important
+    font-size: 0.9em
+
+  .name
+    font-size: 1.0em
+    font-weight: bold
+
+for num in (1..30)
+  .carousel__content-index-{num}
+    >>>.item
+      &:nth-of-type({num})
+        display: block
+
+dump_media_cache()

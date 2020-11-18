@@ -1,0 +1,32 @@
+@import '~@/assets/styles/variables'
+
+.tag
+  line-height: 1.0em
+  font-size: 0.8em
+  padding: 5px 8px
+  font-weight: bold
+  border-radius: $size-btn-radius
+  border: 2px solid
+  display: inline-block
+
+
+.tag--standard
+  border-color: $btn
+  background-color: $btn
+  color: white 
+
+.tag--light
+  border-color: $btn-light
+  background-color: $btn-light
+  color: white
+
+.mode--dark
+  .tag--light
+    border-color: $btn-light-dm
+    background-color: $btn-light-dm
+
+.tag--hollow
+  background-color: transparent 
+  color: $btn
+
+dump_media_cache()

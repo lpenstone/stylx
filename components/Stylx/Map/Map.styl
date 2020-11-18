@@ -1,0 +1,171 @@
+@import '~@/assets/styles/variables'
+
+$nav-height = 60px
+
+/* --- Standard menu -- */
+
+.nav__dummy-bar
+  position: relative
+  width: 100%
+  height: $nav-height
+
+.nav
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  background-color: $bg-brand-highlight
+  z-index: 10
+
+.mode--dark
+  .nav
+    background-color: $bg-brand-highlight-dm
+
+.nav__wrap
+  width: 100%
+  padding: 10px 20px
+  display: flex
+  height: $nav-height
+  align-items: center
+
+.nav__content
+  font-family: $font-headings
+  font-weight: bold
+  font-size: 0.95em
+  width: 100%
+  max-width: 1400px
+  margin: auto 
+  display: flex
+  justify-content: space-between
+
+  ul
+    list-styl-type: none
+    display: flex
+    margin: 0
+    padding: 0
+
+    li
+      margin: 0
+      margin-right: 30px
+
+      &:before
+        margin: 0
+        content: ''
+
+      >>>a
+        border-color: transparent 
+
+        &:hover
+          border-color: $secondary
+
+.nav__items
+  display: flex
+  align-items: center
+
+  .nav__item
+    margin: 0px 5px
+
+  &.nav__items--left
+    justify-content: flex-start
+
+    .nav__item--logo
+      margin-right: 40px
+
+    .nav__item--logo-link
+      text-decoration: none
+
+    .nav__item--mobile-menu
+      display: none
+
+  &.nav__items--right
+    .nav__item--icons
+      display: flex
+
+/* --- Mobile menu - Open -- */
+
+@media(max-width: 767px)
+  .nav
+    width: 100%
+
+  .nav__items
+    .nav__item
+      margin: 0
+    
+    &.nav__items--left
+      width: 100%
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: center
+
+      .nav__item--links
+        display: none
+
+      .nav__item--mobile-menu
+        display: inline-block
+
+    &.nav__items--right
+      .nav__item--icons
+        display: none
+
+    #menu
+      display: flex
+
+    #close
+      display: none
+
+  /* --- Mobile menu - Open -- */
+
+  .nav.nav--open
+    background-color: $standard
+
+    #menu
+      display: none
+
+    #close
+      display: flex
+
+    .nav__wrap
+      padding: 10px 20px
+      display: flex
+      flex-direction: column
+      height: 100vh
+      align-items: center
+
+    .nav__content
+      flex-direction: column
+      justify-content: space-between
+      margin: 0
+      height: 100%
+
+      ul
+        flex-direction: column
+
+        li
+          margin-right: 0
+    
+    .nav__items
+      .nav__item
+        display: flex
+        flex-direction: column
+
+      &.nav__items--left
+        .nav__item--links
+          width: 100%
+          text-align: center
+          margin-top: 20px
+
+      &.nav__items--right
+        justify-content: center
+        flex-direction: column
+        align-items: center
+  
+        .nav__item--icons
+          justify-content: center
+          align-items: center
+
+  .mode--dark
+    .nav--open
+      background-color: $standard-dm
+
+
+dump_media_cache()
