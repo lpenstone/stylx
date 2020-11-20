@@ -4,9 +4,12 @@
   width: 100%
 
 .see-more__content
-  display: inline-block
+  max-height: 2000px
+  overflow: hidden
+  transition: 0.5s max-height ease-in-out
 
 .see-more__content--hidden
-  display: none
+  max-height: 0px
+  overflow: hidden
 
 dump_media_cache()

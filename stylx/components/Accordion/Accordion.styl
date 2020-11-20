@@ -1,12 +1,70 @@
 @import '~@/assets/styles/variables'
 
-.see-more
+.accordion
+  margin-bottom: 5px
+
+.accordion__label
+  position: relative
   width: 100%
+  background-color: $accordion
+  font-size: 1em
+  border: 1px solid $accordion
+  border-radius: 4px
+  padding: 10px 12px
+  text-align: left
+  outline: none
+  cursor: pointer
 
-.see-more__content
-  display: inline-block
+  &:after
+    content: '+'
+    color: $brand
+    position: absolute 
+    right: 10px
 
-.see-more__content--hidden
-  display: none
+  &:hover, &:focus
+    border: 1px solid $accordion-hover
+    background-color: $accordion-hover
+
+.accordion__content-wrap
+  max-height: 0
+  overflow: hidden
+  border: 0
+
+.accordion__content
+  padding: 10px 12px
+
+.accordion--expanded
+  .accordion__label
+    border-bottom-right-radius: 0px
+    border-bottom-left-radius: 0px
+
+    &:after
+      content: '-'
+
+  .accordion__content-wrap
+    border: 1px solid $accordion
+    border-top: 2px solid $brand
+    max-height: 3000px
+    border-bottom-right-radius: 4px
+    border-bottom-left-radius: 4px
+    transition 0.7s max-height ease-in-out
+
+.mode--dark
+  .accordion__label
+    color: $copy-dm
+    background-color: $accordion-dm
+    border: 1px solid $accordion-dm
+
+    &:after
+      color: $brand-xxlight
+
+    &:hover, &:focus
+      border: 1px solid $accordion-hover-dm
+      background-color: $accordion-hover-dm
+
+  .accordion--expanded
+    .accordion__content-wrap
+      border: 1px solid $accordion-dm
+      border-top: 2px solid $brand-xlight
 
 dump_media_cache()

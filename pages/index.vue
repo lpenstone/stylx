@@ -60,6 +60,18 @@
             <h4>Something something</h4>
             <p>Lorem ipsum dolor sit amet, consectetur <x-link href="test" class="margin--top-20">Design Systems</x-link> adipiscing elit. Duis sit amet purus vel quam tincidunt bibendum in quis eros. Donec vehicula suscipit risus, sed congue purus viverra et. Nam maximus, massa id ultricies scelerisque, ex libero blandit sapien, non dignissim nibh diam eu lacus. Aliquam ullamcorper rutrum sapien, at egestas lacus. Nulla facilisi. Morbi in orci pharetra, porta nisl non, malesuada purus. Mauris consequat est eget lectus scelerisque, ac vestibulum arcu vulputate. Proin rutrum sem id odio convallis tincidunt. Maecenas vitae metus imperdiet, lobortis odio eget, ultrices lorem.</p>
             <x-link href="test">Read more</x-link>
+            <x-accordion label="this is the label" class="margin--top-5">
+              <p>This is the content</p>
+              <p>whats up sucker</p>
+            </x-accordion>
+            <x-accordion label="this is the label" class="margin--top-5">
+              <p>This is the content</p>
+              <p>whats up sucker</p>
+            </x-accordion>
+            <x-accordion label="this is the label" class="margin--top-5">
+              <p>This is the content</p>
+              <p>whats up sucker</p>
+            </x-accordion>
           </div>
           <div class="col-sm-12 col-md-4 offset-md-1">
             <x-card as="standard" size="sm">

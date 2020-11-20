@@ -41,10 +41,15 @@ $mp = 2 // margin, in percent
     overflow: hidden
     background: linear-gradient(270deg, $brand-xxlight, $secondary-xxlight)
     background-size: 400% 400%
-    animation: backgroundMotion 2s ease infinite
+    animation: backgroundMotion 3s ease 3
 
     img
       display: block
+
+.dark--mode
+  .grid--gallery
+    >>>.item
+      background: linear-gradient(270deg, $brand-xxdark, $secondary-xxdark)
 
 .item
   display: inline-block

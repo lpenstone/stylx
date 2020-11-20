@@ -1,12 +1,13 @@
 <template>
-  <div class="see-more">
-    <div class="see-more__content" :class="{'see-more__content--hidden': !isExpanded}">
-      <slot></slot>
+  <div class="accordion" :class="{'accordion--expanded': isExpanded}">
+    <button class="accordion__label" @click="isExpanded = !isExpanded">
+      {{label}}
+    </button>
+    <div class="accordion__content-wrap">
+      <div class="accordion__content">
+        <slot></slot>
+      </div>
     </div>
-    <x-button :as="as" :size="size" @clicked="isExpanded = !isExpanded">
-      <span v-if="isExpanded">Show less</span>
-      <span v-else>{{label || 'See more'}}</span>
-    </x-button>
   </div>
 </template>
 
