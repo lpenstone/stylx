@@ -19,8 +19,8 @@
   </x-swipe>
 </template>
 <script>
-import Swipe from '@/components/Stylx/Swipe/Swipe'
-import ScrollDots from '@/components/Stylx/Scroll-Dots/Scroll-Dots'
+import Swipe from '../Swipe/Swipe'
+import ScrollDots from '../Scroll-Dots/Scroll-Dots'
 
 export default {
   name: 'Carousel',

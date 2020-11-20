@@ -36,7 +36,9 @@
               <slot name="icons">
                 <x-social></x-social>
               </slot>
-              <x-mode-toggle v-if="allowModeToggle"></x-mode-toggle>
+              <div v-if="allowModeToggle" class="mode-toggle__wrap">
+                <x-mode-toggle></x-mode-toggle>
+              </div>
             </div>
           </div>
         </div>
@@ -47,8 +49,6 @@
 </template>
 
 <script>
-import Swipe from '@/components/Stylx/Swipe/Swipe'
-
 export default {
   name: 'Nav',
   props: {
@@ -56,9 +56,6 @@ export default {
       type: String,
       default: 'standard'
     }
-  },
-  components: {
-    'x-swipe': Swipe
   },
   filters: {
     sanitize: function (value) {

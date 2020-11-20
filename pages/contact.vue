@@ -17,7 +17,7 @@
           </div>
           <x-card v-else as="shadow" size="lg">
             <h2 class="heading--title margin--bottom-20">Send a message</h2>
-            <x-form name="contact" Netlify action="/success">
+            <x-form name="contact" netlify action="/contact?notice=success">
               <x-form-input as="text" name="name" label="Name"/>
               <x-form-input as="email" name="email" label="Email"/>
               <x-form-input as="textarea" name="message" label="Message"/>

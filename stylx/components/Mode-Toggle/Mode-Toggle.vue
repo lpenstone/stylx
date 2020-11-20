@@ -1,8 +1,8 @@
 <template>
-  <Button as="icon" :aria-label="darkMode ? 'view light mode': 'view dark mode'" @clicked="toggleMode()">
+  <x-button as="icon" :aria-label="darkMode ? 'view light mode': 'view dark mode'" @clicked="toggleMode()">
     <span v-if="darkMode">&#9728;</span>
     <span v-else>&#9790;</span>
-  </Button>
+  </x-button>
 </template>
 
 <script>
