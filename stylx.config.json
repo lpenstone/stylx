@@ -1,5 +1,6 @@
 {
 	"name": "Laura Penstone",
+	"title": "Laura Penstone | Portfolio",
 	"brandColor": "#121fde",
 	"brandColorsOverride": {
 		"light": "",
@@ -28,7 +29,7 @@
 	"warnColor": "",
 	"defaultDarkMode": false,
 	"allowModeToggle": true,
-	"elBorderRadiusDefault": "10px",
+	"elBorderRadiusDefault": "8px",
 	"btnBorderRadiusDefault": "30px",
 	"btnDefaultSize": "md",
 	"linkStyleUnderline": true,
@@ -36,7 +37,9 @@
 	"sectionDefaultSize": "lg",
 	"defaultCopySize": "18px",
 	"defaultHeadingsFamily": "Noto Sans JP",
+	"defaulyHeadingsLink": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap",
 	"defaultCopyFamily": "Nunito",
+	"defaultCopyLink": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap",
 	"socials": {
 		"linkedin": "https://www.linkedin.com/in/laura-penstone-073431111/",
 		"facebook": "",

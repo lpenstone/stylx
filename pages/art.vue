@@ -2,8 +2,12 @@
   <div>
     <x-section as="hero">
       <x-content class="text-align-center">
-        <h1>Art & Printmaking</h1>
-        <p>A blub about this and that whatever</p>
+        <x-element as="center" size="sm">
+          <h1>Art & Printmaking</h1>
+          <p>I love making things with my hands.</p>
+          <p>I frequently experiment with different mediums, with my current focus being on printmaking (linocut & screenprinting).</p>
+          <p class="margin--top-20">Shop coming soon</p>
+        </x-element>
       </x-content>
     </x-section>
     <x-section>
