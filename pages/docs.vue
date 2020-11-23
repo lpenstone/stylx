@@ -2,12 +2,16 @@
   <div>
     <x-section as="hero">
       <x-content class="text-align-center">
-        <h1>Stylx Library</h1>
+        <x-element as="center" size="md">
+          <h1 class="margin--bottom-20">Stylx Library</h1>
+          <p>Style and preview the Stylx elements within this library.</p>
+          <p>Copy the resulting code into your project.</p>
+        </x-element>
       </x-content>
     </x-section>
     <x-section as="standard">
       <x-content>
-        <h2 class="margin--bottom-30">Table of Contents</h2>
+        <h2 class="visually-hidden">Table of Contents</h2>
         <x-grid cols="4">
           <x-grid-item>
             <h3 class="h5 margin--top-20">Elements</h3>
