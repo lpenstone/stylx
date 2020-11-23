@@ -27,7 +27,7 @@
 	"errorColor": "",
 	"successColor": "",
 	"warnColor": "",
-	"defaultDarkMode": true,
+	"defaultDarkMode": false,
 	"allowModeToggle": true,
 	"elBorderRadiusDefault": "8px",
 	"btnBorderRadiusDefault": "30px",

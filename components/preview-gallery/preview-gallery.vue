@@ -84,7 +84,7 @@ export default {
   name: 'preview-accordion',
   data () {
     return {
-      currentAs: 'zoom',
+      currentAs: 'gallery',
       currentCols: '4'
     }
   },
