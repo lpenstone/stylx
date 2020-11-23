@@ -5,7 +5,7 @@
       <div class="modal__wrap" :class="'modal__wrap--' + size">
         <div class="modal__box">
           <div class="modal__close">
-            <x-button v-if="isCloseable" as="icon" @clicked="closeModal()" aria-label="close">x</x-button>
+            <x-button v-if="isCloseable" as="icon" @click="closeModal()" aria-label="close">x</x-button>
           </div>
           <div class="modal__content">
             <slot></slot>
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <x-button v-if="label" :as="buttonAs" :size="buttonSize" @clicked="openModal(name)">{{label}}</x-button>
+    <x-button v-if="label" :as="buttonAs" :size="buttonSize" @click="openModal(name)">{{label}}</x-button>
   </div>
 </template>
 <script>

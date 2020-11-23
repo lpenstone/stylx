@@ -16,21 +16,20 @@ export default {
     }
   },
   data () {
-    return {
-      classType: '',
-      color: ''
-    }
+    return {}
   },
-  created: function () {
-    this.setTagStyle()
-  },
-  methods: {
-    setTagStyle: function () {
+  computed: {
+    classType: function () {
       if (['hollow', 'standard', 'secondary'].indexOf(this.as) > -1) {
-        this.classType = this.as
-      } else {
-        this.color = this.as
+        return this.as
       }
+      return ''
+    },
+    color: function () {
+      if (['hollow', 'standard', 'secondary'].indexOf(this.as) > -1) {
+        return ''
+      }
+      return this.as
     }
   }
 }

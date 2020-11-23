@@ -5,10 +5,10 @@
         <slot></slot>
       </div>
       <div class="carousel__btn carousel__btn--previous">
-        <x-button as="icon" aria-label="previous" @clicked="prevItem()">&#8701;</x-button>
+        <x-button as="icon" aria-label="previous" @click="prevItem()">&#8701;</x-button>
       </div>
       <div class="carousel__btn carousel__btn--next">
-        <x-button as="icon" aria-label="next" @clicked="nextItem()">&#8702;</x-button>
+        <x-button as="icon" aria-label="next" @click="nextItem()">&#8702;</x-button>
       </div>
       <div class="carousel__dots-wrap">
         <div class="carousel__dots">

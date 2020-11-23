@@ -1,5 +1,8 @@
 <template>
-  <button class="btn" :class="['btn--' + as, 'btn--' + size]" @click="clicked()">
+  <button
+    class="btn"
+    :class="['btn--' + as, 'btn--' + size, {'btn--selected': selected}]"
+    @click="clicked()">
     <slot></slot>
   </button>
 </template>
@@ -19,7 +22,11 @@ export default {
       }
     },
     click: {
-      stype: String
+      type: String
+    },
+    selected: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -31,7 +38,7 @@ export default {
         this.$store.commit('openModal')
         return
       }
-      this.$emit('clicked', config)
+      this.$emit('click', config)
     }
   }
 }

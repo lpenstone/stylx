@@ -3,7 +3,7 @@
     <div class="see-more__content" :class="{'see-more__content--hidden': !isExpanded}">
       <slot></slot>
     </div>
-    <x-button :as="as" :size="size" @clicked="isExpanded = !isExpanded">
+    <x-button :as="as" :size="size" @click="isExpanded = !isExpanded">
       <span v-if="isExpanded">Show less</span>
       <span v-else>{{label || 'See more'}}</span>
     </x-button>

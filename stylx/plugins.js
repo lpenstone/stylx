@@ -6,6 +6,7 @@ import Link from './components/Button-Link/Link.vue'
 import Card from './components/Card/Card.vue'
 import Carousel from './components/Carousel/Carousel.vue'
 import Content from './components/Content/Content.vue'
+import Code from './components/Code/Code.vue'
 import Form from './components/Form/Form.vue'
 import FormInput from './components/Form-Input/Form-Input.vue'
 import FormGroup from './components/Form-Group/Form-Group.vue'
@@ -27,6 +28,7 @@ Vue.component('x-button', Button)
 Vue.component('x-card', Card)
 Vue.component('x-carousel', Carousel)
 Vue.component('x-carousel-item', Item)
+Vue.component('x-code', Code)
 Vue.component('x-content', Content)
 Vue.component('x-form', Form)
 Vue.component('x-form-input', FormInput)

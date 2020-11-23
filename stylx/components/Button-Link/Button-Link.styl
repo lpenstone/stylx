@@ -9,10 +9,12 @@
   outline: none
   text-decoration: none
   border: 2px solid
-  display: inline-block
 
   &:hover
     cursor: pointer
+
+.btn--selected
+  border-color: $btn-selected-outline !important
 
 a:not(.btn), .btn--link
   display: inline-block
@@ -28,7 +30,7 @@ a:not(.btn), .btn--link
   color: $copy
   font-weight: 600
 
-  &.btn--md, &.btn--md, &.btn--sm
+  &.btn--lg, &.btn--md, &.btn--sm
     padding: 0px
 
   &:hover
@@ -41,14 +43,29 @@ a:not(.btn), .btn--link
 .btn--standard
   border-color: $btn
   background-color: $btn
-  color: white 
+  color: white
+  display: inline-block
 
   &:hover
     color: $white
     background-color: $btn-hover
     border-color: $btn-hover
 
+.btn--secondary
+  border-color: $btn-secondary
+  background-color: $btn-secondary
+  color: white
+  display: inline-block
+
+  &:hover
+    color: $white
+    background-color: $btn-secondary-hover
+    border-color: $btn-secondary-hover
+
 .mode--dark
+  .btn--selected
+      border-color: $btn-selected-outline-dm !important
+
   .btn--standard
     border-color: $btn-dm
     background-color: $btn-dm
@@ -59,10 +76,12 @@ a:not(.btn), .btn--link
       background-color: $btn-hover-dm
       border-color: $btn-hover-dm
 
+
 .btn--light
   border-color: $btn-light
   background-color: $btn-light
   color: $copy-light
+  display: inline-block
 
   &:hover
     color: $copy-light
@@ -72,6 +91,7 @@ a:not(.btn), .btn--link
 .btn--hollow
   background-color: transparent 
   color: $btn
+  display: inline-block
 
   &:hover
     color: $btn-hover
@@ -146,10 +166,17 @@ a:not(.btn), .btn--link
     &:hover
       background-color: $btn-icon-hover-dm
 
+  .btn--hollow
+    color: $btn-hollow-dm
+    border-color: $btn-hollow-dm
+
+    &:hover
+      color: $btn-hollow-hover-dm
+      border-color: $btn-hollow-hover-dm
+
 
 .btn--close
   display: block
-  // background-image: url('~@/assets/images/icons/close-grey.svg')
   background-color: transparent
   background-size: 20px 20px
   padding: 0

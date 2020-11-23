@@ -1,7 +1,7 @@
 {
-	"name": "Laura Penstone",
-	"title": "Laura Penstone | Portfolio",
-	"brandColor": "#121fde",
+	"name": "Stylx",
+	"title": "Stylx",
+	"brandColor": "#0059de",
 	"brandColorsOverride": {
 		"light": "",
 		"xlight": "",
@@ -10,7 +10,7 @@
 		"xdark": "",
 		"xxdark": ""
 	},
-	"secondaryColor": "#de4212",
+	"secondaryColor": "#de00aa",
 	"secondaryColorsOverride": {
 		"light": "",
 		"xlight": "",
@@ -27,7 +27,7 @@
 	"errorColor": "",
 	"successColor": "",
 	"warnColor": "",
-	"defaultDarkMode": false,
+	"defaultDarkMode": true,
 	"allowModeToggle": true,
 	"elBorderRadiusDefault": "8px",
 	"btnBorderRadiusDefault": "30px",
@@ -41,9 +41,9 @@
 	"defaultCopyFamily": "Nunito",
 	"defaultCopyLink": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap",
 	"socials": {
-		"linkedin": "https://www.linkedin.com/in/laura-penstone-073431111/",
+		"linkedin": "",
 		"facebook": "",
-		"instagram": "https://instagram.com/laurapenstone",
+		"instagram": "",
 		"dribbble": "",
 		"github": "https://github.com/lpenstone",
 		"twitter": "",

@@ -7,10 +7,8 @@
   position: relative
   width: 100%
   background-color: $accordion
-  font-size: 1em
   border: 1px solid $accordion
   border-radius: 4px
-  padding: 10px 12px
   text-align: left
   outline: none
   cursor: pointer
@@ -19,7 +17,6 @@
     content: '+'
     color: $brand
     position: absolute 
-    right: 10px
 
   &:hover, &:focus
     border: 1px solid $accordion-hover
@@ -29,9 +26,6 @@
   max-height: 0
   overflow: hidden
   border: 0
-
-.accordion__content
-  padding: 10px 12px
 
 .accordion--expanded
   .accordion__label
@@ -48,6 +42,41 @@
     border-bottom-right-radius: 4px
     border-bottom-left-radius: 4px
     transition 0.7s max-height ease-in-out
+
+.accordion--sm
+  .accordion__label
+    padding: 6px 8px
+    font-size: 0.9em
+
+    &:after
+      right: 8px
+
+  .accordion__content
+    padding: 8px
+    font-size: 0.9em
+
+.accordion--md
+  .accordion__label
+    padding: 10px 12px
+    font-size: 1em
+
+    &:after
+      right: 10px
+
+  .accordion__content
+    padding: 10px 12px
+
+.accordion--lg
+  .accordion__label
+    padding: 20px 18px
+    font-size: 1em
+
+    &:after
+      right: 18px
+
+
+  .accordion__content
+    padding: 18px
 
 .mode--dark
   .accordion__label
