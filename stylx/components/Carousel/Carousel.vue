@@ -19,6 +19,7 @@
   </x-swipe>
 </template>
 <script>
+
 import Swipe from '../Swipe/Swipe'
 import ScrollDots from '../Scroll-Dots/Scroll-Dots'
 
@@ -77,7 +78,7 @@ export default {
         } else {
           this.index ++
         }
-      }, 350)
+      }, 250)
     },
     prevItem: function () {
       if (this.isModalOpen && this.as !== 'modal') return
@@ -88,7 +89,7 @@ export default {
         } else {
           this.index --
         }
-      }, 350)
+      }, 250)
     },
     getItemsNumber: function () {
       const carousel = this.$refs.carousel

@@ -1,9 +1,9 @@
 <template>
   <div>
     <x-section as="hero">
-      <x-content class="text-align-center">
+      <x-content class="text-align--center">
         <x-element as="center" size="md">
-          <h1 class="margin--bottom-20">Stylx Library</h1>
+          <h1 class="margin-bottom--20">Stylx Library</h1>
           <p>Style and preview the Stylx elements within this library.</p>
           <p>Copy the resulting code into your project.</p>
         </x-element>
@@ -14,7 +14,7 @@
         <h2 class="visually-hidden">Table of Contents</h2>
         <x-grid cols="4">
           <x-grid-item>
-            <h3 class="h5 margin--top-20">Elements</h3>
+            <h3 class="h5 margin-top--20">Elements</h3>
             <ul>
               <li><x-link as="plain" href="#button">Button</x-link></li>
               <li><x-link as="plain" href="#link">Link</x-link></li>
@@ -34,7 +34,7 @@
             </ul>
           </x-grid-item>
           <x-grid-item>
-            <h3 class="h5 margin--top-20">Interactive</h3>
+            <h3 class="h5 margin-top--20">Interactive</h3>
             <ul>
               <li><x-link as="plain" href="#carousel">Carousel</x-link></li>
               <li><x-link as="plain" href="#gallery">Gallery</x-link></li>
@@ -42,7 +42,7 @@
             </ul>
           </x-grid-item>
           <x-grid-item>
-            <h3 class="h5 margin--top-20">Forms</h3>
+            <h3 class="h5 margin-top--20">Forms</h3>
             <ul>
               <li><x-link as="plain" href="#form">Form</x-link></li>
               <li><x-link as="plain" href="#input">Form Input (text, email, password, number)</x-link></li>
@@ -50,7 +50,7 @@
             </ul>
           </x-grid-item>
           <x-grid-item>
-            <h3 class="h5 margin--top-20">Specialty</h3>
+            <h3 class="h5 margin-top--20">Specialty</h3>
             <ul>
               <li><x-link as="plain" href="#nav-bar">Nav bar</x-link></li>
               <li><x-link as="plain" href="#mode-toggle">Light/dark mode toggle</x-link></li>
@@ -62,27 +62,27 @@
     </x-section>
     <x-section as="alt">
       <x-content>
-        <h3 class="text-align-center margin--bottom-30">Elements</h3>
+        <h3 class="text-align--center margin-bottom--30">Elements</h3>
         <x-card as="shadow" id="button">
           <preview-button></preview-button>
         </x-card>
-        <x-card as="shadow" id="link" class="margin--top-30">
+        <x-card as="shadow" id="link" class="margin-top--30">
           <preview-link></preview-link>
         </x-card>
-        <x-card as="shadow" id="accordion" class="margin--top-30">
+        <x-card as="shadow" id="accordion" class="margin-top--30">
           <preview-accordion></preview-accordion>
         </x-card>
-        <x-card as="shadow" id="see-more" class="margin--top-30">
+        <x-card as="shadow" id="see-more" class="margin-top--30">
           <preview-see-more></preview-see-more>
         </x-card>
-        <x-card as="shadow" id="tag" class="margin--top-30">
+        <x-card as="shadow" id="tag" class="margin-top--30">
           <preview-tag></preview-tag>
         </x-card>
       </x-content>
     </x-section>
     <x-section>
       <x-content>
-        <h3 class="text-align-center margin--bottom-30">Layout</h3>
+        <h3 class="text-align--center margin-bottom--30">Layout</h3>
         <x-card as="shadow" id="grid">
           <preview-grid></preview-grid>
         </x-card>
@@ -90,9 +90,12 @@
     </x-section>
     <x-section as="alt">
       <x-content>
-        <h3 class="text-align-center margin--bottom-30">Interactive</h3>
+        <h3 class="text-align--center margin-bottom--30">Interactive</h3>
         <x-card as="shadow" id="gallery">
           <preview-gallery></preview-gallery>
+        </x-card>
+        <x-card as="shadow" id="carousel" class="margin-top--30">
+          <preview-carousel></preview-carousel>
         </x-card>
       </x-content>
     </x-section>
@@ -103,6 +106,7 @@
 import previewButton from '../components/preview-button/preview-button'
 import previewLink from '../components/preview-link/preview-link'
 import previewAccordion from '../components/preview-accordion/preview-accordion'
+import previewCarousel from '../components/preview-carousel/preview-carousel'
 import previewTag from '../components/preview-tag/preview-tag'
 import previewGallery from '../components/preview-gallery/preview-gallery'
 import previewGrid from '../components/preview-grid/preview-grid'
@@ -116,6 +120,7 @@ export default {
     'preview-see-more': previewSeeMore,
     'preview-tag': previewTag,
     'preview-accordion': previewAccordion,
+    'preview-carousel': previewCarousel,
     'preview-gallery': previewGallery,
     'preview-grid': previewGrid
   },
