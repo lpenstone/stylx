@@ -143,15 +143,6 @@ a:not(.btn), .btn--link-alt
   &:hover
     opacity: 0.9
 
-.mode--dark
-  .btn--hollow
-    color: $btn-light-dm
-
-    &:hover
-      color: $btn-light-hover-dm
-      border-color: $btn-light-hover-dm
-
-
 .btn--sm
   font-size: 0.8em
   padding: 5px 8px
@@ -193,7 +184,21 @@ a:not(.btn), .btn--link-alt
     width: 55px
     height: 55px
 
+/* --- DARK MODE -- */
+
 .mode--dark
+  .btn
+    &:focus
+      box-shadow 0 0 5px 1px $brand-xlight
+
+  .btn--plain
+    &:focus
+      box-shadow: none
+
+  a:not(.btn), .btn--link, .btn--link-alt
+    &:hover, &:focus
+      box-shadow: none
+
   .btn--icon
     color: $copy-dm
     background-color: $btn-icon-dm
@@ -209,22 +214,5 @@ a:not(.btn), .btn--link-alt
       color: $btn-hollow-hover-dm
       border-color: $btn-hollow-hover-dm
 
-
-.btn--close
-  display: block
-  background-color: transparent
-  background-size: 20px 20px
-  padding: 0
-  border: 0
-  border-radius: 50%
-  width: 20px
-  height: 20px
-  opacity: 0.8
-
-  &:hover, &:focus
-    background-color: transparent
-    border: 0
-    outline: 0
-    opacity: 1.0
 
 dump_media_cache()

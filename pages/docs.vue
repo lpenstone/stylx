@@ -61,6 +61,22 @@
               <li><x-link as="plain" href="#map">Map</x-link></li>
             </ul>
           </x-grid-item>
+          <x-grid-item>
+            <h3 class="h5 margin-top--20">General styles</h3>
+            <ul>
+              <li><x-link as="plain" id="margins" href="#nav-bar">Margins</x-link></li>
+              <li><x-link as="plain" id="Titles" href="#mode-toggle">Titles</x-link></li>
+              <li><x-link as="plain" id="Other" href="#map">Other</x-link></li>
+            </ul>
+          </x-grid-item>
+          <x-grid-item>
+            <h3 class="h5 margin-top--20">Credits</h3>
+            <ul>
+              <li><x-link as="plain" id="margins" href="#nav-bar">Demo photos</x-link></li>
+              <li><x-link as="plain" id="margins" href="#nav-bar">Font Awesome</x-link></li>
+              <li><x-link as="plain" id="margins" href="#nav-bar">Nuxt</x-link></li>
+            </ul>
+          </x-grid-item>
         </x-grid>
       </x-content>
     </x-section>
@@ -87,8 +103,20 @@
     <x-section size="lg">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Layout</h3>
-        <x-card as="shadow" id="grid">
+        <x-card as="shadow" id="section">
+          Section
+        </x-card>
+        <x-card as="shadow" id="content" class="margin-top--30">
+          Content
+        </x-card>
+        <x-card as="shadow" id="group" class="margin-top--30">
+          Group
+        </x-card>
+        <x-card as="shadow" id="grid" class="margin-top--30">
           <preview-grid></preview-grid>
+        </x-card>
+        <x-card as="shadow" id="card" class="margin-top--30">
+          Card
         </x-card>
       </x-content>
     </x-section>
@@ -103,6 +131,34 @@
         </x-card>
         <x-card as="shadow" id="gallery" class="margin-top--30">
           <preview-gallery></preview-gallery>
+        </x-card>
+      </x-content>
+    </x-section>
+    <x-section size="lg">
+      <x-content>
+        <h3 class="text-align--center margin-bottom--30">Forms</h3>
+        <x-card as="shadow" id="form" >
+          Form
+        </x-card>
+        <x-card as="shadow" id="input" class="margin-top--30">
+          Form inputs
+        </x-card>
+        <x-card as="shadow" id="groups" class="margin-top--30">
+          Form groups
+        </x-card>
+      </x-content>
+    </x-section>
+    <x-section as="alt" size="lg">
+      <x-content>
+        <h3 class="text-align--center margin-bottom--30">Specialty</h3>
+        <x-card as="shadow" id="mode-toggle" >
+          Mode toggle
+        </x-card>
+        <x-card as="shadow" id="nav" class="margin-top--30">
+          Nav bar
+        </x-card>
+        <x-card as="shadow" id="nav" class="margin-top--30">
+          Map
         </x-card>
       </x-content>
     </x-section>
