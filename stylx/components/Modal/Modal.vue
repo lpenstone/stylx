@@ -62,6 +62,11 @@ export default {
       window.addEventListener('keydown', this.handleKeydown)
     }
   },
+  mounted: function () {
+    if (this.as === 'open') {
+      this.openModal(this.name)
+    }
+  },
   computed: {
     isCloseable: function () {
       return this.as !== 'noclose'

@@ -6,6 +6,10 @@
           <h1 class="margin-bottom--20">Stylx Library</h1>
           <p>Style and preview the Stylx elements within this library.</p>
           <p>Copy the resulting code into your project.</p>
+          <x-card as="shadow" class="margin-top--40 text-align--center">
+            <p>Preview elements are displayed with Stylx default colors</p>
+            <div class="color-preview color-preview--brand">#DE00AA</div><div class="color-preview color-preview--secondary">#0059DE</div>
+          </x-card>
         </x-element>
       </x-content>
     </x-section>
@@ -91,11 +95,14 @@
     <x-section as="alt">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Interactive</h3>
-        <x-card as="shadow" id="gallery">
-          <preview-gallery></preview-gallery>
-        </x-card>
-        <x-card as="shadow" id="carousel" class="margin-top--30">
+        <x-card as="shadow" id="carousel" >
           <preview-carousel></preview-carousel>
+        </x-card>
+        <x-card as="shadow" id="modal" >
+          <preview-modal></preview-modal>
+        </x-card>
+        <x-card as="shadow" id="gallery" class="margin-top--30">
+          <preview-gallery></preview-gallery>
         </x-card>
       </x-content>
     </x-section>
@@ -110,6 +117,7 @@ import previewCarousel from '../components/preview-carousel/preview-carousel'
 import previewTag from '../components/preview-tag/preview-tag'
 import previewGallery from '../components/preview-gallery/preview-gallery'
 import previewGrid from '../components/preview-grid/preview-grid'
+import previewModal from '../components/preview-modal/preview-modal'
 import previewSeeMore from '../components/preview-see-more/preview-see-more'
 
 export default {
@@ -122,10 +130,42 @@ export default {
     'preview-accordion': previewAccordion,
     'preview-carousel': previewCarousel,
     'preview-gallery': previewGallery,
-    'preview-grid': previewGrid
+    'preview-grid': previewGrid,
+    'preview-modal': previewModal
   },
   data () {
     return {}
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+@import '~@/assets/styles/variables'
+
+.color-preview
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono, Courier New, sans-serif
+  position: relative
+  display: inline-block
+  line-height: 1.2em
+  padding-left: 25px
+  margin: 0 10px
+  
+  &:before
+    position: absolute
+    display: block
+    content: ''
+    width: 16px
+    height: 16px
+    left: 0px
+    border: 1px solid $standard-xxdark
+    border-radius: 3px
+
+.color-preview--brand
+  &:before
+    background-color: $brand
+
+.color-preview--secondary
+  &:before
+    background-color: $secondary
+
+</style>

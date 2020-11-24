@@ -35,12 +35,14 @@
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
         </div>
       </div>
-      <div class="margin-top--20 margin-bottom--30">
+      <div class="margin-top--20">
         <x-tag as="secondary">height</x-tag>
         <p class="margin-top--10">Add a numeric value for a consistent carousel height.</p>  
       </div>
-      <h5>Children</h5>
-      <p>Each group within the carousel needs to be wrapped in <span class="">&lt;x-carousel-item&gt;&lt;/x-carousel-item&gt;</span> tags.</p>
+      <div class="margin-top--30">
+        <h5>Children</h5>
+        <p>Each group within the carousel needs to be wrapped in <span class="code-text">&lt;x-carousel-item&gt;&lt;/x-carousel-item&gt;</span> tags.</p>
+      </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>

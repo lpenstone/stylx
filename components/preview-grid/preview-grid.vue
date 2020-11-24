@@ -49,6 +49,10 @@
           <x-button size="sm" @click="setCols('6')" :selected="currentCols === '6'">6</x-button>
         </div>
       </div>
+      <div class="margin-top--30">
+        <h5>Children</h5>
+        <p>Each group within the grid needs to be wrapped in <span class="code-text">&lt;x-grid-item&gt;&lt;/x-grid-item&gt;</span> tags.</p>
+      </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>

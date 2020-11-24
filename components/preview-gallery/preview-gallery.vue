@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Gallery (subet of grid)</h4>
+    <h4>Gallery (subset of grid)</h4>
     <div class="margin-top--30">
       <x-grid :as="currentAs" :cols="currentCols" name="prints">
         <x-grid-item>
