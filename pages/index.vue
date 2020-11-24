@@ -3,33 +3,30 @@
     <x-section as="hero" id="hero">
       <x-content class="text-align--center">
         <x-element as="center" size="md">
-          <h1 class="margin-bottom--30">Welcome to Stylx</h1>
-          <p class="heading--title">So you're interested in building a website fast that includes:</p>
-          <x-carousel height="90" class="margin-top--40 margin-bottom--40">
-            <x-carousel-item>
-              <h2 class="h4 margin-bottom--20">Accessibility features</h2>
-              <p>Keyboard and touch swipe capabilities, well-formatted forms, </p>
-            </x-carousel-item>
-            <x-carousel-item>
-              <h2 class="h4 margin-bottom--20">Dark mode capability</h2>
-              <p>Components are designed and built with light and dark mode versions.</p>
-            </x-carousel-item>
-            <x-carousel-item>
-              <h2 class="h4 margin-bottom--20">Responsive design</h2>
-              <p>All elements are built to suit and adjust to any screen size.</p>
-            </x-carousel-item>
-            <x-carousel-item>
-              <h2 class="h4 margin-bottom--20">Branding customizations</h2>
-              <p>Adjust the look and feel of your website with your brand colors and style preferences.</p>
-            </x-carousel-item>
-            <x-carousel-item>
-              <h2 class="h4 margin-bottom--20">Easy to use syntax</h2>
-              <p>If you know HTML basics, you'll thrive using Stylx.</p>
-            </x-carousel-item>
-          </x-carousel>
+          <h1 class="margin-bottom--30">Stylx UI framework</h1>
+          <p class="heading--title">The essential development tool for...</p>
+          <x-element as="center" size="sm">
+            <x-carousel as="cycle-2500" class="margin-bottom--70">
+              <x-carousel-item>
+                <h2 class="heading--title">building websites quickly</h2>
+              </x-carousel-item>
+              <x-carousel-item>
+                <h2 class="heading--title">accessibile components</h2>
+              </x-carousel-item>
+              <x-carousel-item>
+                <h2 class="heading--title">dark mode capability</h2>
+              </x-carousel-item>
+              <x-carousel-item>
+                <h2 class="heading--title">responsive design</h2>
+              </x-carousel-item>
+              <x-carousel-item>
+                <h2 class="heading--title">branding customizations</h2>
+              </x-carousel-item>
+            </x-carousel>
+          </x-element>
           <div class="margin-top--20">
             <x-link as="hollow" size="lg" :to="{name: 'docs'}">View components</x-link>
-            <x-link as="standard" size="lg" href="github.com">Get started</x-link>
+            <x-link as="standard" size="lg" brand="github" href="github.com">Get started</x-link>
           </div>
         </x-element>
       </x-content>
@@ -48,3 +45,4 @@ export default {}
 
 <style lang="stylus" scoped>
 </style>
+

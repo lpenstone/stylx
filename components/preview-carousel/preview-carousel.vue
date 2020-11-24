@@ -33,6 +33,11 @@
         <div class="margin-top--10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
+          <x-button size="sm" @click="setAs('cycle')" :selected="currentAs === 'cycle'">cycle</x-button>
+          <x-button size="sm" @click="setAs('cycle-900')" :selected="currentAs === 'cycle-900'">cycle-900</x-button>
+          <x-button size="sm" @click="setAs('cycle-2500')" :selected="currentAs === 'cycle-2500'">cycle-2500</x-button>
+          <x-button size="sm" @click="setAs('cycle-5000')" :selected="currentAs === 'cycle-5000'">cycle-5000</x-button>
+          <p class="margin-top--10">Set the length of the cycle with the format <span class="code-text">cycle-[time]</span> where <span class="code-text">[time]</span> can be any value, in milliseconds. (1 second = 1000 milliseconds)</p>
         </div>
       </div>
       <div class="margin-top--20">

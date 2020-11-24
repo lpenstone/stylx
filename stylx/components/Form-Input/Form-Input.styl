@@ -12,17 +12,35 @@
 .input__item
   color: $copy
   font-family: $font-copy
-  font-size: 1.0em
   background-color: transparent
   width: 100%
   border: 1px solid $form-border
   border-radius: 3px
-  padding: 10px
 
   &:focus
     border: 2px solid $form-border-focus
     outline: none
-    padding: 9px
+
+  &.input__item--sm
+    padding: 6px
+    font-size: 0.9em
+
+    &:focus
+      padding: 5px
+
+  &.input__item--md
+    padding: 10px
+    font-size: 1.0em
+
+    &:focus
+      padding: 9px
+
+  &.input__item--lg
+    padding: 14px
+    font-size: 1.2em
+
+    &:focus
+      padding: 13px
 
 .mode--dark
   .input__item

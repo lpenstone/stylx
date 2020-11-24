@@ -1,7 +1,7 @@
 <template>
   <form class="form" method="POST">
     <slot></slot>
-    <x-button size="lg" type="submit" class="margin--center-block">Submit</x-button>
+    <x-button v-if="as === 'submit'" size="lg" type="submit" class="margin--center-block">Submit</x-button>
   </form>
 </template>
 

@@ -2,7 +2,10 @@
   <button
     class="btn"
     :class="['btn--' + as, 'btn--' + size, {'btn--selected': selected}]"
-    @click="clicked()">
+    @click="clicked()"
+    :aria-label="as === 'icon' ? icon || brand : ''">
+    <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
+    <i v-else-if="brand" :class="['fab', 'fa-' + brand, 'fa-' + size]"></i>
     <slot></slot>
   </button>
 </template>
@@ -20,6 +23,12 @@ export default {
       default: function () {
         return this.$store.state.config.btnDefaultSize || 'md'
       }
+    },
+    icon: {
+      type: String
+    },
+    brand: {
+      type: String
     },
     click: {
       type: String

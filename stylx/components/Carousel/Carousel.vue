@@ -5,10 +5,10 @@
         <slot></slot>
       </div>
       <div class="carousel__btn carousel__btn--previous">
-        <x-button as="icon" aria-label="previous" @click="prevItem()">&#8701;</x-button>
+        <x-button as="icon" aria-label="previous" @click="cliked = true; prevItem();">&#8701;</x-button>
       </div>
       <div class="carousel__btn carousel__btn--next">
-        <x-button as="icon" aria-label="next" @click="nextItem()">&#8702;</x-button>
+        <x-button as="icon" aria-label="next" @click="clicked = true; nextItem();">&#8702;</x-button>
       </div>
       <div class="carousel__dots-wrap">
         <div class="carousel__dots">
@@ -48,16 +48,21 @@ export default {
   data () {
     return {
       index: this.startIndex,
-      nItems: '2'
+      nItems: '2',
+      timer: null,
+      clicked: false,
+      cycleTime: 3000
     }
   },
   created: function () {
     if (process.browser) {
       window.addEventListener('keydown', this.navigate)
     }
+    this.getCycleTime()
   },
   mounted: function () {
     this.nItems = this.items || this.getItemsNumber()
+    if (this.as.indexOf('cycle') > -1) this.autoScroll()
   },
   computed: {
     isModalOpen: function () {
@@ -91,9 +96,36 @@ export default {
         }
       }, 250)
     },
+    getCycleTime: function () {
+      if (this.as.indexOf('cycle') > -1) {
+        const array = this.as.split('-')
+        if (array[1]) {
+          this.cycleTime = Number(array[1])
+        }
+      }
+    },
+    autoScroll: function () {
+      this.timer = setTimeout(() => {
+        if (this.clicked) {
+          clearTimeout(this.timer)
+          return
+        }
+        this.nextItem()
+        this.autoScroll()
+      }, this.cycleTime)
+    },
     getItemsNumber: function () {
       const carousel = this.$refs.carousel
       return carousel.children.length.toString()
+    }
+  },
+  watch: {
+    as: function (value) {
+      clearTimeout(this.timer)
+      if (value.indexOf('cycle') > -1) {
+        this.getCycleTime()
+        this.autoScroll()
+      }
     }
   },
   destroyed: function () {

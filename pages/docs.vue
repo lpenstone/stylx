@@ -1,5 +1,19 @@
 <template>
   <div>
+    <!-- <x-img-section as="fixed" size="lg" name="hero" screen="0.3">
+      <img class="bg-img" src="~@/assets/images/sample2.png">
+      <x-content class="text-align--center">
+        <x-element as="center" size="sm">
+          <h1 class="margin-bottom--20">Stylx Library</h1>
+          <p>Style and preview the Stylx elements within this library.</p>
+          <p>Copy the resulting code into your project.</p>
+          <x-card class="margin-top--40 text-align--center">
+            <p>Indoor dining closed due to covid-19</p>
+            <x-button class="margin-top--20">Takout menu</x-button>
+          </x-card>
+        </x-element>
+      </x-content>
+    </x-img-section> -->
     <x-section size="lg" as="hero">
       <x-content class="text-align--center">
         <x-element as="center" size="md">
@@ -64,6 +78,7 @@
           <x-grid-item>
             <h3 class="h5 margin-top--20">General styles</h3>
             <ul>
+              <li><x-link as="plain" id="margins" href="#icons">Icons &amp; Brand Icons</x-link></li>
               <li><x-link as="plain" id="margins" href="#nav-bar">Margins</x-link></li>
               <li><x-link as="plain" id="Titles" href="#mode-toggle">Titles</x-link></li>
               <li><x-link as="plain" id="Other" href="#map">Other</x-link></li>

@@ -1,15 +1,17 @@
 <template>
   <div class="input__wrap">
-    <label class="input__label" :for="name">{{label}}</label>
+    <label v-if="label" class="input__label" :for="name">{{label}}</label>
     <textarea v-if="inputType === 'textarea'"
-      class="input__item"
+      v-model="model"
+      :class="['input__item', 'input__item--' + size]"
       :name="name"
       :id="name"
       rows="5"
       style="resize: none"
       :placeholder="placeholder"></textarea>
     <input v-else
-      class="input__item"
+      v-model="model"
+      :class="['input__item', 'input__item--' + size]"
       :type="type || as"
       :name="name"
       :id="name"
@@ -29,6 +31,10 @@ export default {
       type: String,
       default: ''
     },
+    size: {
+      type: String,
+      default: 'md'
+    },
     name: {
       type: String,
       required: true
@@ -41,14 +47,26 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      model: ''
+    }
   },
   computed: {
     inputType: function () {
       return this.type || this.as
-    // },
-    // isInput: function () {
-    //   return ['text', 'email', 'password'].indexOf(this.inputType) > -1
+    }
+  },
+  methods: {
+    clearInput: function () {
+      this.model = ''
+    },
+    setInput: function (value) {
+      this.model = value
+    }
+  },
+  watch: {
+    model: function (value) {
+      this.$emit('model', value)
     }
   }
 }

@@ -2,11 +2,19 @@
   <div>
     <h4>Link</h4>
     <div class="margin-top--30">
-      <x-link :as="currentAs" :size="currentSize" href="https://stylx.com" target="_blank">{{currentText}}</x-link>
+      <x-link :as="currentAs" :size="currentSize" href="https://stylx.com" target="_blank" :brand="currentBrand" :icon="currentIcon">{{hideText ? '' : currentText}}</x-link>
     </div>
     <x-card size="sm" class="margin-top--20">
-      <h5>Attributes</h5>
-      <div class="margin-top--20">
+      <div>
+        <h5>Link text</h5>
+        <x-element size="sm">
+          <x-form>
+            <x-form-input @model="currentText = $event" name="link-text" as=text :placeholder="currentText"></x-form-input>
+          </x-form>
+        </x-element>
+      </div>
+      <div class="margin-top--30">
+        <h5>Attributes</h5>
         <x-tag as="secondary">href</x-tag> <em>*required</em>
         <div class="margin-top--10">
           <p>The URL that you're linking to.</p>
@@ -25,7 +33,7 @@
           <x-button size="sm" @click="setAs('standard'); setText();" :selected="currentAs === 'standard'">standard</x-button>
           <x-button size="sm" @click="setAs('hollow'); setText();" :selected="currentAs === 'hollow'">hollow</x-button>
           <x-button size="sm" @click="setAs('plain'); setText();" :selected="currentAs === 'plain'">plain</x-button>
-          <x-button size="sm" @click="setAs('icon'); setIcon();" :selected="currentAs === 'icon'">icon</x-button>
+          <x-button size="sm" @click="setAs('icon'); clearText();" :selected="currentAs === 'icon'">icon</x-button>
         </div>
       </div>
       <div class="margin-top--30">
@@ -41,6 +49,40 @@
         </div>
       </div>
       <div class="margin-top--30">
+        <x-tag as="secondary">icon</x-tag>
+        <div class="margin-top--10">
+          <strong>values: </strong>
+          <x-button size="sm" @click="setIcon('')" :selected="currentIcon === ''">none</x-button>
+          <x-button size="sm" @click="setIcon('sun')" :selected="currentIcon === 'sun'">sun</x-button>
+          <x-button size="sm" @click="setIcon('comment')" :selected="currentIcon === 'comment'">comment</x-button>
+          <x-button size="sm" @click="setIcon('download')" :selected="currentIcon === 'download'">download</x-button>
+          <strong>&amp; others...</strong>
+          <x-element size="sm" class="margin-top--10">
+            <x-form>
+              <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>
+            </x-form>
+          </x-element>
+          <p class="margin-top--10">You can include an icon from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank">View available icons</x-link></p>
+        </div>
+      </div>
+      <div class="margin-top--30">
+        <x-tag as="secondary">brand</x-tag>
+        <div class="margin-top--10">
+          <strong>values: </strong>
+          <x-button size="sm" @click="setBrand('')" :selected="currentBrand === ''">none</x-button>
+          <x-button size="sm" @click="setBrand('github')" :selected="currentBrand === 'github'">github</x-button>
+          <x-button size="sm" @click="setBrand('twitter')" :selected="currentBrand === 'twitter'">twitter</x-button>
+          <x-button size="sm" @click="setBrand('youtube')" :selected="currentBrand === 'youtube'">youtube</x-button>
+          <strong>&amp; others...</strong>
+          <x-element size="sm" class="margin-top--10">
+            <x-form>
+              <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"></x-form-input>
+            </x-form>
+          </x-element>
+          <p class="margin-top--10">You can include a brand from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">View available brands</x-link></p>
+        </div>
+      </div>
+      <div class="margin-top--30">
         <strong>Other: </strong>
         <p>Use any standard HTML link attributes.</p>
         <x-button as="secondary" size="sm" @click="toggle('target')" :selected="!!optional.target">target</x-button>
@@ -52,7 +94,7 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-link href="" as="{{currentAs}}" size="{{currentSize}}" {{optional.target}} {{optional.title}} {{optional.name}}&gt;{{currentText}}&lt;/x-link&gt;
+        &lt;x-link href="" as="{{currentAs}}" size="{{currentSize}}" <span v-if="currentIcon">icon="{{currentIcon}}"</span> <span v-if="currentBrand">brand="{{currentBrand}}"</span> {{optional.target}} {{optional.title}} {{optional.name}}&gt;{{currentText}}&lt;/x-link&gt;
       </x-code>
     </div>
   </div>
@@ -66,6 +108,9 @@ export default {
       currentAs: 'link',
       currentSize: 'md',
       currentText: 'Sample Link',
+      hideText: false,
+      currentIcon: '',
+      currentBrand: '',
       optional: {
         name: '',
         target: '',
@@ -80,11 +125,22 @@ export default {
     setSize: function (value) {
       this.currentSize = value
     },
-    setIcon: function () {
-      this.currentText = '👍'
+    setIcon: function (value) {
+      if (value) this.$refs.brandInput.setInput('')
+      this.$refs.iconInput.setInput(value)
+      this.currentIcon = value
+    },
+    setBrand: function (value) {
+      if (value) this.$refs.iconInput.setInput('')
+      this.$refs.brandInput.setInput(value)
+      this.currentBrand = value
+    },
+    clearText: function () {
+      this.hideText = true
+      if (!this.currentIcon) this.currentIcon = 'sun'
     },
     setText: function () {
-      this.currentText = 'Sample Link'
+      this.hideText = false
     },
     toggle: function (key) {
       if (this.optional[key]) {

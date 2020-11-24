@@ -1,8 +1,18 @@
 <template>
-  <router-link v-if="to" :to="to" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" :target="target">
+  <router-link
+    v-if="to"
+    :to="to"
+    :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" 
+    :aria-label="as === 'icon' ? icon || brand : false">
+    <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
+    <i v-else-if="brand" :class="['fab', 'fa-' + brand, 'fa-' + size]"></i>
     <slot></slot>
   </router-link>
-  <a v-else-if="href" :href="href" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" :target="target">
+  <a v-else-if="href"
+    :href="href" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]"
+    :aria-label="as === 'icon' ? icon || brand : false">
+    <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
+    <i v-else-if="brand" :class="['fab', 'fa-' + brand, 'fa-' + size]"></i>
     <slot></slot>
   </a>
 </template>
@@ -20,6 +30,12 @@ export default {
       default: function () {
         return this.$store.state.btnDefaultSize || 'md'
       }
+    },
+    icon: {
+      type: String
+    },
+    brand: {
+      type: String
     },
     to: {
       type: Object
