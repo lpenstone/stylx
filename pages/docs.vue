@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section as="hero">
+    <x-section size="lg" as="hero">
       <x-content class="text-align--center">
         <x-element as="center" size="md">
           <h1 class="margin-bottom--20">Stylx Library</h1>
@@ -64,7 +64,7 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section as="alt">
+    <x-section size="lg" as="alt">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Elements</h3>
         <x-card as="shadow" id="button">
@@ -84,7 +84,7 @@
         </x-card>
       </x-content>
     </x-section>
-    <x-section>
+    <x-section size="lg">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Layout</h3>
         <x-card as="shadow" id="grid">
@@ -92,13 +92,13 @@
         </x-card>
       </x-content>
     </x-section>
-    <x-section as="alt">
+    <x-section size="lg" as="alt">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Interactive</h3>
         <x-card as="shadow" id="carousel" >
           <preview-carousel></preview-carousel>
         </x-card>
-        <x-card as="shadow" id="modal" >
+        <x-card as="shadow" id="modal" class="margin-top--30">
           <preview-modal></preview-modal>
         </x-card>
         <x-card as="shadow" id="gallery" class="margin-top--30">

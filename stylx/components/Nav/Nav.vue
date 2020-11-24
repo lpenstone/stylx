@@ -12,8 +12,8 @@
               </router-link>
             </div>
             <div class="nav__item nav__item--mobile-menu">
-              <x-button as="icon" id="close" @clicked="toggleMenu">x</x-button>
-              <x-button as="plain" id="menu" @clicked="toggleMenu">
+              <x-button as="icon" id="close" @click="toggleMenu">x</x-button>
+              <x-button as="plain" id="menu" @click="toggleMenu">
                 <i class="fas fa-bars"></i>
               </x-button>
             </div>
