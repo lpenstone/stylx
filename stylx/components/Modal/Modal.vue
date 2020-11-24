@@ -1,6 +1,9 @@
 <template>
   <div class="modal-button__wrap">
-    <div v-if="isModalOpen && name === modalName" ref="modal" role="dialog" :aria-labelledby="'labelID'" class="modal">
+    <div v-if="isModalOpen && name === modalName"
+      ref="modal"
+      role="dialog"
+      class="modal">
       <div @click="isCloseable && closeModal()" class="modal__screen"></div>
       <div class="modal__wrap" :class="'modal__wrap--' + size">
         <div class="modal__box">
@@ -46,12 +49,17 @@ export default {
   },
   data () {
     return {
-      activeField: null
+      activeField: null,
+      isShiftPressed: false,
+      focusableEls: [],
+      topFocusEl: null,
+      bottomFocusEl: null
     }
   },
   created: function () {
-    if (this.isCloseable && process.browser) {
-      window.addEventListener('keydown', this.escape)
+    if (process.browser) {
+      window.addEventListener('keyup', this.handleKeyup)
+      window.addEventListener('keydown', this.handleKeydown)
     }
   },
   computed: {
@@ -71,14 +79,47 @@ export default {
       this.$store.commit('openModal', name)
       this.activeField = document.activeElement
       this.$nextTick(() => {
-        const inputField = this.$refs.modal.querySelector('input')
-        const button = this.$refs.modal.querySelectorAll('button')[1] // skip the close button
-        if (inputField) {
-          inputField.focus()
-        } else if (button) {
-          button.focus()
+        this.getFocusEls()
+        if (this.focusableEls[1]) {
+          this.focusableEls[1].focus()
         }
       })
+    },
+    getFocusEls: function () {
+      this.focusableEls = this.$refs.modal.querySelectorAll('button, [href], input, select, textarea, select, textarea [tabindex]:not([tabindex="-1"])')
+      this.topFocusEl = this.focusableEls[0]
+      this.bottomFocusEl = this.focusableEls[this.focusableEls.length - 1]
+    },
+    handleKeydown: function (e) {
+      switch(e.key) {
+        case 'Escape':
+          if (!this.isCloseable) return
+          this.closeModal()
+          break
+        case 'Tab':
+          if (this.isShiftPressed) {
+            if (document.activeElement === this.topFocusEl) {
+              setTimeout(() => {
+                this.topFocusEl.focus()
+              }, 150)
+            }
+          } else if (document.activeElement === this.bottomFocusEl) {
+            setTimeout(() => {
+              this.bottomFocusEl.focus()
+            }, 150)
+          }
+          break
+        case 'Shift':
+          this.isShiftPressed = true
+          break
+        default:
+          return
+      }
+    },
+    handleKeyup: function (e) {
+      if (e.key === 'Shift') {
+        this.isShiftPressed = false
+      }
     },
     closeModal: function () {
       this.$store.commit('closeModal')
@@ -88,16 +129,12 @@ export default {
           this.activeField = null
         }
       }, 100)
-    },
-    escape: function (e) {
-      if (e.key === 'Escape') {
-        this.closeModal()
-      }
     }
   },
   destroyed: function () {
     if (process.browser) {
-      window.removeEventListener('keydown', this.escape)
+      window.removeEventListener('keydown', this.handleKeydown)
+      window.removeEventListener('keyup', this.handleKeyup)
     }
   }
 }

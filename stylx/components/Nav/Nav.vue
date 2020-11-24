@@ -21,7 +21,7 @@
               <slot name="links">
                 <ul>
                   <li v-for="(route, name) in routes" v-bind:key="name">
-                    <x-link
+                    <x-link as="link-alt"
                       v-if="route.path !== '/' && route.path !== '/success'"
                       :to="{name: route.name}">
                       {{route.name | sanitize}}

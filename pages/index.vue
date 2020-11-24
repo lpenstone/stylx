@@ -5,7 +5,7 @@
         <x-element as="center" size="md">
           <h1 class="margin--bottom-30">Welcome to Stylx</h1>
           <p class="heading--title">So you're interested in building a website fast that includes:</p>
-          <x-carousel items="5" height="90" class="margin--top-40 margin--bottom-40">
+          <x-carousel height="90" class="margin--top-40 margin--bottom-40">
             <x-carousel-item>
               <h2 class="h4 margin--bottom-20">Accessibility features</h2>
               <p>Keyboard and touch swipe capabilities, well-formatted forms, </p>

@@ -1,6 +1,6 @@
 <template>
   <div class="view-wrap" :class="darkMode ? 'mode--dark' : ''">
-    <div class="view-content">
+    <div class="view-content" :inert="isModalOpen">
       <x-nav></x-nav>
       <Nuxt />
     </div>
@@ -16,6 +16,9 @@ export default {
   computed: {
     darkMode: function () {
       return this.$store.state.darkMode
+    },
+    isModalOpen: function () {
+      return this.$store.state.modal.isOpen
     }
   },
   watch: {

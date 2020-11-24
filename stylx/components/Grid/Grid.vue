@@ -1,6 +1,6 @@
 <template>
   <div class="grid__window">
-    <div class="grid" :ref="name" :class="['grid--' + cols, {'grid--zoomable': zoomable}, {'grid--gallery': gallery}]" @click="gallery ? openGallery($event) : zoom($event)">
+    <div class="grid" :ref="name" :class="['grid--' + cols, {'grid--zoomable': zoomable}, {'grid--gallery': gallery}]" @click="handleClick($event)">
       <slot></slot>
     </div>
     <x-modal ref="gridModal" v-if="gallery" :name="name">
@@ -54,6 +54,13 @@ export default {
         this.carouselIndex = index + 1
 
         this.$refs.gridModal.openModal(this.name)
+      }
+    },
+    handleClick: function (e) {
+      if (this.gallery) {
+        this.openGallery(e)
+      } else if (this.zoomable){
+        this.zoom(e)
       }
     },
     zoom: function (e) {

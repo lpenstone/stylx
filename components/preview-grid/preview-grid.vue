@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h4>Gallery (subet of grid)</h4>
+    <h4>Grid</h4>
     <div class="margin--top-30">
-      <x-grid :as="currentAs" :cols="currentCols" name="prints">
+      <x-grid :as="currentAs" :cols="currentCols">
         <x-grid-item>
           <img src="~@/assets/images/sample1.png" alt="">
           <p class="secret">Newfoundland, Canada</p>
@@ -30,7 +30,8 @@
         </div>
         <div class="margin--top-10">
           <strong>values:</strong>
-          <x-button size="sm" @click="setAs('gallery')" :selected="currentAs === 'gallery'">gallery</x-button>
+          <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
+          <x-button size="sm" @click="setAs('zoom')" :selected="currentAs === 'zoom'">zoom</x-button>
         </div>
       </div>
       <div class="margin--top-30">
@@ -48,30 +49,22 @@
           <x-button size="sm" @click="setCols('6')" :selected="currentCols === '6'">6</x-button>
         </div>
       </div>
-      <div class="margin--top-20">
-        <x-tag as="secondary">name</x-tag> <em>*required</em>
-        <p class="margin--top-10">Choose a unique name for your gallery. No spaces, use hyphens.</p>  
-      </div>
     </x-card>
     <div class="margin--top-20">
       <h5>Code</h5>
       <x-code class="margin--top-10">
-        &lt;x-grid as="{{currentAs}}" cols="{{currentCols}}" name="unique-name"&gt;<br>
+        &lt;x-grid as="{{currentAs}}" cols="{{currentCols}}"&gt;<br>
         &nbsp;&nbsp;&lt;x-grid-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret"&gt;Caption #1&lt;/p&gt;<br>
         &nbsp;&nbsp;&lt;/x-grid-item&gt;<br>
         &nbsp;&nbsp;&lt;x-grid-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret"&gt;Caption #2&lt;/p&gt;<br>
         &nbsp;&nbsp;&lt;/x-grid-item&gt;<br>
         &nbsp;&nbsp;&lt;x-grid-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret"&gt;Caption #3&lt;/p&gt;<br>
         &nbsp;&nbsp;&lt;/x-grid-item&gt;<br>
         &nbsp;&nbsp;&lt;x-grid-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret"&gt;Caption #4&lt;/p&gt;<br>
         &nbsp;&nbsp;&lt;/x-grid-item&gt;<br>
         &lt;/x-grid&gt;
       </x-code>
@@ -84,7 +77,7 @@ export default {
   name: 'preview-accordion',
   data () {
     return {
-      currentAs: 'gallery',
+      currentAs: 'standard',
       currentCols: '4'
     }
   },

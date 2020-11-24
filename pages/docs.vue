@@ -83,8 +83,8 @@
     <x-section>
       <x-content>
         <h3 class="text-align-center margin--bottom-30">Layout</h3>
-        <x-card as="shadow" id="button">
-          <preview-button></preview-button>
+        <x-card as="shadow" id="grid">
+          <preview-grid></preview-grid>
         </x-card>
       </x-content>
     </x-section>
@@ -105,6 +105,7 @@ import previewLink from '../components/preview-link/preview-link'
 import previewAccordion from '../components/preview-accordion/preview-accordion'
 import previewTag from '../components/preview-tag/preview-tag'
 import previewGallery from '../components/preview-gallery/preview-gallery'
+import previewGrid from '../components/preview-grid/preview-grid'
 import previewSeeMore from '../components/preview-see-more/preview-see-more'
 
 export default {
@@ -115,7 +116,8 @@ export default {
     'preview-see-more': previewSeeMore,
     'preview-tag': previewTag,
     'preview-accordion': previewAccordion,
-    'preview-gallery': previewGallery
+    'preview-gallery': previewGallery,
+    'preview-grid': previewGrid
   },
   data () {
     return {}

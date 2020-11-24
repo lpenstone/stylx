@@ -16,6 +16,7 @@
           <x-button size="sm" @click="setAs('standard'); setText();" :selected="currentAs === 'standard'">standard</x-button>
           <x-button size="sm" @click="setAs('hollow'); setText();" :selected="currentAs === 'hollow'">hollow</x-button>
           <x-button size="sm" @click="setAs('link'); setText();" :selected="currentAs === 'link'">link</x-button>
+          <x-button size="sm" @click="setAs('link-alt'); setText();" :selected="currentAs === 'link-alt'">link-alt</x-button>
           <x-button size="sm" @click="setAs('plain'); setText();" :selected="currentAs === 'plain'">plain</x-button>
           <x-button size="sm" @click="setAs('icon'); setIcon();" :selected="currentAs === 'icon'">icon</x-button>
         </div>

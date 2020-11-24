@@ -1,8 +1,8 @@
 <template>
-  <router-link v-if="to" :to="to" :class="[btn ? 'btn btn--' + as : '', ' btn--' + size]" :target="target">
+  <router-link v-if="to" :to="to" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" :target="target">
     <slot></slot>
   </router-link>
-  <a v-else-if="href" :href="href" :class="[btn ? 'btn btn--' + as : '', ' btn--' + size]" :target="target">
+  <a v-else-if="href" :href="href" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" :target="target">
     <slot></slot>
   </a>
 </template>

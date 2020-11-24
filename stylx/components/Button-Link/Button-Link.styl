@@ -13,10 +13,34 @@
   &:hover
     cursor: pointer
 
+  &:focus
+    box-shadow 0 0 5px 1px $brand
+
 .btn--selected
   border-color: $btn-selected-outline !important
 
 a:not(.btn), .btn--link
+  display: inline-block
+  background-color: transparent 
+  outline: none 
+  border: 0px
+  padding: 0px
+  margin: 0px
+  border-radius: 0px
+  text-decoration: underline
+  line-height: inherit
+  color: $brand-xdark
+  font-weight: 600
+
+  &.btn--lg, &.btn--md, &.btn--sm
+    padding: 0px
+
+  &:hover, &:focus
+    border-color: $btn-hover
+    background-color: rgba(0,0,0,0.15)
+    box-shadow: none
+
+a:not(.btn), .btn--link-alt
   display: inline-block
   background-color: transparent 
   outline: none 
@@ -33,12 +57,23 @@ a:not(.btn), .btn--link
   &.btn--lg, &.btn--md, &.btn--sm
     padding: 0px
 
-  &:hover
+  &:hover, &:focus
     border-color: $btn-hover
+    background-color: rgba(0,0,0,0.15)
+    box-shadow: none
 
 .mode--dark
-  a:not(.btn), .btn--link
+  a:not(.btn), .btn--link-alt
     color: $copy-dm
+
+    &:hover
+      background-color: rgba(0,0,0,0.3)
+
+  a:not(.btn), .btn--link
+    color: $brand-xlight
+
+    &:hover
+      background-color: rgba(0,0,0,0.3)
 
 .btn--standard
   border-color: $btn

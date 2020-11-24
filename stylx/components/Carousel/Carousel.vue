@@ -1,7 +1,7 @@
 <template>
   <x-swipe @swipeRight="prevItem" @swipeLeft="nextItem">
     <div class="carousel">
-      <div class="carousel__content" :class="'carousel__content-index-' + index" :style="height ? `min-height: ${height}px` : 'min-height: auto'">
+      <div ref="carousel" class="carousel__content" :class="'carousel__content-index-' + index" :style="height ? `min-height: ${height}px` : 'min-height: auto'">
         <slot></slot>
       </div>
       <div class="carousel__btn carousel__btn--previous">
@@ -34,8 +34,7 @@ export default {
       default: 'standard'
     },
     items: {
-      type: String,
-      default: '2'
+      type: String
     },
     height: {
       type: String
@@ -47,13 +46,17 @@ export default {
   },
   data () {
     return {
-      index: this.startIndex
+      index: this.startIndex,
+      nItems: '2'
     }
   },
   created: function () {
     if (process.browser) {
       window.addEventListener('keydown', this.navigate)
     }
+  },
+  mounted: function () {
+    this.nItems = this.items || this.getItemsNumber()
   },
   computed: {
     isModalOpen: function () {
@@ -69,7 +72,7 @@ export default {
       if (this.isModalOpen && this.as !== 'modal') return
       this.$refs.dots.scrollRight()
       setTimeout(() => {
-        if (this.index === Number(this.items)) {
+        if (this.index === Number(this.nItems)) {
           this.index = 1
         } else {
           this.index ++
@@ -81,12 +84,16 @@ export default {
       this.$refs.dots.scrollLeft()
       setTimeout(() => {
         if (this.index === 1) {
-          this.index = Number(this.items)
+          this.index = Number(this.nItems)
         } else {
           this.index --
         }
       }, 350)
     },
+    getItemsNumber: function () {
+      const carousel = this.$refs.carousel
+      return carousel.children.length.toString()
+    }
   },
   destroyed: function () {
     if (process.browser) {

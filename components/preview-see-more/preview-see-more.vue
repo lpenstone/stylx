@@ -16,6 +16,7 @@
         <div class="margin--top-10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('link')" :selected="currentAs === 'link'">link</x-button>
+          <x-button size="sm" @click="setAs('link-alt')" :selected="currentAs === 'link-alt'">link-alt</x-button>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
           <x-button size="sm" @click="setAs('hollow')" :selected="currentAs === 'hollow'">hollow</x-button>
           <x-button size="sm" @click="setAs('plain')" :selected="currentAs === 'plain'">plain</x-button>
