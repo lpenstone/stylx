@@ -74,23 +74,17 @@ export default {
     transform: translate(0, 0)
 
     .expand__btn
-      transform: translate(0, -23px)
-
-      .expand__caret
-        border-top-color: transparent
-        border-bottom-color: grey
-        bottom: 7px
-        top: auto
+      transform: translate(0, -23px) scaleY(-1)
 
   .expand__btn
     position: absolute
     bottom: -22px
     display: block
-    width: 50px
+    width: 46px
     height: 22px
     background-color: white
-    border-bottom-right-radius: 10px
-    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 22px
+    border-bottom-left-radius: 22px
     z-index: 10
     transform: translate(0, 0)
     transition: transform 0.6s ease-in-out
@@ -102,7 +96,7 @@ export default {
     .expand__caret
       position: absolute 
       top: 7px
-      right: 16px
+      left: 15px
       content: ''
       width: 0
       height: 0
