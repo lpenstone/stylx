@@ -149,7 +149,7 @@ export default {
     },
     clearText: function () {
       this.hideText = true
-      if (!this.currentIcon) this.currentIcon = 'sun'
+      if (!this.currentIcon && !this.currentBrand) this.currentIcon = 'sun'
     },
     setText: function () {
       this.hideText = false
