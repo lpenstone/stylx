@@ -1,5 +1,6 @@
 <template>
   <router-link
+    @click="clicked()"
     v-if="to"
     :to="to"
     :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" 
@@ -9,6 +10,7 @@
     <slot></slot>
   </router-link>
   <a v-else-if="href"
+    @click="clicked()"
     :href="href" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]"
     :aria-label="as === 'icon' ? icon || brand : false">
     <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
@@ -57,7 +59,7 @@ export default {
   },
   methods: {
     clicked: function (config) {
-      this.$emit('clicked', config)
+      this.$emit('click', config)
     }
   }
 }

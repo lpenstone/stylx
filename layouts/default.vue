@@ -1,13 +1,17 @@
 <template>
   <div class="view-wrap" :class="darkMode ? 'mode--dark' : ''">
     <div class="view-content" :inert="isModalOpen">
-      <div class="table__wrap" :class="{'table__wrap--expanded': expanded}">
-        <div class="test">
-          <contents-table></contents-table>
+      <div v-if="isDocs" class="expand__wrap" :class="{'expand__wrap--expanded': expanded}">
+        <div class="contents__wrap">
+          <x-section size="sm">
+            <x-content>
+              <contents-table @clicked="expanded = false"></contents-table>
+            </x-content>
+          </x-section>
         </div>
-        <div @click="expanded = !expanded" class="expand">
+        <x-button as="plain" @click="expanded = !expanded" class="expand__btn">
           <div class="expand__caret"></div>
-        </div>
+        </x-button>
       </div>
       <x-nav></x-nav>
       <Nuxt />
@@ -30,6 +34,9 @@ export default {
     },
     isModalOpen: function () {
       return this.$store.state.modal.isOpen
+    },
+    isDocs: function () {
+      return this.$route.name === 'docs'
     }
   },
   watch: {
@@ -42,14 +49,14 @@ export default {
 
 <style scoped lang="stylus">
 
-.test
-  padding: 40px 70px
+.contents__wrap
+  width: 100%
   max-height: 90vh
   overflow: auto
   background-color: white
   border-bottom: 1px solid grey
 
-.table__wrap
+.expand__wrap
   width: 100%
   height: auto
   max-height: 90vh
@@ -59,14 +66,14 @@ export default {
   z-index: 1
   overflow: visible
   transform: translate(0, -100%)
-  transition: transform 1s ease-in-out
+  transition: transform 0.6s ease-in-out
   display: flex
   justify-content: center
 
-  &.table__wrap--expanded
+  &.expand__wrap--expanded
     transform: translate(0, 0)
 
-    .expand
+    .expand__btn
       transform: translate(0, -23px)
 
       .expand__caret
@@ -75,7 +82,7 @@ export default {
         bottom: 7px
         top: auto
 
-  .expand
+  .expand__btn
     position: absolute
     bottom: -22px
     display: block
@@ -86,7 +93,11 @@ export default {
     border-bottom-left-radius: 10px
     z-index: 10
     transform: translate(0, 0)
-    transition: transform 1s ease-in-out
+    transition: transform 0.6s ease-in-out
+    box-shadow: none
+
+    &:focus
+      box-shadow: none
 
     .expand__caret
       position: absolute 
