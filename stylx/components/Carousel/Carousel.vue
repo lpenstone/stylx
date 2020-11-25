@@ -101,6 +101,8 @@ export default {
         const array = this.as.split('-')
         if (array[1]) {
           this.cycleTime = Number(array[1])
+        } else {
+          this.cycleTime = 3000
         }
       }
     },

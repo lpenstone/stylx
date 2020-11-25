@@ -2,7 +2,7 @@
   <div>
     <h4>Accordion</h4>
     <div class="margin-top--30">
-      <x-accordion :as="currentAs" :size="currentSize" label="Sample Accordion">
+      <x-accordion :as="currentAs" :size="currentSize" :label="currentLabel">
         <p>Accordion content</p>
       </x-accordion>
     </div>
@@ -32,13 +32,21 @@
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">label</x-tag> <em>*required</em>
+        <x-element size="sm" class="margin-top--10">
+          <x-form>
+            <x-form-input name="label-text" size="sm" @model="setLabel($event)" as=text :placeholder="currentLabel"></x-form-input>
+          </x-form>
+        </x-element>
         <p class="margin-top--10">The text you want presented on the collapsed accordion</p>  
       </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-accordion as="{{currentAs}}" size="{{currentSize}}" label="Sample Accordion"&gt;<br>
+        &lt;x-accordion
+        <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
+        <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+        label="{{currentLabel}}"&gt;<br>
         &nbsp;&nbsp;&lt;p&gt;Accordion content&lt;/p&gt;<br>
         &lt;/x-accordion&gt;
       </x-code>
@@ -51,8 +59,13 @@ export default {
   name: 'preview-accordion',
   data () {
     return {
+      defaults: {
+        as: 'standard',
+        size: 'md'
+      },
       currentAs: 'standard',
-      currentSize: 'md'
+      currentSize: 'md',
+      currentLabel: 'Sample Accordion'
     }
   },
   methods: {
@@ -61,6 +74,13 @@ export default {
     },
     setSize: function (value) {
       this.currentSize = value
+    },
+    setLabel: function (value) {
+      if (!value) {
+        this.currentLabel = 'Sample Accordion'
+        return
+      }
+      this.currentLabel = value
     }
   }
 }

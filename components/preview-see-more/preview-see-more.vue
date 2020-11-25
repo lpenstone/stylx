@@ -2,7 +2,7 @@
   <div>
     <h4>See more toggle</h4>
     <div class="margin-top--30">
-      <x-see-more :as="currentAs" :size="currentSize">
+      <x-see-more :as="currentAs" :size="currentSize" :label="currentLabel">
         <p>Hidden/revealed content</p>
       </x-see-more>
     </div>
@@ -37,7 +37,12 @@
       <div class="margin-top--20">
         <x-tag as="secondary">label</x-tag>
         <div class="margin-top--10">
-          <strong>default: </strong> See more
+          <p><strong>default: </strong> See more</p>
+          <x-element size="sm">
+            <x-form>
+              <x-form-input name="label-text" size="sm" @model="setLabel($event)" as=text :placeholder="currentLabel"></x-form-input>
+            </x-form>
+          </x-element>
           <p class="margin-top--10">The text you want displayed on the prompt</p>  
         </div>
       </div>
@@ -45,7 +50,10 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-see-more as="{{currentAs}}" size="{{currentSize}}" label=""&gt;<br>
+        &lt;x-see-more
+        <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
+        <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+        <span v-if="currentLabel !== defaults.label">label="{{currentLabel}}"</span>&gt;<br>
         &nbsp;&nbsp;&lt;p&gt;Hidden/revealed content&lt;/p&gt;<br>
         &lt;/x-see-more&gt;
       </x-code>
@@ -58,8 +66,14 @@ export default {
   name: 'preview-accordion',
   data () {
     return {
+      defaults: {
+        as: 'link',
+        size: 'md',
+        label: 'See more'
+      },
       currentAs: 'link',
-      currentSize: 'md'
+      currentSize: 'md',
+      currentLabel: 'See more'
     }
   },
   methods: {
@@ -68,6 +82,13 @@ export default {
     },
     setSize: function (value) {
       this.currentSize = value
+    },
+    setLabel: function (value) {
+      if (!value) {
+        this.currentLabel = 'See more'
+        return
+      }
+      this.currentLabel = value
     }
   }
 }

@@ -94,7 +94,15 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-link href="" as="{{currentAs}}" size="{{currentSize}}" <span v-if="currentIcon">icon="{{currentIcon}}"</span> <span v-if="currentBrand">brand="{{currentBrand}}"</span> {{optional.target}} {{optional.title}} {{optional.name}}&gt;{{currentText}}&lt;/x-link&gt;
+        &lt;x-link
+        href=""
+        <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
+        <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+        <span v-if="currentIcon">icon="{{currentIcon}}"</span>
+        <span v-if="currentBrand">brand="{{currentBrand}}"</span>
+        {{optional.target}}
+        {{optional.title}}
+        {{optional.name}}&gt;{{currentText}}&lt;/x-link&gt;
       </x-code>
     </div>
   </div>
@@ -105,6 +113,10 @@ export default {
   name: 'preview-link',
   data () {
     return {
+      defaults: {
+        as: 'link',
+        size: 'md'
+      },
       currentAs: 'link',
       currentSize: 'md',
       currentText: 'Sample Link',

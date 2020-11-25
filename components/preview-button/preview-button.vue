@@ -88,7 +88,12 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-button as="{{currentAs}}" size="{{currentSize}}" <span v-if="currentIcon">icon="{{currentIcon}}"</span> <span v-if="currentBrand">brand="{{currentBrand}}"</span> @click=""&gt;{{currentText}}&lt;/x-button&gt;
+        &lt;x-button 
+          <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
+          <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+          <span v-if="currentIcon">icon="{{currentIcon}}"</span>
+          <span v-if="currentBrand">brand="{{currentBrand}}"</span>
+          @click=""&gt;{{currentText}}&lt;/x-button&gt;
       </x-code>
     </div>
   </div>
@@ -99,6 +104,10 @@ export default {
   name: 'preview-button',
   data () {
     return {
+      defaults: {
+        as: 'standard',
+        size: 'md'
+      },
       currentAs: 'standard',
       currentSize: 'md',
       currentText: 'Sample Button',

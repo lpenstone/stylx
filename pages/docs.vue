@@ -30,69 +30,7 @@
     <x-section as="standard">
       <x-content>
         <h2 class="visually-hidden">Table of Contents</h2>
-        <x-grid cols="4">
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">Elements</h3>
-            <ul>
-              <li><x-link as="plain" href="#button">Button</x-link></li>
-              <li><x-link as="plain" href="#link">Link</x-link></li>
-              <li><x-link as="plain" href="#accordion">Accordion</x-link></li>
-              <li><x-link as="plain" href="#see-more">See more toggle</x-link></li>
-              <li><x-link as="plain" href="#tag">Tag</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5">Layout</h3>
-            <ul>
-              <li><x-link as="plain" href="#section">Section</x-link></li>
-              <li><x-link as="plain" href="#content">Content</x-link></li>
-              <li><x-link as="plain" href="#group">Group</x-link></li>
-              <li><x-link as="plain" href="#grid">Grid</x-link></li>
-              <li><x-link as="plain" href="#grid">Card</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">Interactive</h3>
-            <ul>
-              <li><x-link as="plain" href="#carousel">Carousel</x-link></li>
-              <li><x-link as="plain" href="#gallery">Gallery</x-link></li>
-              <li><x-link as="plain" href="#modal">Modal</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">Forms</h3>
-            <ul>
-              <li><x-link as="plain" href="#form">Form</x-link></li>
-              <li><x-link as="plain" href="#input">Form Input (text, email, password, number)</x-link></li>
-              <li><x-link as="plain" href="#groups">Form Groups (radio buttons, checkboxes, select dropdown)</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">Specialty</h3>
-            <ul>
-              <li><x-link as="plain" href="#nav-bar">Nav bar</x-link></li>
-              <li><x-link as="plain" href="#mode-toggle">Light/dark mode toggle</x-link></li>
-              <li><x-link as="plain" href="#map">Map</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">General styles</h3>
-            <ul>
-              <li><x-link as="plain" id="margins" href="#icons">Icons &amp; Brand Icons</x-link></li>
-              <li><x-link as="plain" id="margins" href="#nav-bar">Margins</x-link></li>
-              <li><x-link as="plain" id="Titles" href="#mode-toggle">Titles</x-link></li>
-              <li><x-link as="plain" id="Other" href="#map">Other</x-link></li>
-            </ul>
-          </x-grid-item>
-          <x-grid-item>
-            <h3 class="h5 margin-top--20">Credits</h3>
-            <ul>
-              <li><x-link as="plain" id="margins" href="#nav-bar">Demo photos</x-link></li>
-              <li><x-link as="plain" id="margins" href="#nav-bar">Font Awesome</x-link></li>
-              <li><x-link as="plain" id="margins" href="#nav-bar">Nuxt</x-link></li>
-            </ul>
-          </x-grid-item>
-        </x-grid>
+        <contents-table></contents-table>
       </x-content>
     </x-section>
     <x-section size="lg" as="alt">
@@ -181,6 +119,7 @@
 </template>
 
 <script>
+import contentsTable from '../components/contents-table/contents-table'
 import previewButton from '../components/preview-button/preview-button'
 import previewLink from '../components/preview-link/preview-link'
 import previewAccordion from '../components/preview-accordion/preview-accordion'
@@ -194,6 +133,7 @@ import previewSeeMore from '../components/preview-see-more/preview-see-more'
 export default {
   name: 'docs',
   components: {
+    'contents-table': contentsTable,
     'preview-button': previewButton,
     'preview-link': previewLink,
     'preview-see-more': previewSeeMore,
