@@ -75,14 +75,14 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-section
+        &lt;x-img-section
         <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
         <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
         <span v-if="currentScreen !== defaults.screen">screen="{{currentScreen}}"</span>
         name="{{currentName}}"&gt;<br>
         &nbsp;&nbsp;&lt;img class="background" src="{{currentSrc}}"&gt;<br>
         &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
-        &lt;/x-section&gt;
+        &lt;/x-img-section&gt;
       </x-code>
     </div>
   </div>
