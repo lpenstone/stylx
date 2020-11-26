@@ -1,7 +1,8 @@
 <template>
   <div class="view-wrap" :class="darkMode ? 'mode--dark' : ''">
     <div class="view-content" :inert="isModalOpen">
-      <div v-if="isDocs" class="expand__wrap" :class="{'expand__wrap--expanded': expanded}">
+      <div v-if="isDocs" class="expand__wrap" :class="[{'expand__wrap--expanded': expanded}, {'expand__wrap--lowered': showTableContent}]">
+        <div @click="expanded = false" class="screen"></div>
         <div class="contents__wrap">
           <x-section size="sm">
             <x-content>
@@ -25,6 +26,8 @@ export default {
   name: 'Layout',
   data () {
     return {
+      showTableContent: false,
+      contentTop: 0,
       expanded: false,
     }
   },
@@ -39,6 +42,30 @@ export default {
       return this.$route.name === 'docs'
     }
   },
+  mounted: function () {
+    this.getContentTop()
+    this.handleScroll()
+    this.setScroll()
+  },
+  methods: {
+    handleScroll: function () {
+      let scrollPosition = window.scrollY
+      if (scrollPosition >= this.contentTop - 60) {
+        if (!this.showTableContent) this.showTableContent = true
+      } else {
+        if (this.showTableContent) this.showTableContent = false
+      }
+    },
+    getContentTop: function () {
+      this.contentTop = document.getElementById('content').offsetTop
+    },
+    setScroll: function () {
+      if (this.isDocs) {
+        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('resize', this.getContentTop)
+      }
+    }
+  },
   watch: {
     $route () {
       this.$store.commit('toggleMenu', false)
@@ -48,33 +75,33 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-
-.contents__wrap
-  width: 100%
-  max-height: 90vh
-  overflow: auto
-  background-color: white
-  border-bottom: 1px solid grey
+@import '~@/assets/styles/variables'
 
 .expand__wrap
   width: 100%
   height: auto
   max-height: 90vh
   position: fixed
-  top: 59px
+  top: 60px
   left: 0px
-  z-index: 1
+  z-index: 3
   overflow: visible
-  transform: translate(0, -100%)
+  transform: translate(0, -110%)
   transition: transform 0.6s ease-in-out
   display: flex
   justify-content: center
+
+  &.expand__wrap--lowered
+    transform: translate(0, -100%)
 
   &.expand__wrap--expanded
     transform: translate(0, 0)
 
     .expand__btn
       transform: translate(0, -23px) scaleY(-1)
+
+    .screen
+      display: block
 
   .expand__btn
     position: absolute
@@ -103,6 +130,21 @@ export default {
       display: inline-block
       border: 8px solid transparent
       border-top-color: grey
+
+  .screen
+    position: absolute 
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    display: none
+
+.contents__wrap
+  width: 100%
+  max-height: 80vh
+  overflow: auto
+  background-color: white
+  border-bottom: 1px solid $brand
 
 .view-wrap
   .view-content

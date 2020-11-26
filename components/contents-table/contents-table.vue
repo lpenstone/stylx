@@ -14,6 +14,7 @@
       <h3 class="h5">Layout</h3>
       <ul>
         <li><x-link @click="clicked()" as="plain" href="#section">Section</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#img-section">Image Section</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#content">Content</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#group">Group</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#grid">Grid</x-link></li>

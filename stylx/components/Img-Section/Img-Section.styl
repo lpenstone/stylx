@@ -1,12 +1,13 @@
 @import '~@/assets/styles/variables'
 
-.bg-img
+.background
   width: 0
   height: 0
   overflow: hidden
   opacity: 0
 
 .section
+  position: relative
   background-repeat: no-repeat
   background-size: cover
   background-position: center
@@ -21,8 +22,10 @@
   top: 0
   left: 0
   background-color: rgba(0,0,0, 0.3)
+  z-index: 0
 
 .section__inner
+  position: relative
   z-index: 1
 
 /* ----- SIZES ----- */

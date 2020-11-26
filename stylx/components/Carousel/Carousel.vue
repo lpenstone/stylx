@@ -5,10 +5,10 @@
         <slot></slot>
       </div>
       <div class="carousel__btn carousel__btn--previous">
-        <x-button as="icon" aria-label="previous" @click="cliked = true; prevItem();">&#8701;</x-button>
+        <x-button ref="prevBtn" as="icon" aria-label="previous" @click="cliked = true; prevItem();">&#8701;</x-button>
       </div>
       <div class="carousel__btn carousel__btn--next">
-        <x-button as="icon" aria-label="next" @click="clicked = true; nextItem();">&#8702;</x-button>
+        <x-button ref="nextBtn" as="icon" aria-label="next" @click="clicked = true; nextItem();">&#8702;</x-button>
       </div>
       <div class="carousel__dots-wrap">
         <div class="carousel__dots">
@@ -77,6 +77,7 @@ export default {
     nextItem: function () {
       if (this.isModalOpen && this.as !== 'modal') return
       this.$refs.dots.scrollRight()
+      this.$refs.nextBtn.$el.focus()
       setTimeout(() => {
         if (this.index === Number(this.nItems)) {
           this.index = 1
@@ -88,6 +89,7 @@ export default {
     prevItem: function () {
       if (this.isModalOpen && this.as !== 'modal') return
       this.$refs.dots.scrollLeft()
+      this.$refs.prevBtn.$el.focus()
       setTimeout(() => {
         if (this.index === 1) {
           this.index = Number(this.nItems)

@@ -5,6 +5,9 @@
 .section--bg-standard
   background-color: $bg-standard
 
+  &.mode--dark
+    background-color: $bg-standard-dm
+
 .mode--dark
   .section--bg-standard
     background-color: $bg-standard-dm
@@ -16,32 +19,28 @@
   .section--bg-alt
     background-color: $bg-alt-dm
 
-.section--bg-dark
-  background-color: $bg-dark
-
-.mode--dark
-  .section--bg-dark
-    background-color: $bg-dark-dm
-
-.section--bg-brand-highlight, .section--bg-hero
+.section--bg-brand, .section--bg-hero
   background-color: $bg-brand-highlight
 
-.mode--dark
-  .section--bg-brand-highlight, .section--bg-hero
+  &.mode--dark
     background-color: $bg-brand-highlight-dm
 
-.section--bg-brand-lowlight
-  background-color: $bg-brand-lowlight
+.mode--dark
+  .section--bg-brand, .section--bg-hero
+    background-color: $bg-brand-highlight-dm
 
-.section--bg-secondary-highlight
+.section--bg-secondary
   background-color: $bg-secondary-highlight
 
-.mode--dark
-  .section--bg-secondary-highlight
+  &.mode--dark
     background-color: $bg-secondary-highlight-dm
 
-.section--bg-secondary-lowlight
-  background-color: $bg-secondary-lowlight
+.mode--dark
+  .section--bg-secondary
+    background-color: $bg-secondary-highlight-dm
+
+// .section--bg-secondary-lowlight
+//   background-color: $bg-secondary-lowlight
 
 /* ----- SIZES ----- */
 

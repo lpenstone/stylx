@@ -1,19 +1,5 @@
 <template>
   <div>
-    <!-- <x-img-section as="fixed" size="lg" name="hero" screen="0.3">
-      <img class="bg-img" src="~@/assets/images/sample2.png">
-      <x-content class="text-align--center">
-        <x-element as="center" size="sm">
-          <h1 class="margin-bottom--20">Stylx Library</h1>
-          <p>Style and preview the Stylx elements within this library.</p>
-          <p>Copy the resulting code into your project.</p>
-          <x-card class="margin-top--40 text-align--center">
-            <p>Indoor dining closed due to covid-19</p>
-            <x-button class="margin-top--20">Takout menu</x-button>
-          </x-card>
-        </x-element>
-      </x-content>
-    </x-img-section> -->
     <x-section size="lg" as="hero">
       <x-content class="text-align--center">
         <x-element as="center" size="md">
@@ -33,7 +19,7 @@
         <contents-table></contents-table>
       </x-content>
     </x-section>
-    <x-section size="lg" as="alt">
+    <x-section id="content" size="lg" as="alt">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Elements</h3>
         <x-card as="shadow" id="button">
@@ -57,7 +43,10 @@
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Layout</h3>
         <x-card as="shadow" id="section">
-          Section
+          <preview-section></preview-section>
+        </x-card>
+        <x-card as="shadow" id="img-section" class="margin-top--30">
+          <preview-img-section></preview-img-section>
         </x-card>
         <x-card as="shadow" id="content" class="margin-top--30">
           Content
@@ -69,7 +58,7 @@
           <preview-grid></preview-grid>
         </x-card>
         <x-card as="shadow" id="card" class="margin-top--30">
-          Card
+          <preview-card></preview-card>
         </x-card>
       </x-content>
     </x-section>
@@ -121,6 +110,9 @@
 <script>
 import contentsTable from '../components/contents-table/contents-table'
 import previewButton from '../components/preview-button/preview-button'
+import previewCard from '../components/preview-card/preview-card'
+import previewSection from '../components/preview-section/preview-section'
+import previewImgSection from '../components/preview-img-section/preview-img-section'
 import previewLink from '../components/preview-link/preview-link'
 import previewAccordion from '../components/preview-accordion/preview-accordion'
 import previewCarousel from '../components/preview-carousel/preview-carousel'
@@ -135,8 +127,11 @@ export default {
   components: {
     'contents-table': contentsTable,
     'preview-button': previewButton,
+    'preview-card': previewCard,
     'preview-link': previewLink,
     'preview-see-more': previewSeeMore,
+    'preview-section': previewSection,
+    'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-accordion': previewAccordion,
     'preview-carousel': previewCarousel,
