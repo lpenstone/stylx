@@ -11,7 +11,7 @@
                 <h2 class="heading--title">building websites quickly</h2>
               </x-carousel-item>
               <x-carousel-item>
-                <h2 class="heading--title">accessibile components</h2>
+                <h2 class="heading--title">accessible components</h2>
               </x-carousel-item>
               <x-carousel-item>
                 <h2 class="heading--title">dark mode capability</h2>
