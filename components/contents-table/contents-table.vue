@@ -5,6 +5,7 @@
       <ul>
         <li><x-link @click="clicked()" as="plain" href="#button">Button</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#link">Link</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#icon">Icon</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#accordion">Accordion</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#see-more">See more toggle</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#tag">Tag</x-link></li>
@@ -48,7 +49,7 @@
     <x-grid-item>
       <h3 class="h5 margin-top--20">General styles</h3>
       <ul>
-        <li><x-link @click="clicked()" as="plain" id="margins" href="#icons">Icons &amp; Brand Icons</x-link></li>
+        <li><x-link @click="clicked()" as="plain" id="general" href="#icons">General tags</x-link></li>
         <li><x-link @click="clicked()" as="plain" id="margins" href="#nav-bar">Margins</x-link></li>
         <li><x-link @click="clicked()" as="plain" id="Titles" href="#mode-toggle">Titles</x-link></li>
         <li><x-link @click="clicked()" as="plain" id="Other" href="#map">Other</x-link></li>

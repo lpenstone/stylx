@@ -1,0 +1,111 @@
+@import '~@/assets/styles/variables'
+
+$size-sm = 30px
+$size-md = 40px
+$size-lg = 64px
+
+.icon__wrap
+  position: relative
+
+  i 
+    z-index: 1
+
+.icon__wrap--standard
+  display: inline
+
+.icon__wrap:not(.icon__wrap--standard)
+  display: flex
+  text-align: center
+  justify-content: center
+  align-items: center
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    border-radius: 50%
+    opacity: 0.2
+    display: block
+
+
+.icon__wrap--alt
+  color: $copy
+
+  &:after
+    background-color: $copy
+
+.icon__wrap--secondary
+  color: $secondary
+
+  &:after
+    background-color: $secondary
+
+.icon__wrap--secondary-alt
+  color: $copy
+
+  &:after
+    background-color: $secondary
+
+  i 
+    opacity: 0.8
+
+.icon__wrap--brand
+  color: $brand
+
+  &:after
+    background-color: $brand
+
+.icon__wrap--brand-alt
+  color: $copy
+
+  &:after
+    background-color: $brand
+
+  i 
+    opacity: 0.8
+
+.mode--dark
+  .icon__wrap
+    color: $copy-dm !important
+
+    i 
+      opacity: 1
+
+  .icon__wrap--alt
+
+    &:after
+      background-color: black
+      opacity: 0.3
+
+/*--- Sizes -- */
+
+.icon__wrap--sm
+  width: $size-sm
+  height: $size-sm
+  font-size: 16px
+
+  &:after
+    width: $size-sm
+    height: $size-sm
+
+.icon__wrap--md
+  width: $size-md
+  height: $size-md
+  font-size: 22px
+
+  &:after
+    width: $size-md
+    height: $size-md
+
+.icon__wrap--lg
+  width: $size-lg
+  height: $size-lg
+  font-size: 28px
+
+  &:after
+    width: $size-lg
+    height: $size-lg
+
+
+dump_media_cache()

@@ -44,9 +44,6 @@ export default {
     },
     href: {
       type: String
-    },
-    target: {
-      type: String
     }
   },
   data () {

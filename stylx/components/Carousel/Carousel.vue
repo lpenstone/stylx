@@ -5,10 +5,10 @@
         <slot></slot>
       </div>
       <div class="carousel__btn carousel__btn--previous">
-        <x-button ref="prevBtn" as="icon" aria-label="previous" @click="cliked = true; prevItem();">&#8701;</x-button>
+        <x-button ref="prevBtn" as="icon" aria-label="previous" @click="clickPrev()">&#8701;</x-button>
       </div>
       <div class="carousel__btn carousel__btn--next">
-        <x-button ref="nextBtn" as="icon" aria-label="next" @click="clicked = true; nextItem();">&#8702;</x-button>
+        <x-button ref="nextBtn" as="icon" aria-label="next" @click="clickNext()">&#8702;</x-button>
       </div>
       <div class="carousel__dots-wrap">
         <div class="carousel__dots">
@@ -71,13 +71,22 @@ export default {
   },
   methods: {
     navigate: function (e) {
-      if (e.key === 'ArrowRight') this.nextItem()
-      if (e.key === 'ArrowLeft') this.prevItem()
+      if (e.key === 'ArrowRight') {
+        this.nextItem()
+        this.$refs.nextBtn.$el.focus()
+      }
+      if (e.key === 'ArrowLeft') {
+        this.prevItem()
+        this.$refs.prevBtn.$el.focus()
+      }
+    },
+    clickNext: function () {
+      this.clicked = true
+      this.nextItem()
     },
     nextItem: function () {
       if (this.isModalOpen && this.as !== 'modal') return
       this.$refs.dots.scrollRight()
-      this.$refs.nextBtn.$el.focus()
       setTimeout(() => {
         if (this.index === Number(this.nItems)) {
           this.index = 1
@@ -86,10 +95,13 @@ export default {
         }
       }, 250)
     },
+    clickPrev: function () {
+      this.clicked = true
+      this.prevItem()
+    },
     prevItem: function () {
       if (this.isModalOpen && this.as !== 'modal') return
       this.$refs.dots.scrollLeft()
-      this.$refs.prevBtn.$el.focus()
       setTimeout(() => {
         if (this.index === 1) {
           this.index = Number(this.nItems)

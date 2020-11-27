@@ -1,23 +1,13 @@
 <template>
   <div>
-    <h4>Button</h4>
+    <h4>Icon</h4>
     <div class="margin-top--30">
-      <x-button :as="currentAs"
+      <x-icon :as="currentAs"
         :size="currentSize"
         :icon="currentIcon"
-        :brand="currentBrand">
-        {{hideText ? '' : currentText}}
-      </x-button>
+        :brand="currentBrand"/>
     </div>
     <x-card size="sm" class="margin-top--20">
-      <div>
-        <h5>Button text</h5>
-        <x-element size="sm">
-          <x-form>
-            <x-form-input @model="currentText = $event" name="button-text" as=text :placeholder="currentText"></x-form-input>
-          </x-form>
-        </x-element>
-      </div>
       <div class="margin-top--30">
         <h5>Attributes</h5>
         <x-tag as="secondary">as</x-tag>
@@ -27,11 +17,11 @@
         <div class="margin-top--10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard'); setText();" :selected="currentAs === 'standard'">standard</x-button>
-          <x-button size="sm" @click="setAs('hollow'); setText();" :selected="currentAs === 'hollow'">hollow</x-button>
-          <x-button size="sm" @click="setAs('link'); setText();" :selected="currentAs === 'link'">link</x-button>
-          <x-button size="sm" @click="setAs('link-alt'); setText();" :selected="currentAs === 'link-alt'">link-alt</x-button>
-          <x-button size="sm" @click="setAs('plain'); setText();" :selected="currentAs === 'plain'">plain</x-button>
-          <x-button size="sm" @click="setAs('icon'); clearText();" :selected="currentAs === 'icon'">icon</x-button>
+          <x-button size="sm" @click="setAs('alt'); setText();" :selected="currentAs === 'alt'">alt</x-button>
+          <x-button size="sm" @click="setAs('brand'); setText();" :selected="currentAs === 'brand'">brand</x-button>
+          <x-button size="sm" @click="setAs('brand-alt'); setText();" :selected="currentAs === 'brand-alt'">brand-alt</x-button>
+          <x-button size="sm" @click="setAs('secondary'); setText();" :selected="currentAs === 'secondary'">secondary</x-button>
+          <x-button size="sm" @click="setAs('secondary-alt'); clearText();" :selected="currentAs === 'secondary-alt'">secondary-alt</x-button>
         </div>
       </div>
       <div class="margin-top--30">
@@ -51,10 +41,12 @@
         <div class="margin-top--10">
           <strong>values: </strong>
           <x-button size="sm" @click="setIcon('')" :selected="currentIcon === ''">none</x-button>
-          <x-button size="sm" @click="setIcon('sun')" :selected="currentIcon === 'sun'">sun</x-button>
-          <x-button size="sm" @click="setIcon('comment')" :selected="currentIcon === 'comment'">comment</x-button>
-          <x-button size="sm" @click="setIcon('download')" :selected="currentIcon === 'download'">download</x-button>
-          <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link></strong>
+          <x-button size="sm" @click="setIcon('tree')" :selected="currentIcon === 'tree'">tree</x-button>
+          <x-button size="sm" @click="setIcon('cog')" :selected="currentIcon === 'cog'">cog</x-button>
+          <x-button size="sm" @click="setIcon('phone')" :selected="currentIcon === 'phone'">phone</x-button>
+          <x-button size="sm" @click="setIcon('bicycle')" :selected="currentIcon === 'bicycle'">bicycle</x-button>
+          <x-button size="sm" @click="setIcon('clock')" :selected="currentIcon === 'clock'">clock</x-button>
+          <strong>&amp; others...</strong>
           <x-element size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>
@@ -71,7 +63,8 @@
           <x-button size="sm" @click="setBrand('github')" :selected="currentBrand === 'github'">github</x-button>
           <x-button size="sm" @click="setBrand('twitter')" :selected="currentBrand === 'twitter'">twitter</x-button>
           <x-button size="sm" @click="setBrand('youtube')" :selected="currentBrand === 'youtube'">youtube</x-button>
-          <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">&amp; others...</x-link>
+          <x-button size="sm" @click="setBrand('dribbble')" :selected="currentBrand === 'dribbble'">dribbble</x-button>
+          <strong>&amp; others...</strong>
           <x-element size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"></x-form-input>
@@ -80,20 +73,15 @@
           <p class="margin-top--10">You can include a brand from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">View available brands</x-link></p>
         </div>
       </div>
-      <div class="margin-top--30">
-        <x-tag as="secondary">@click</x-tag>
-        <p class="margin-top--10">The resulting action when your button gets clicked.</p>
-      </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-button 
+        &lt;x-icon 
           <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
           <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
           <span v-if="currentIcon">icon="{{currentIcon}}"</span>
-          <span v-if="currentBrand">brand="{{currentBrand}}"</span>
-          @click=""&gt;{{currentText}}&lt;/x-button&gt;
+          <span v-if="currentBrand">brand="{{currentBrand}}"</span>/&gt;
       </x-code>
     </div>
   </div>
@@ -101,7 +89,7 @@
 
 <script>
 export default {
-  name: 'preview-button',
+  name: 'preview-icon',
   data () {
     return {
       defaults: {
@@ -110,9 +98,7 @@ export default {
       },
       currentAs: 'standard',
       currentSize: 'md',
-      currentText: 'Sample Button',
-      hideText: false,
-      currentIcon: '',
+      currentIcon: 'tree',
       currentBrand: ''
     }
   },
