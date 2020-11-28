@@ -77,16 +77,16 @@ for num in (4..6)
       @media(max-width: 991px)
         width: ((100 / 3) - (2 * $mp))%
 
-for num in (3..6)
-  .grid--{num}
-    >>>.item
-      @media(max-width: 767px)
-        width: ((100 / 2) - (2 * $mp))%
+// for num in (3..6)
+//   .grid--{num}
+//     >>>.item
+//       @media(max-width: 767px)
+//         width: ((100 / 2) - (2 * $mp))%
 
 for num in (1..6)
   .grid--{num}
     >>>.item
-      @media(max-width: 424px)
+      @media(max-width: 767px)
         width: 100%
 
 

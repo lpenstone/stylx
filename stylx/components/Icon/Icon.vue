@@ -15,9 +15,7 @@ export default {
     },
     size: {
       type: String,
-      default: function () {
-        return this.$store.state.config.btnDefaultSize || 'md'
-      }
+      default: 'md'
     },
     icon: {
       type: String

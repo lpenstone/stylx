@@ -61,7 +61,6 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Caption #2&lt;/p&gt;<br>
         &nbsp;&nbsp;&lt;/x-carousel-item&gt;<br>
-        &nbsp;&nbsp;&lt;x-carousel-item&gt;<br>
         &lt;/x-carousel&gt;
       </x-code>
     </div>

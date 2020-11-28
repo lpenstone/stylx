@@ -1,11 +1,49 @@
 <template>
   <div>
-    <h4>Icon</h4>
+    <h4>Icon &amp; Text</h4>
     <div class="margin-top--30">
-      <x-icon :as="currentAs"
-        :size="currentSize"
-        :icon="currentIcon"
-        :brand="currentBrand"/>
+      <x-grid cols="2">
+        <x-grid-item>
+          <x-icon-text :as="currentAs"
+            :iconAs="currentIconAs"
+            :iconSize="currentIconSize"
+            :icon="currentIcon"
+            :brand="currentBrand">
+            <p><strong>This is icon-text</strong></p>
+            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
+          </x-icon-text>
+        </x-grid-item>
+        <x-grid-item>
+          <x-icon-text :as="currentAs"
+            :iconAs="currentIconAs"
+            :iconSize="currentIconSize"
+            :icon="currentIcon"
+            :brand="currentBrand">
+            <p><strong>This is icon-text</strong></p>
+            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
+          </x-icon-text>
+        </x-grid-item>
+        <x-grid-item>
+          <x-icon-text :as="currentAs"
+            :iconAs="currentIconAs"
+            :iconSize="currentIconSize"
+            :icon="currentIcon"
+            :brand="currentBrand">
+            <p><strong>This is icon-text</strong></p>
+            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
+          </x-icon-text>
+        </x-grid-item>
+        <x-grid-item>
+          <x-icon-text :as="currentAs"
+            :iconAs="currentIconAs"
+            :iconSize="currentIconSize"
+            :icon="currentIcon"
+            :brand="currentBrand">
+            <p><strong>This is icon-text</strong></p>
+            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
+          </x-icon-text>
+        </x-grid-item>
+      </x-grid>
     </div>
     <x-card size="sm" class="margin-top--20">
       <div>
@@ -17,23 +55,36 @@
         <div class="margin-top--10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
-          <x-button size="sm" @click="setAs('alt')" :selected="currentAs === 'alt'">alt</x-button>
-          <x-button size="sm" @click="setAs('brand')" :selected="currentAs === 'brand'">brand</x-button>
-          <x-button size="sm" @click="setAs('brand-alt')" :selected="currentAs === 'brand-alt'">brand-alt</x-button>
-          <x-button size="sm" @click="setAs('secondary')" :selected="currentAs === 'secondary'">secondary</x-button>
-          <x-button size="sm" @click="setAs('secondary-alt')" :selected="currentAs === 'secondary-alt'">secondary-alt</x-button>
+          <x-button size="sm" @click="setAs('left')" :selected="currentAs === 'left'">left</x-button>
+          <x-button size="sm" @click="setAs('right')" :selected="currentAs === 'right'">right</x-button>
+          <x-button size="sm" @click="setAs('center')" :selected="currentAs === 'center'">center</x-button>
         </div>
       </div>
       <div class="margin-top--30">
-        <x-tag as="secondary">size</x-tag>
+        <x-tag as="secondary">iconAs</x-tag>
+        <div class="margin-top--10">
+          <strong>default:</strong> <x-tag>standard</x-tag>
+        </div>
+        <div class="margin-top--10">
+          <strong>values:</strong>
+          <x-button size="sm" @click="setIconAs('standard')" :selected="currentIconAs === 'standard'">standard</x-button>
+          <x-button size="sm" @click="setIconAs('alt')" :selected="currentIconAs === 'alt'">alt</x-button>
+          <x-button size="sm" @click="setIconAs('brand')" :selected="currentIconAs === 'brand'">brand</x-button>
+          <x-button size="sm" @click="setIconAs('brand-alt')" :selected="currentIconAs === 'brand-alt'">brand-alt</x-button>
+          <x-button size="sm" @click="setIconAs('secondary')" :selected="currentIconAs === 'secondary'">secondary</x-button>
+          <x-button size="sm" @click="setIconAs('secondary-alt')" :selected="currentIconAs === 'secondary-alt'">secondary-alt</x-button>
+        </div>
+      </div>
+      <div class="margin-top--30">
+        <x-tag as="secondary">iconSize</x-tag>
         <div class="margin-top--10">
           <strong>default: </strong> <x-tag>md</x-tag>
         </div>
         <div class="margin-top--10">
           <strong>values: </strong>
-          <x-button size="sm" @click="setSize('sm')" :selected="currentSize === 'sm'">sm</x-button>
-          <x-button size="sm" @click="setSize('md')" :selected="currentSize === 'md'">md</x-button>
-          <x-button size="sm" @click="setSize('lg')" :selected="currentSize === 'lg'">lg</x-button>
+          <x-button size="sm" @click="setIconSize('sm')" :selected="currentIconSize === 'sm'">sm</x-button>
+          <x-button size="sm" @click="setIconSize('md')" :selected="currentIconSize === 'md'">md</x-button>
+          <x-button size="sm" @click="setIconSize('lg')" :selected="currentIconSize === 'lg'">lg</x-button>
         </div>
       </div>
       <div class="margin-top--30">
@@ -77,11 +128,14 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-icon 
+        &lt;x-icon-text
           <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
-          <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+          <span v-if="currentIconAs !== defaults.iconAs">iconAs="{{currentIconAs}}"</span>
+          <span v-if="currentIconSize !== defaults.iconSize">iconSize="{{currentIconSize}}"</span>
           <span v-if="currentIcon">icon="{{currentIcon}}"</span>
-          <span v-if="currentBrand">brand="{{currentBrand}}"</span>/&gt;
+          <span v-if="currentBrand">brand="{{currentBrand}}"</span>&gt;<br>
+          &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
+        &lt;/x-icon-text&gt;
       </x-code>
     </div>
   </div>
@@ -94,10 +148,12 @@ export default {
     return {
       defaults: {
         as: 'standard',
-        size: 'md'
+        iconAs: 'standard',
+        iconSize: 'md'
       },
       currentAs: 'standard',
-      currentSize: 'md',
+      currentIconAs: 'standard',
+      currentIconSize: 'md',
       currentIcon: 'tree',
       currentBrand: ''
     }
@@ -105,6 +161,12 @@ export default {
   methods: {
     setAs: function (value) {
       this.currentAs = value
+    },
+    setIconAs: function (value) {
+      this.currentIconAs = value
+    },
+    setIconSize: function (value) {
+      this.currentIconSize = value
     },
     setIcon: function (value) {
       if (value) this.$refs.brandInput.setInput('')
@@ -115,9 +177,6 @@ export default {
       if (value) this.$refs.iconInput.setInput('')
       this.$refs.brandInput.setInput(value)
       this.currentBrand = value
-    },
-    setSize: function (value) {
-      this.currentSize = value
     }
   }
 }

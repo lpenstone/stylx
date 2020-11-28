@@ -2,7 +2,12 @@
   <div>
     <h4>Modal</h4>
     <div class="margin-top--30">
-      <x-modal :size="currentSize" :buttonAs="currentButtonAs" :buttonSize="currentButtonSize" label="Open modal">
+      <x-modal
+        :size="currentSize"
+        :buttonAs="currentButtonAs"
+        :buttonSize="currentButtonSize"
+        :label="currentLabel"
+        :name="currentName">
         <img src="~@/assets/images/sample1.png" alt="">
         <p>Newfoundland, Canada</p>
       </x-modal>
@@ -63,17 +68,33 @@
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">label</x-tag>
+        <x-element size="sm" class="margin-top--10">
+          <x-form>
+            <x-form-input name="label-text" size="sm" @model="setLabel($event)" as="text" :placeholder="currentLabel"/>
+          </x-form>
+        </x-element>
         <p class="margin-top--10">The text that will appear on the button to open the modal. If left blank, there will be no button.</p>  
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">name</x-tag> <em>*required</em>
+        <x-element size="sm" class="margin-top--10">
+          <x-form>
+            <x-form-input name="name-text" size="sm" @model="setName($event)" as="text" :placeholder="currentName"/>
+          </x-form>
+        </x-element>
         <p class="margin-top--10">Choose a unique name for your modal. No spaces, use hyphens.</p>  
       </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-modal as="{{currentAs}}" size="{{currentSize}}" buttonAs="{{currentButtonAs}}"" buttonSize="{{currentButtonSize}}" name="unique-name" label="Open modal"&gt;<br>
+        &lt;x-modal
+        <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
+        <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>
+        <span v-if="currentButtonAs !== defaults.buttonAs">buttonAs="{{currentButtonAs}}"</span>
+        <span v-if="currentButtonSize !== defaults.buttonSize">buttonSize="{{currentButtonSize}}"</span>
+        name="{{currentName}}"
+        label="{{currentLabel}}"&gt;<br>
         &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
         &lt;/x-modal&gt;
       </x-code>
@@ -86,10 +107,18 @@ export default {
   name: 'preview-modal',
   data () {
     return {
+      defaults: {
+        as: 'standard',
+        size: 'md',
+        buttonAs: 'link',
+        buttonSize: 'md'
+      },
       currentAs: 'standard',
       currentSize: 'md',
       currentButtonAs: 'link',
-      currentButtonSize: 'md'
+      currentButtonSize: 'md',
+      currentLabel: 'Open modal',
+      currentName: 'unique-name'
     }
   },
   methods: {
@@ -104,6 +133,20 @@ export default {
     },
     setButtonSize: function (value) {
       this.currentButtonSize = value
+    },
+    setLabel: function (value) {
+      if (!value) {
+        this.currentLabel = 'Open modal'
+        return
+      }
+      this.currentLabel = value
+    },
+    setName: function (value) {
+      if (!value) {
+        this.currentName = 'unique-name'
+        return
+      }
+      this.currentName = value
     }
   }
 }

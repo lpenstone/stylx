@@ -50,13 +50,18 @@
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">name</x-tag> <em>*required</em>
+        <x-element size="sm" class="margin-top--10">
+          <x-form>
+            <x-form-input name="name-text" size="sm" @model="setName($event)" as="text" :placeholder="currentName"/>
+          </x-form>
+        </x-element>
         <p class="margin-top--10">Choose a unique name for your gallery. No spaces, use hyphens.</p>  
       </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-grid as="{{currentAs}}" cols="{{currentCols}}" name="unique-name"&gt;<br>
+        &lt;x-grid as="{{currentAs}}" cols="{{currentCols}}" name="{{currentName}}"&gt;<br>
         &nbsp;&nbsp;&lt;x-grid-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="secret"&gt;Caption #1&lt;/p&gt;<br>
@@ -85,7 +90,8 @@ export default {
   data () {
     return {
       currentAs: 'gallery',
-      currentCols: '4'
+      currentCols: '4',
+      currentName: 'unique-name'
     }
   },
   methods: {
@@ -94,6 +100,13 @@ export default {
     },
     setCols: function (value) {
       this.currentCols = value
+    },
+    setName: function (value) {
+      if (!value) {
+        this.currentName = 'unique-name'
+        return
+      }
+      this.currentName = value
     }
   }
 }

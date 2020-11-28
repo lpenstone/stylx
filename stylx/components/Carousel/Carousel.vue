@@ -50,7 +50,7 @@ export default {
       index: this.startIndex,
       nItems: '2',
       timer: null,
-      clicked: false,
+      stopCycle: false,
       cycleTime: 3000
     }
   },
@@ -73,15 +73,17 @@ export default {
     navigate: function (e) {
       if (e.key === 'ArrowRight') {
         this.nextItem()
+        this.stopCycle = true
         this.$refs.nextBtn.$el.focus()
       }
       if (e.key === 'ArrowLeft') {
         this.prevItem()
+        this.stopCycle = true
         this.$refs.prevBtn.$el.focus()
       }
     },
     clickNext: function () {
-      this.clicked = true
+      this.stopCycle = true
       this.nextItem()
     },
     nextItem: function () {
@@ -96,7 +98,7 @@ export default {
       }, 250)
     },
     clickPrev: function () {
-      this.clicked = true
+      this.stopCycle = true
       this.prevItem()
     },
     prevItem: function () {
@@ -122,7 +124,7 @@ export default {
     },
     autoScroll: function () {
       this.timer = setTimeout(() => {
-        if (this.clicked) {
+        if (this.stopCycle) {
           clearTimeout(this.timer)
           return
         }
@@ -139,6 +141,7 @@ export default {
     as: function (value) {
       clearTimeout(this.timer)
       if (value.indexOf('cycle') > -1) {
+        this.stopCycle = false
         this.getCycleTime()
         this.autoScroll()
       }

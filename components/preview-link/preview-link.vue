@@ -56,7 +56,7 @@
           <x-button size="sm" @click="setIcon('sun')" :selected="currentIcon === 'sun'">sun</x-button>
           <x-button size="sm" @click="setIcon('comment')" :selected="currentIcon === 'comment'">comment</x-button>
           <x-button size="sm" @click="setIcon('download')" :selected="currentIcon === 'download'">download</x-button>
-          <strong>&amp; others...</strong>
+          <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link>
           <x-element size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>
@@ -73,7 +73,7 @@
           <x-button size="sm" @click="setBrand('github')" :selected="currentBrand === 'github'">github</x-button>
           <x-button size="sm" @click="setBrand('twitter')" :selected="currentBrand === 'twitter'">twitter</x-button>
           <x-button size="sm" @click="setBrand('youtube')" :selected="currentBrand === 'youtube'">youtube</x-button>
-          <strong>&amp; others...</strong>
+          <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">&amp; others...</x-link>
           <x-element size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"></x-form-input>

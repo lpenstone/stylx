@@ -54,7 +54,7 @@
           <x-button size="sm" @click="setIcon('sun')" :selected="currentIcon === 'sun'">sun</x-button>
           <x-button size="sm" @click="setIcon('comment')" :selected="currentIcon === 'comment'">comment</x-button>
           <x-button size="sm" @click="setIcon('download')" :selected="currentIcon === 'download'">download</x-button>
-          <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link></strong>
+          <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link>
           <x-element size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>

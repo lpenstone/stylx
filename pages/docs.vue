@@ -44,6 +44,9 @@
         <x-card as="shadow" id="icon" class="margin-top--30">
           <preview-icon></preview-icon>
         </x-card>
+        <x-card as="shadow" id="icon-and-text" class="margin-top--30">
+          <preview-icon-text></preview-icon-text>
+        </x-card>
         <x-card as="shadow" id="accordion" class="margin-top--30">
           <preview-accordion></preview-accordion>
         </x-card>
@@ -142,6 +145,7 @@ import previewAccordion from '../components/preview-accordion/preview-accordion'
 import previewCarousel from '../components/preview-carousel/preview-carousel'
 import previewTag from '../components/preview-tag/preview-tag'
 import previewIcon from '../components/preview-icon/preview-icon'
+import previewIconText from '../components/preview-icon-text/preview-icon-text'
 import previewGallery from '../components/preview-gallery/preview-gallery'
 import previewGrid from '../components/preview-grid/preview-grid'
 import previewModal from '../components/preview-modal/preview-modal'
@@ -159,6 +163,7 @@ export default {
     'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-icon': previewIcon,
+    'preview-icon-text': previewIconText,
     'preview-accordion': previewAccordion,
     'preview-carousel': previewCarousel,
     'preview-gallery': previewGallery,

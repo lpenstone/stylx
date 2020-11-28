@@ -13,6 +13,7 @@ import FormGroup from './components/Form-Group/Form-Group.vue'
 import FormGroupInput from './components/Form-Group-Input/Form-Group-Input.vue'
 import Element from './components/Element/Element.vue'
 import Icon from './components/Icon/Icon.vue'
+import IconText from './components/Icon-Text/Icon-Text.vue'
 import Item from './components/Item/Item.vue'
 import ImgSection from './components/Img-Section/Img-Section.vue'
 import Grid from './components/Grid/Grid.vue'
@@ -40,6 +41,7 @@ Vue.component('x-grid', Grid)
 Vue.component('x-grid-item', Item)
 Vue.component('x-element', Element)
 Vue.component('x-icon', Icon)
+Vue.component('x-icon-text', IconText)
 Vue.component('x-img-section', ImgSection)
 Vue.component('x-modal', Modal)
 Vue.component('x-map', MapEmbed)
