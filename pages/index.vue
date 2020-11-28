@@ -25,8 +25,12 @@
             </x-carousel>
           </x-group>
           <div class="margin-top--20">
-            <x-link as="hollow" size="lg" :to="{name: 'docs'}" class="margin-left--5 margin-right--5 margin-bottom-10">View components</x-link>
-            <x-link as="standard" size="lg" brand="github" href="github.com" class="margin-left--5 margin-right--5 margin-bottom-10">Get started</x-link>
+            <x-link as="hollow" size="lg" :to="{name: 'library'}" class="margin-left--5 margin-right--5 margin-bottom-10">
+              View library
+            </x-link>
+            <x-link as="standard" size="lg" :to="{name: 'docs'}" class="margin-left--5 margin-right--5 margin-bottom-10">
+              Get started
+            </x-link>
           </div>
         </x-group>
       </x-content>

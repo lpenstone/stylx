@@ -12,9 +12,16 @@
     </x-section>
     <x-section as="alt">
       <x-group as="center" size="md">
-        <h2 class="h4 text-align--center">Upcoming Workshops</h2>
-        <p class="text-align--center">Not currently taking registrations.</p>
-        <p class="text-align--center"><strong>The next Workshop will be on January 16, 2021 (Saturday)</strong></p>
+        <div class="text-align--center">
+          <h2 class="h4">Upcoming Workshops</h2>
+          <p>Not currently taking registrations.</p>
+          <p>The next Workshop will be on January 16, 2021 (Saturday)</p>
+        </div>
+        <div class="margin-top--40">
+          <x-form as="submit" netlify action="/workshop">
+            <x-form-input as="email" name="email" label="Get notified when registration opens" placeholder="Email"/>
+          </x-form>
+        </div>
       </x-group>
     </x-section>
     <x-section>
