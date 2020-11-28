@@ -4,7 +4,7 @@
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <h1 class="margin-bottom--30">Stylx Workshops</h1>
-          <p>Learn how to <strong>build &amp; deploy</strong> a clean, beautiful, production-ready website with free tools in this 4-hour course. Your website will be ready to share with friends and family by 2pm. That's wild.</p>
+          <p>Learn how to <strong>build &amp; deploy</strong> a clean, beautiful website with free tools in this 4-hour course. Your website will be ready to share with friends and family by 2pm.</p>
           <p>Workshops are capped at 10 people so each student can get the help they need.</p>
           <!-- <p>View sample websites that have been made with Stylx: ____, _____, _____</p> -->
         </x-group>
@@ -83,7 +83,7 @@
                 <p class="heading--title">Building a page</p>
                 <p class="heading--accent">10:40-11:10am</p>
                 <ul>
-                  <li>Learn more about Stylx and how to use it to make our websites fast!</li>
+                  <li>Learn more about Stylx and how to use it to build our websites quickly!</li>
                   <li>Walkthrough of making an actual page.</li>
                 </ul>
               </div>
@@ -95,7 +95,7 @@
                   <li>The instructor will be available to give advice to the group or in a 1-on-1 setting.</li>
                 </ul>
               </div>
-              <div class="margin-top--30">
+              <div class="margin-top--30 text-align--center">
                 <p class="heading--title">Lunch break</p>
                 <p class="heading--accent">12:10 - 12:40pm</p>
               </div>
