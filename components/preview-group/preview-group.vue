@@ -4,7 +4,7 @@
     <div class="margin-top--30">
       <x-group :as="currentAs" :size="currentSize">
         <p class="h3">This is a group</p>
-        <p>A group allows you to constrain the maximum width of its contents. Often used to keep a long string of text from spanning the width of the screen.</p>
+        <p>A group allows you to constrain the maximum width of its contents. Often used to keep a long strings of text from spanning the width of the screen. A <x-link href="#card">card</x-link> is frequently nested within a group.</p>
       </x-group>
     </div>
     <x-card size="sm" class="margin-top--20">
