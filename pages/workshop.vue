@@ -18,7 +18,7 @@
           <p>The next Workshop will be on January 16, 2021 (Saturday)</p>
         </div>
         <div class="margin-top--40">
-          <x-form as="submit" netlify action="/workshop">
+          <x-form as="submit" name="notify" netlify action="/workshop">
             <x-form-input as="email" name="email" label="Get notified when registration opens" placeholder="Email"/>
           </x-form>
         </div>
