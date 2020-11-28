@@ -68,20 +68,20 @@
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">label</x-tag>
-        <x-element size="sm" class="margin-top--10">
+        <x-group size="sm" class="margin-top--10">
           <x-form>
             <x-form-input name="label-text" size="sm" @model="setLabel($event)" as="text" :placeholder="currentLabel"/>
           </x-form>
-        </x-element>
+        </x-group>
         <p class="margin-top--10">The text that will appear on the button to open the modal. If left blank, there will be no button.</p>  
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">name</x-tag> <em>*required</em>
-        <x-element size="sm" class="margin-top--10">
+        <x-group size="sm" class="margin-top--10">
           <x-form>
             <x-form-input name="name-text" size="sm" @model="setName($event)" as="text" :placeholder="currentName"/>
           </x-form>
-        </x-element>
+        </x-group>
         <p class="margin-top--10">Choose a unique name for your modal. No spaces, use hyphens.</p>  
       </div>
     </x-card>

@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h4>Card</h4>
+    <h4>Group</h4>
     <div class="margin-top--30">
-      <x-group size="md">
-        <x-card :as="currentAs" :size="currentSize">
-          <p class="h3">This is a card</p>
-          <p>A card will provide a styled envelope around your content.</p>
-          <p>Use it to provide depth and organization to your layouts.</p>
-          <p>Add any content within a card.</p>
-        </x-card>
+      <x-group :as="currentAs" :size="currentSize">
+        <p class="h3">This is a group</p>
+        <p>A group allows you to constrain the maximum width of its contents. Often used to keep a long string of text from spanning the width of the screen.</p>
       </x-group>
     </div>
     <x-card size="sm" class="margin-top--20">
@@ -21,7 +17,7 @@
         <div class="margin-top--10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
-          <x-button size="sm" @click="setAs('shadow')" :selected="currentAs === 'shadow'">shadow</x-button>
+          <x-button size="sm" @click="setAs('center')" :selected="currentAs === 'center'">center</x-button>
         </div>
       </div>
       <div class="margin-top--30">
@@ -40,11 +36,11 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-card
+        &lt;x-group
         <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
         <span v-if="currentSize !== defaults.size">size="{{currentSize}}"</span>&gt;<br>
         &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
-        &lt;/x-card&gt;
+        &lt;/x-group&gt;
       </x-code>
     </div>
   </div>
@@ -52,7 +48,7 @@
 
 <script>
 export default {
-  name: 'preview-card',
+  name: 'preview-section',
   data () {
     return {
       defaults: {

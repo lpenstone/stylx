@@ -32,11 +32,11 @@
       </div>
       <div class="margin-top--20">
         <x-tag as="secondary">label</x-tag> <em>*required</em>
-        <x-element size="sm" class="margin-top--10">
+        <x-group size="sm" class="margin-top--10">
           <x-form>
             <x-form-input name="label-text" size="sm" @model="setLabel($event)" as=text :placeholder="currentLabel"></x-form-input>
           </x-form>
-        </x-element>
+        </x-group>
         <p class="margin-top--10">The text you want presented on the collapsed accordion</p>  
       </div>
     </x-card>

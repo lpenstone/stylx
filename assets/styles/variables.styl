@@ -10,6 +10,9 @@ $font-copy = defaultCopyFamily
 $size-copy = defaultCopySize || 18px
 $size-radius = elBorderRadiusDefault || 10px
 $size-btn-radius = btnBorderRadiusDefault || 8px
+$size-icon-sm = 30px
+$size-icon-md = 40px
+$size-icon-lg = 64px
 
 /* ----- COLORS ------ */
 
@@ -76,6 +79,14 @@ $btn-selected-outline-dm = $brand-xxlight
 $btn-hollow-dm = $brand-xlight
 $btn-hollow-hover-dm = darken($btn-hollow-dm, 10%)
 
+// ACCORDION
+$accordion = $standard-xdark
+$accordion-hover = $standard-xxdark
+// dark mode
+$accordion-dm = $standard-xxdark-dm
+$accordion-hover-dm = darken($accordion-dm, 10%)
+
+/* ----- Layout ----- */
 // BACKGROUNDS
 $bg-standard = $standard
 $bg-alt = $standard-dark
@@ -91,6 +102,15 @@ $bg-dark = $standard-xdark-dm
 $bg-brand-highlight-dm = $brand-xxdark
 $bg-secondary-highlight-dm = $secondary-xxdark
 
+// CARD
+$card = $standard-dark
+$card-standard = $standard
+// dark mode
+$card-dm = $standard-xxdark-dm
+$card-standard-dm = $standard-dm
+
+/* ----- Headings & copy ----- */
+
 // HEADINDS & COPY
 $heading = $black
 $heading-alt = $med-grey
@@ -102,7 +122,7 @@ $copy-dm = $white
 $heading-dm = $white
 $heading-alt-dm = $brand-xxlight
 
-// FORMS
+/* ----- Forms ----- */
 $form-border = $standard-xxdark
 $form-border-focus = $brand-dark
 $form-selector = $standard-xxdark
@@ -110,17 +130,3 @@ $form-selector-focus = darken($form-selector, 10%)
 // dark mode
 $form-border-dm = $standard-xlight
 $form-border-focus = $brand-xlight
-
-// CARD
-$card = $standard-dark
-$card-standard = $standard
-// dark mode
-$card-dm = $standard-xxdark-dm
-$card-standard-dm = $standard-dm
-
-// ACCORDION
-$accordion = $standard-xdark
-$accordion-hover = $standard-xxdark
-// dark mode
-$accordion-dm = $standard-xxdark-dm
-$accordion-hover-dm = darken($accordion-dm, 10%)

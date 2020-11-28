@@ -30,6 +30,25 @@
   @media(max-width: 767px)
     margin-bottom: 5px
 
+  >>>.icon__wrap--standard
+    display: flex
+    text-align: center
+    justify-content: center
+    align-items: center
+    margin-right: 0
+
+    &.icon__wrap--sm
+      width: $size-icon-sm
+      height: $size-icon-sm
+
+    &.icon__wrap--md
+      width: $size-icon-md
+      height: $size-icon-md
+
+    &.icon__wrap--lg
+      width: $size-icon-lg
+      height: $size-icon-lg
+
 .icon__wrap--standard, .icon__wrap--left
   margin-right: 14px
   margin-left: 0
@@ -45,9 +64,6 @@
   margin-left: auto
   margin-right: auto
   text-align: center
-
-  &.center-padding
-    padding-left: 14px
 
 .text__wrap--standard, .text__wrap--left
   text-align: left

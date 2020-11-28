@@ -2,10 +2,10 @@
   <div>
     <x-section as="hero" id="hero">
       <x-content class="text-align--center">
-        <x-element as="center" size="md">
+        <x-group as="center" size="md">
           <h1 class="margin-bottom--30">Stylx UI framework</h1>
           <p class="heading--title">The essential development tool for...</p>
-          <x-element as="center" size="sm">
+          <x-group as="center" size="sm">
             <x-carousel as="cycle-2500" class="margin-bottom--70">
               <x-carousel-item>
                 <h2 class="heading--title">building websites quickly</h2>
@@ -23,12 +23,12 @@
                 <h2 class="heading--title">branding customizations</h2>
               </x-carousel-item>
             </x-carousel>
-          </x-element>
+          </x-group>
           <div class="margin-top--20">
             <x-link as="hollow" size="lg" :to="{name: 'docs'}">View components</x-link>
             <x-link as="standard" size="lg" brand="github" href="github.com">Get started</x-link>
           </div>
-        </x-element>
+        </x-group>
       </x-content>
     </x-section>
     <x-section>

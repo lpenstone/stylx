@@ -11,7 +11,7 @@ import Form from './components/Form/Form.vue'
 import FormInput from './components/Form-Input/Form-Input.vue'
 import FormGroup from './components/Form-Group/Form-Group.vue'
 import FormGroupInput from './components/Form-Group-Input/Form-Group-Input.vue'
-import Element from './components/Element/Element.vue'
+import Group from './components/Group/Group.vue'
 import Icon from './components/Icon/Icon.vue'
 import IconText from './components/Icon-Text/Icon-Text.vue'
 import Item from './components/Item/Item.vue'
@@ -39,7 +39,7 @@ Vue.component('x-form-group', FormGroup)
 Vue.component('x-form-group-input', FormGroupInput)
 Vue.component('x-grid', Grid)
 Vue.component('x-grid-item', Item)
-Vue.component('x-element', Element)
+Vue.component('x-group', Group)
 Vue.component('x-icon', Icon)
 Vue.component('x-icon-text', IconText)
 Vue.component('x-img-section', ImgSection)

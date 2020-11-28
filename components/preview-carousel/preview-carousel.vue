@@ -2,7 +2,7 @@
   <div>
     <h4>Carousel</h4>
     <div class="margin-top--30">
-      <x-element as="center" size="md">
+      <x-group as="center" size="md">
         <x-carousel :as="currentAs">
           <x-carousel-item>
             <img src="~@/assets/images/sample1.png" alt="">
@@ -21,7 +21,7 @@
             <p>Alberta, Canada</p>
           </x-carousel-item>
         </x-carousel>
-      </x-element>
+      </x-group>
     </div>
     <x-card size="sm" class="margin-top--20">
       <h5>Attributes</h5>

@@ -23,4 +23,4 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus" src="./Element.styl">
+<style scoped lang="stylus" src="./Group.styl">

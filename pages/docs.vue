@@ -15,7 +15,7 @@
     </div>
     <x-section size="lg" as="hero">
       <x-content class="text-align--center">
-        <x-element as="center" size="md">
+        <x-group as="center" size="md">
           <h1 class="margin-bottom--20">Stylx Library</h1>
           <p>Style and preview the Stylx elements within this library.</p>
           <p>Copy the resulting code into your project.</p>
@@ -23,7 +23,7 @@
             <p>Preview elements are displayed with Stylx default colors</p>
             <div class="color-preview color-preview--brand">#DE00AA</div><div class="color-preview color-preview--secondary">#0059DE</div>
           </x-card>
-        </x-element>
+        </x-group>
       </x-content>
     </x-section>
     <x-section as="standard">
@@ -71,7 +71,7 @@
           Content
         </x-card>
         <x-card as="shadow" id="group" class="margin-top--30">
-          Group
+          <preview-group/>
         </x-card>
         <x-card as="shadow" id="grid" class="margin-top--30">
           <preview-grid></preview-grid>
@@ -139,6 +139,7 @@ import contentsTable from '../components/contents-table/contents-table'
 import previewButton from '../components/preview-button/preview-button'
 import previewCard from '../components/preview-card/preview-card'
 import previewSection from '../components/preview-section/preview-section'
+import previewGroup from '../components/preview-group/preview-group'
 import previewImgSection from '../components/preview-img-section/preview-img-section'
 import previewLink from '../components/preview-link/preview-link'
 import previewAccordion from '../components/preview-accordion/preview-accordion'
@@ -160,6 +161,7 @@ export default {
     'preview-link': previewLink,
     'preview-see-more': previewSeeMore,
     'preview-section': previewSection,
+    'preview-group': previewGroup,
     'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-icon': previewIcon,

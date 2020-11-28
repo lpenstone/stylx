@@ -7,11 +7,11 @@
     <x-card size="sm" class="margin-top--20">
       <div>
         <h5>Link text</h5>
-        <x-element size="sm">
+        <x-group size="sm">
           <x-form>
             <x-form-input @model="currentText = $event" name="link-text" as=text :placeholder="currentText"></x-form-input>
           </x-form>
-        </x-element>
+        </x-group>
       </div>
       <div class="margin-top--30">
         <h5>Attributes</h5>
@@ -57,11 +57,11 @@
           <x-button size="sm" @click="setIcon('comment')" :selected="currentIcon === 'comment'">comment</x-button>
           <x-button size="sm" @click="setIcon('download')" :selected="currentIcon === 'download'">download</x-button>
           <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link>
-          <x-element size="sm" class="margin-top--10">
+          <x-group size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>
             </x-form>
-          </x-element>
+          </x-group>
           <p class="margin-top--10">You can include an icon from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank">View available icons</x-link></p>
         </div>
       </div>
@@ -74,11 +74,11 @@
           <x-button size="sm" @click="setBrand('twitter')" :selected="currentBrand === 'twitter'">twitter</x-button>
           <x-button size="sm" @click="setBrand('youtube')" :selected="currentBrand === 'youtube'">youtube</x-button>
           <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">&amp; others...</x-link>
-          <x-element size="sm" class="margin-top--10">
+          <x-group size="sm" class="margin-top--10">
             <x-form>
               <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"></x-form-input>
             </x-form>
-          </x-element>
+          </x-group>
           <p class="margin-top--10">You can include a brand from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">View available brands</x-link></p>
         </div>
       </div>

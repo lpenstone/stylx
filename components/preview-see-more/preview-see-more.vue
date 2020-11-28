@@ -38,11 +38,11 @@
         <x-tag as="secondary">label</x-tag>
         <div class="margin-top--10">
           <p><strong>default: </strong> See more</p>
-          <x-element size="sm">
+          <x-group size="sm">
             <x-form>
               <x-form-input name="label-text" size="sm" @model="setLabel($event)" as=text :placeholder="currentLabel"></x-form-input>
             </x-form>
-          </x-element>
+          </x-group>
           <p class="margin-top--10">The text you want displayed on the prompt</p>  
         </div>
       </div>
