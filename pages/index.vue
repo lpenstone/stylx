@@ -71,7 +71,7 @@
             <button id="resize" @mousedown="start" @mouseover="resize($event)" @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
-            <iframe class="responsive-iframe" src="https://www.stylx.dev/demo" title="Responsive design demo"></iframe>
+            <iframe class="responsive-iframe" src="https://www.stylx.dev/z-demo/" title="Responsive design demo"></iframe>
           </x-card>
         </x-group>
       </x-content>
