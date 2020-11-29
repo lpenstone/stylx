@@ -1,5 +1,5 @@
 <template>
-  <x-swipe @swipeRight="prevItem" @swipeLeft="nextItem">
+  <x-swipe @swipeRight="clickPrev()" @swipeLeft="clickNext()">
     <div class="carousel">
       <div ref="carousel" class="carousel__content" :class="'carousel__content-index-' + index" :style="height ? `min-height: ${height}px` : 'min-height: auto'">
         <slot></slot>

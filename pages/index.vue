@@ -63,15 +63,16 @@
     <x-section as="alt">
       <div id="circle-decor"></div>
       <x-content ref="resizeContainer">
-        <h2 class="h3 text-align--center">Responsive... out of the box</h2>
+        <h2 class="h3 text-align--center">Responsive</h2>
         <x-group as="center" size="lg" class="margin-top--50">
           <x-card id="browser-demo"
             as="browser-shadow"
             size="sm"
             :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
-            <button ref="resize" id="resize"
+            <!-- <button ref="resize" id="resize"
               @mousedown="start"
-              @mouseup="stop">
+              @mouseup="stop"> -->
+            <button ref="resize" id="resize">
               <x-icon icon="arrows-alt-h"/>
             </button>
             <iframe class="responsive-iframe" src="https://www.stylx.dev/z-demo/" title="Responsive design demo"></iframe>
@@ -98,10 +99,7 @@ export default {
   mounted: function () {
     this.getMaxWidth()
     window.addEventListener('resize', this.getMaxWidth)
-
-    this.$refs.resize.addEventListener('touchstart', this.start)
-    this.$refs.resize.addEventListener('touchmove', this.resize)
-    this.$refs.resize.addEventListener('touchend', this.stop)
+    this.$refs.resize.addEventListener('touchstart', this.mobileStart, true)
   },
   methods: {
     getMaxWidth: function () {
@@ -110,11 +108,9 @@ export default {
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
     },
     start: function (e) {
-      console.log('start')
       this.x1 = e.screenX
       this.x2 = e.screenX
       window.addEventListener('mouseup', this.stop)
-      window.addEventListener('touchmove', this.resize)
       window.addEventListener('mousemove', this.resize)
     },
     resize: function (e) {
@@ -126,12 +122,29 @@ export default {
       if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth
       this.x1 = this.x2
     },
+    mobileStart: function (e) {
+      this.x1 = parseInt(e.touches[0].screenX)
+      this.x2 = parseInt(e.touches[0].screenX)
+
+      this.$refs.resize.addEventListener('touchmove', this.mobileResize, true)
+      this.$refs.resize.addEventListener('touchend', this.stop, true)
+    },
+    mobileResize: function (e) {
+      this.x2 = parseInt(e.touches[0].screenX)
+      let diff = this.x2 - this.x1
+      this.demoWidth += diff
+      console.log(diff)
+
+      if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
+      if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth
+      this.x1 = this.x2
+    },
     stop: function (e) {
       window.removeEventListener('mousemove', this.resize)
       window.removeEventListener('mouseup', this.stop)
-      window.removeEventListener('touchmove', this.resize)
-      this.$refs.resize.removeEventListener('touchmove', this.resize)
-      this.$refs.resize.removeEventListener('touchend', this.stop)
+
+      this.$refs.resize.removeEventListener('touchmove', this.resize, true)
+      this.$refs.resize.removeEventListener('touchend', this.stop, true)
     }
   },
   destroyed: function () {
