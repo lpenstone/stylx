@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <x-modal ref="gridModal" v-if="gallery" :name="name">
-      <x-carousel as="modal" :items="carouselItems" :startIndex="carouselIndex" height="210">
+      <x-carousel as="modal" :items="carouselItems" :startIndex="carouselIndex" height="210" :name="name">
         <slot></slot>
       </x-carousel>
     </x-modal>

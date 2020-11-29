@@ -1,11 +1,16 @@
 <template>
-  <div id="swipe">
+  <div :id="'swipe-' + name">
     <slot></slot>
   </div>
 </template>
 <script>
 export default {
   name: 'swipe',
+  props: {
+    name: {
+      type: String
+    }
+  },
   data () {
     return {
       el: null,
@@ -18,7 +23,7 @@ export default {
     }
   },
   mounted: function () {
-    this.el = document.getElementById('swipe')
+    this.el = document.getElementById('swipe-' + this.name)
     this.el.addEventListener('touchstart', this.touchStart.bind(event), true)
     this.el.addEventListener('touchmove', this.touchMove.bind(event), true)
     this.el.addEventListener('touchend', this.horizontalSwipe, true)

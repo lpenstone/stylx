@@ -1,5 +1,5 @@
 <template>
-  <x-swipe @swipeRight="clickPrev()" @swipeLeft="clickNext()">
+  <x-swipe :name="name" @swipeRight="clickPrev()" @swipeLeft="clickNext()">
     <div class="carousel">
       <div ref="carousel" class="carousel__content" :class="'carousel__content-index-' + index" :style="height ? `min-height: ${height}px` : 'min-height: auto'">
         <slot></slot>
@@ -43,6 +43,10 @@ export default {
     startIndex: {
       type: Number,
       default: 1
+    },
+    name: {
+      type: String,
+      required: true
     }
   },
   data () {

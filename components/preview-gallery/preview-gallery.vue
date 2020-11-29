@@ -91,7 +91,7 @@ export default {
     return {
       currentAs: 'gallery',
       currentCols: '4',
-      currentName: 'unique-name'
+      currentName: 'unique-gallery'
     }
   },
   methods: {
@@ -103,7 +103,7 @@ export default {
     },
     setName: function (value) {
       if (!value) {
-        this.currentName = 'unique-name'
+        this.currentName = 'unique-gallery'
         return
       }
       this.currentName = value

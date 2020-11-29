@@ -7,7 +7,7 @@
           <h1 class="margin-bottom--30">Stylx UI framework</h1>
           <p class="heading--title">The essential development tool for...</p>
           <x-group as="center" size="sm">
-            <x-carousel as="cycle-2500" class="margin-bottom--70">
+            <x-carousel as="cycle-2500" name="hero" class="margin-bottom--70">
               <x-carousel-item>
                 <h2 class="heading--title">building websites quickly</h2>
               </x-carousel-item>

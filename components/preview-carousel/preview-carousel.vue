@@ -3,7 +3,7 @@
     <h4>Carousel</h4>
     <div class="margin-top--30">
       <x-group as="center" size="md">
-        <x-carousel :as="currentAs">
+        <x-carousel :as="currentAs" name="num1">
           <x-carousel-item>
             <img src="~@/assets/images/sample1.png" alt="">
             <p>Newfoundland, Canada</p>
@@ -44,6 +44,15 @@
         <x-tag as="secondary">height</x-tag>
         <p class="margin-top--10">Add a numeric value for a consistent carousel height.</p>  
       </div>
+      <div class="margin-top--20">
+        <x-tag as="secondary">name</x-tag> <em>*required</em>
+        <x-group size="sm" class="margin-top--10">
+          <x-form>
+            <x-form-input name="name-text" size="sm" @model="setName($event)" as="text" :placeholder="currentName"/>
+          </x-form>
+        </x-group>
+        <p class="margin-top--10">Choose a unique name for your modal. No spaces, use hyphens.</p>  
+      </div>
       <div class="margin-top--30">
         <h5>Children</h5>
         <p>Each group within the carousel needs to be wrapped in <span class="code-text">&lt;x-carousel-item&gt;&lt;/x-carousel-item&gt;</span> tags.</p>
@@ -52,7 +61,7 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-carousel as="{{currentAs}}" height=""&gt;<br>
+        &lt;x-carousel as="{{currentAs}}" name="{{currentName}}" height=""&gt;<br>
         &nbsp;&nbsp;&lt;x-carousel-item&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="" alt=""&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Caption #1&lt;/p&gt;<br>
@@ -72,12 +81,20 @@ export default {
   name: 'preview-carousel',
   data () {
     return {
-      currentAs: 'standard'
+      currentAs: 'standard',
+      currentName: 'unique-name'
     }
   },
   methods: {
     setAs: function (value) {
       this.currentAs = value
+    },
+    setName: function (value) {
+      if (!value) {
+        this.currentName = 'unique-name'
+        return
+      }
+      this.currentName = value
     }
   }
 }
