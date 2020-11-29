@@ -69,11 +69,9 @@
             as="browser-shadow"
             size="sm"
             :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
-            <button id="resize"
+            <button ref="resize" id="resize"
               @mousedown="start"
-              @touchstart="start"
-              @mouseup="stop"
-              @touchend="stop">
+              @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
             <iframe class="responsive-iframe" src="https://www.stylx.dev/z-demo/" title="Responsive design demo"></iframe>
@@ -99,6 +97,11 @@ export default {
   },
   mounted: function () {
     this.getMaxWidth()
+    window.addEventListener('resize', this.getMaxWidth)
+
+    this.$refs.resize.addEventListener('touchstart', this.start)
+    this.$refs.resize.addEventListener('touchmove', this.resize)
+    this.$refs.resize.addEventListener('touchend', this.stop)
   },
   methods: {
     getMaxWidth: function () {
@@ -107,11 +110,12 @@ export default {
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
     },
     start: function (e) {
+      console.log('start')
       this.x1 = e.screenX
       this.x2 = e.screenX
       window.addEventListener('mouseup', this.stop)
-      window.addEventListener('mousemove', this.resize)
       window.addEventListener('touchmove', this.resize)
+      window.addEventListener('mousemove', this.resize)
     },
     resize: function (e) {
       this.x2 = e.screenX
@@ -126,7 +130,12 @@ export default {
       window.removeEventListener('mousemove', this.resize)
       window.removeEventListener('mouseup', this.stop)
       window.removeEventListener('touchmove', this.resize)
+      this.$refs.resize.removeEventListener('touchmove', this.resize)
+      this.$refs.resize.removeEventListener('touchend', this.stop)
     }
+  },
+  destroyed: function () {
+    window.removeEventListener('resize', this.getMaxWidth)
   }
 }
 </script>
