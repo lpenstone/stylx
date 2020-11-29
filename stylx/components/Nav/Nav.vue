@@ -22,7 +22,7 @@
                 <ul>
                   <li v-for="(route, name) in routes" v-bind:key="name">
                     <x-link as="link-alt"
-                      v-if="route.path !== '/' && route.path !== '/success'"
+                      v-if="route.path !== '/' && route.path !== '/z-demo'"
                       :to="{name: route.name}">
                       {{route.name | sanitize}}
                     </x-link>

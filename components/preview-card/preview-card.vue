@@ -22,6 +22,8 @@
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
           <x-button size="sm" @click="setAs('shadow')" :selected="currentAs === 'shadow'">shadow</x-button>
+          <x-button size="sm" @click="setAs('browser')" :selected="currentAs === 'browser'">browser</x-button>
+          <x-button size="sm" @click="setAs('browser-shadow')" :selected="currentAs === 'browser-shadow'">browser-shadow</x-button>
         </div>
       </div>
       <div class="margin-top--30">

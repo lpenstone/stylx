@@ -1,7 +1,6 @@
 <template>
   <div class="view-wrap" :class="darkMode ? 'mode--dark' : ''">
     <div class="view-content">
-      <x-nav></x-nav>
       <Nuxt/>
     </div>
   </div>
@@ -10,22 +9,9 @@
 <script>
 
 export default {
-  name: 'Layout',
+  name: 'Minimal',
   data () {
     return {}
-  },
-  computed: {
-    darkMode: function () {
-      return this.$store.state.darkMode
-    },
-    isModalOpen: function () {
-      return this.$store.state.modal.isOpen
-    }
-  },
-  watch: {
-    $route () {
-      this.$store.commit('toggleMenu', false)
-    }
   }
 }
 </script>
