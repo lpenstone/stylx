@@ -69,13 +69,11 @@
             as="browser-shadow"
             size="sm"
             :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
-            <!-- <button ref="resize" id="resize"
+            <button ref="resize" id="resize"
               @mousedown="start"
-              @mouseup="stop"> -->
-            <button ref="resize" id="resize">
+              @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
-            <iframe class="responsive-iframe" src="https://www.stylx.dev/z-demo/" title="Responsive design demo"></iframe>
           </x-card>
         </x-group>
       </x-content>
@@ -85,7 +83,7 @@
 
 <script>
 export default {
-  name: 'preview-card',
+  name: 'index',
   data () {
     return {
       demoWidth: 650,
@@ -133,7 +131,6 @@ export default {
       this.x2 = parseInt(e.touches[0].screenX)
       let diff = this.x2 - this.x1
       this.demoWidth += diff
-      console.log(diff)
 
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
       if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth

@@ -25,7 +25,7 @@
       </x-group>
     </x-section>
     <x-section>
-      <x-content >
+      <x-content>
         <x-group as="center" size="md">
           <x-card as="shadow">
             <h2 class="h4 text-align--center">Details</h2>
@@ -34,14 +34,19 @@
                 <strong><x-icon icon="hand-holding-usd"/> Cost:</strong>
                 $30
               </p>
-              <x-see-more label="Why charge a door fee?">
-                <p>The door fee goes towards:</p>
+              <x-see-more label="About the fee">
+                <p>The fee goes towards:</p>
                 <ul>
                   <li>Ensuring that the instructors get an industry-standard wage</li>
+                  <li>Zoom license fee</li>
                   <li>Compensate the Stylx team so that it can remain as a maintained, open source (free) tool beyond the course.</li>
                   <li>Domain and other fees to keep the Stylx site running</li>
                 </ul>
               </x-see-more>
+              <p class="margin-top--10">
+                <strong><x-icon icon="map-marker-alt" size="sm"/> Location:</strong>
+                Remote via Zoom
+              </p>
               <p class="margin-top--10">
                 <strong><x-icon icon="clock" size="sm"/> Time:</strong>
                 11am-2pm with 30 minute break for lunch
@@ -62,7 +67,7 @@
                 </x-see-more>
               </p>
               <p class="margin-top--20">
-                The makers of Stylx believe coding/building websites should be accessible to everyone. If you are unable to pay the $30 door fee, please reach out and we will accommodate.
+                The makers of Stylx believe building websites should be accessible to everyone. If you are unable to pay the $30 door fee, please reach out and we will accommodate.
               </p>
             </div>
           </x-card>
@@ -132,7 +137,7 @@
               </div>
               <div class="margin-top--30">
                 <p class="heading--title">[Optional] Show off projects &amp; keep working</p>
-                <p class="heading--accent">2pm-2:30pm</p>
+                <p class="heading--accent">2pm+</p>
                 <ul>
                   <li>Demo what you've built.</li>
                   <li>The instructor will linger for an additional ~45 minutes to help with questions or issues.</li>
