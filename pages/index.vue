@@ -61,14 +61,19 @@
       </x-content>
     </x-section>
     <x-section as="alt">
-      <x-content>
+      <div id="circle-decor"></div>
+      <x-content ref="resizeContainer">
         <h2 class="h3 text-align--center">Responsive... out of the box</h2>
         <x-group as="center" size="lg" class="margin-top--50">
           <x-card id="browser-demo"
             as="browser-shadow"
             size="sm"
-            :style="`width: ${demoWidth}px; max-width: 100%`">
-            <button id="resize" @mousedown="start" @mouseover="resize($event)" @mouseup="stop">
+            :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
+            <button id="resize"
+              @mousedown="start"
+              @touchstart="start"
+              @mouseup="stop"
+              @touchend="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
             <iframe class="responsive-iframe" src="https://www.stylx.dev/z-demo/" title="Responsive design demo"></iframe>
@@ -84,31 +89,43 @@ export default {
   name: 'preview-card',
   data () {
     return {
-      demoWidth: 450,
+      demoWidth: 650,
+      maxWidth: 1000,
+      minWidth: 340,
       timer: null,
-      clicked: false,
       x1: 0,
       x2: 0
     }
   },
+  mounted: function () {
+    this.getMaxWidth()
+  },
   methods: {
+    getMaxWidth: function () {
+      let elWidth = this.$refs.resizeContainer.$el.clientWidth
+      this.maxWidth = 0.85 * elWidth
+      if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
+    },
     start: function (e) {
       this.x1 = e.screenX
       this.x2 = e.screenX
-      this.clicked = true
-      window.addEventListener("mousemove", this.resize)
+      window.addEventListener('mouseup', this.stop)
+      window.addEventListener('mousemove', this.resize)
+      window.addEventListener('touchmove', this.resize)
     },
     resize: function (e) {
-      if (!this.clicked) return
       this.x2 = e.screenX
       let diff = this.x2 - this.x1
       this.demoWidth += diff
-      console.log(diff, this.demoWidth)
+
+      if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
+      if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth
       this.x1 = this.x2
     },
     stop: function (e) {
-      this.clicked = false
-      window.removeEventListener("mousemove", this.resize)
+      window.removeEventListener('mousemove', this.resize)
+      window.removeEventListener('mouseup', this.stop)
+      window.removeEventListener('touchmove', this.resize)
     }
   }
 }
@@ -116,6 +133,19 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
+
+#circle-decor
+  position: absolute
+  left: 47%
+  top: 15px
+  
+  width: 500px
+  height: 500px
+  border-radius: 50%
+  background-color: $secondary
+  opacity: 0.15
+  display: block
+  z-index: 0
 
 #resize
   position: absolute
@@ -128,6 +158,7 @@ export default {
   right: -25px
   z-index: 3
   outline: 0
+  cursor: ew-resize
 
 .logo
   width: 100%
