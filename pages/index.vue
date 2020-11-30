@@ -7,26 +7,6 @@
           <h1 class="margin-bottom--30">Stylx UI framework</h1>
           <p class="heading--title margin-bottom--10">The essential development tool for building beautiful UI's fast</p>
           <p>(without a designer)</p>
-          <!-- <p class="heading--title">The essential development tool for...</p>
-          <x-group as="center" size="sm">
-            <x-carousel as="cycle-2500" name="hero" class="margin-bottom--70">
-              <x-carousel-item>
-                <h2 class="heading--title">building websites quickly</h2>
-              </x-carousel-item>
-              <x-carousel-item>
-                <h2 class="heading--title">accessible components</h2>
-              </x-carousel-item>
-              <x-carousel-item>
-                <h2 class="heading--title">dark mode capability</h2>
-              </x-carousel-item>
-              <x-carousel-item>
-                <h2 class="heading--title">responsive design</h2>
-              </x-carousel-item>
-              <x-carousel-item>
-                <h2 class="heading--title">branding customizations</h2>
-              </x-carousel-item>
-            </x-carousel>
-          </x-group> -->
           <div class="margin-top--40">
             <x-link as="hollow" size="lg" :to="{name: 'library'}" class="margin-left--5 margin-right--5 margin-bottom--10">
               View library
@@ -54,29 +34,29 @@
             </x-icon-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-icon-combo as="center" iconAs="secondary" icon="laptop-code">
-              <strong>Preview your elements</strong>
-              <p>Style and preview your elements, and copy the generated code</p>
+            <x-icon-combo as="center" iconAs="secondary" icon="code">
+              <strong>Markup only</strong>
+              <p>Build beautiful projects without every touching CSS</p>
             </x-icon-combo>
           </x-grid-item>
         </x-grid>
       </x-content>
     </x-section>
     <x-section>
-      <div class="circle-decor circle-decor--blue"></div>
+      <div class="circle-decor circle-decor--1"></div>
       <x-content ref="resizeContainer">
         <h2 class="h3 text-align--center">Preview your elements</h2>
         <x-grid cols="2" class="margin-top--30">
           <x-grid-item>
             <x-group as="center" size="sm">
               <div class="text-align--center margin-top--30 margin-bottom--30">
-                <x-link :as="currentAs" :size="currentSize" href="https://stylx.com" >Sample Link</x-link>
+                <x-link :as="currentAs" :size="currentSize" href="https://stylx.com" >Your link</x-link>
               </div>
               <x-code class="margin-top--10">
                 &lt;x-link
                   as="{{currentAs}}"
                   size="{{currentSize}}"
-                  href=""&gt;Sample link&lt;/x-link&gt;
+                  href=""&gt;Your link&lt;/x-link&gt;
               </x-code>
             </x-group>
           </x-grid-item>
@@ -108,10 +88,32 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section>
-      <div class="circle-decor circle-decor--pink"></div>
+    <x-section size="lg">
+      <div class="circle-decor circle-decor--3"></div>
+      <div class="circle-decor circle-decor--4"></div>
       <x-content ref="resizeContainer">
-        <h2 class="h3 text-align--center">Responsive Design</h2>
+        <h2 class="h3 text-align--center">Toggle dark mode</h2>
+        <x-grid cols="2" class="margin-top--40">
+          <x-grid-item class="text-align--center">
+            <x-button size="lg" icon="lightbulb" @click="toggleMode()">Turn {{darkMode? 'on': 'off'}} the lights</x-button>
+          </x-grid-item>
+          <x-grid-item>
+            <div id="dark-mode--hidden">
+              <h3 class="heading--accent">That's better!</h3>
+              <p>Within your custom configuration, you can enable a toggle between light and dark modes. You can also set dark mode as the default.</p>
+            </div>
+          </x-grid-item>
+        </x-grid>
+      </x-content>
+    </x-section>
+    <x-section>
+      <div class="circle-decor circle-decor--2"></div>
+      <x-content ref="resizeContainer">
+        <h2 class="h3 text-align--center">Responsive design</h2>
+        <x-group size="sm" id="responsive--hidden">
+          <h3 class="heading--accent">Oh, hi!</h3>
+          <p>Your elements will shrink, collapse, and adjust to suit any device, hassle free.</p>
+        </x-group>
         <x-group as="center" size="lg" class="margin-top--50">
           <x-card id="browser-demo"
             as="browser-shadow"
@@ -143,6 +145,11 @@ export default {
       x2: 0,
       currentAs: 'link-alt',
       currentSize: 'lg'
+    }
+  },
+  computed: {
+    darkMode: function () {
+      return this.$store.state.darkMode
     }
   },
   mounted: function () {
@@ -193,6 +200,9 @@ export default {
 
       this.$refs.resize.removeEventListener('touchmove', this.resize, true)
       this.$refs.resize.removeEventListener('touchend', this.stop, true)
+    },
+    toggleMode: function () {
+      this.$store.commit('toggleMode')
     }
   },
   destroyed: function () {
@@ -204,6 +214,18 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
 
+#responsive--hidden
+  position: absolute
+  left: 50%
+  top: 50%
+
+#dark-mode--hidden
+  opacity: 0
+
+.mode--dark
+  #dark-mode--hidden
+    opacity: 1
+
 .circle-decor
   position: absolute
   left: 47%
@@ -213,19 +235,34 @@ export default {
   display: block
   z-index: 0
 
-  &.circle-decor--pink
+  &.circle-decor--2
     width: 500px
     height: 500px
     left: 47%
     top: 15px
-    background-color: $secondary
+    background-color: $brand
 
-  &.circle-decor--blue
+  &.circle-decor--1
     width: 410px
     height: 410px
     left: 18%
     top: 33px
     background-color: $brand
+
+  &.circle-decor--3
+    width: 300px
+    height: 300px
+    left: 10%
+    top: 50px
+    background-color: $secondary
+
+  &.circle-decor--4
+    width: 140px
+    height: 140px
+    right: 10%
+    left: auto
+    bottom: 30px
+    background-color: $secondary
   
 
 #resize
