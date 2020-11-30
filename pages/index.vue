@@ -5,7 +5,9 @@
         <x-group as="center" size="md">
           <img class="logo margin-bottom--30" src="~@/assets/images/stylx_logo.png" alt="">
           <h1 class="margin-bottom--30">Stylx UI framework</h1>
-          <p class="heading--title">The essential development tool for...</p>
+          <p class="heading--title margin-bottom--10">The essential development tool for building beautiful UI's fast</p>
+          <p>(without a designer)</p>
+          <!-- <p class="heading--title">The essential development tool for...</p>
           <x-group as="center" size="sm">
             <x-carousel as="cycle-2500" name="hero" class="margin-bottom--70">
               <x-carousel-item>
@@ -24,19 +26,19 @@
                 <h2 class="heading--title">branding customizations</h2>
               </x-carousel-item>
             </x-carousel>
-          </x-group>
-          <div class="margin-top--20">
-            <x-link as="hollow" size="lg" :to="{name: 'library'}" class="margin-left--5 margin-right--5 margin-bottom-10">
+          </x-group> -->
+          <div class="margin-top--40">
+            <x-link as="hollow" size="lg" :to="{name: 'library'}" class="margin-left--5 margin-right--5 margin-bottom--10">
               View library
             </x-link>
-            <x-link as="standard" size="lg" :to="{name: 'docs'}" class="margin-left--5 margin-right--5 margin-bottom-10">
+            <x-link as="standard" size="lg" :to="{name: 'docs'}" class="margin-left--5 margin-right--5 margin-bottom--10">
               Get started
             </x-link>
           </div>
         </x-group>
       </x-content>
     </x-section>
-    <x-section>
+    <x-section as="alt">
       <x-content class="text-align--center">
         <x-grid cols="3">
           <x-grid-item>
@@ -60,10 +62,56 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section as="alt">
-      <div id="circle-decor"></div>
+    <x-section>
+      <div class="circle-decor circle-decor--blue"></div>
       <x-content ref="resizeContainer">
-        <h2 class="h3 text-align--center">Responsive</h2>
+        <h2 class="h3 text-align--center">Preview your elements</h2>
+        <x-grid cols="2" class="margin-top--30">
+          <x-grid-item>
+            <x-group as="center" size="sm">
+              <div class="text-align--center margin-top--30 margin-bottom--30">
+                <x-link :as="currentAs" :size="currentSize" href="https://stylx.com" >Sample Link</x-link>
+              </div>
+              <x-code class="margin-top--10">
+                &lt;x-link
+                  as="{{currentAs}}"
+                  size="{{currentSize}}"
+                  href=""&gt;Sample link&lt;/x-link&gt;
+              </x-code>
+            </x-group>
+          </x-grid-item>
+          <x-grid-item>
+            <x-card as="shadow">
+              <p class="h5">Attributes</p>
+              <div class="margin-top--30">
+                <x-tag as="secondary">as</x-tag>
+                <div class="margin-top--10">
+                  <strong>values:</strong>
+                  <x-button size="sm" @click="currentAs = 'link'" :selected="currentAs === 'link'">link</x-button>
+                  <x-button size="sm" @click="currentAs = 'link-alt'" :selected="currentAs === 'link-alt'">link-alt</x-button>
+                  <x-button size="sm" @click="currentAs = 'standard'" :selected="currentAs === 'standard'">standard</x-button>
+                  <x-button size="sm" @click="currentAs = 'hollow'" :selected="currentAs === 'hollow'">hollow</x-button>
+                  <x-button size="sm" @click="currentAs = 'plain'" :selected="currentAs === 'plain'">plain</x-button>
+                </div>
+              </div>
+              <div class="margin-top--20">
+                <x-tag as="secondary">size</x-tag>
+                <div class="margin-top--10">
+                  <strong>values: </strong>
+                  <x-button size="sm" @click="currentSize = 'sm'" :selected="currentSize === 'sm'">sm</x-button>
+                  <x-button size="sm" @click="currentSize = 'md'" :selected="currentSize === 'md'">md</x-button>
+                  <x-button size="sm" @click="currentSize = 'lg'" :selected="currentSize === 'lg'">lg</x-button>
+                </div>
+              </div>
+            </x-card>
+          </x-grid-item>
+        </x-grid>
+      </x-content>
+    </x-section>
+    <x-section>
+      <div class="circle-decor circle-decor--pink"></div>
+      <x-content ref="resizeContainer">
+        <h2 class="h3 text-align--center">Responsive Design</h2>
         <x-group as="center" size="lg" class="margin-top--50">
           <x-card id="browser-demo"
             as="browser-shadow"
@@ -92,7 +140,9 @@ export default {
       minWidth: 340,
       timer: null,
       x1: 0,
-      x2: 0
+      x2: 0,
+      currentAs: 'link-alt',
+      currentSize: 'lg'
     }
   },
   mounted: function () {
@@ -154,18 +204,29 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
 
-#circle-decor
+.circle-decor
   position: absolute
   left: 47%
   top: 15px
-  
-  width: 500px
-  height: 500px
   border-radius: 50%
-  background-color: $secondary
   opacity: 0.15
   display: block
   z-index: 0
+
+  &.circle-decor--pink
+    width: 500px
+    height: 500px
+    left: 47%
+    top: 15px
+    background-color: $secondary
+
+  &.circle-decor--blue
+    width: 410px
+    height: 410px
+    left: 18%
+    top: 33px
+    background-color: $brand
+  
 
 #resize
   position: absolute
