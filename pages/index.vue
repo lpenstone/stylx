@@ -115,17 +115,19 @@
           <p>Your elements will shrink, collapse, and adjust to suit any device, hassle free.</p>
         </x-group>
         <x-group as="center" size="lg" class="margin-top--50">
-          <x-card id="browser-demo"
-            as="browser-shadow"
-            size="sm"
-            :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
+          <div class="demo-window__wrap">
             <button ref="resize" id="resize"
               @mousedown="start"
               @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
-            <iframe id="demo-site" src="https://www.stylx.dev/z-demo" title="demo site"/>
-          </x-card>
+            <x-card id="browser-demo"
+              as="browser-shadow"
+              size="sm"
+              :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
+              <iframe id="demo-site" src="https://www.stylx.dev/z-demo" scrolling="no" title="demo site"/>
+            </x-card>
+          </div>
         </x-group>
       </x-content>
     </x-section>
@@ -214,6 +216,10 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
 
+.demo-window__wrap
+  display: inline-block
+  position: relative
+
 #responsive--hidden
   position: absolute
   left: 50%
@@ -276,6 +282,7 @@ export default {
   right: -25px
   z-index: 3
   outline: 0
+  color: white !important
   cursor: ew-resize
 
 .logo
@@ -286,6 +293,7 @@ export default {
   width: 100%
   height: 450px
   border: 0
+  display: block
 
 </style>
 

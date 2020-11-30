@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section size="sm">
+    <x-section id="demo" size="sm">
       <p class="h4 text-align--center">Canadian Destinations</p>
       <x-card class="margin-top--30" size="sm">
         <x-grid cols="2">
@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
+#demo
+  font-size: 0.9em
 
 </style>
 
