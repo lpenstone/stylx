@@ -1,49 +1,15 @@
 <template>
   <div>
-    <h4>Icon &amp; Text</h4>
+    <h4>Combo #2 (Icon)</h4>
     <div class="margin-top--30">
-      <x-grid cols="2">
-        <x-grid-item>
-          <x-icon-text :as="currentAs"
-            :iconAs="currentIconAs"
-            :iconSize="currentIconSize"
-            :icon="currentIcon"
-            :brand="currentBrand">
-            <p><strong>This is icon-text</strong></p>
-            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
-          </x-icon-text>
-        </x-grid-item>
-        <x-grid-item>
-          <x-icon-text :as="currentAs"
-            :iconAs="currentIconAs"
-            :iconSize="currentIconSize"
-            :icon="currentIcon"
-            :brand="currentBrand">
-            <p><strong>This is icon-text</strong></p>
-            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
-          </x-icon-text>
-        </x-grid-item>
-        <x-grid-item>
-          <x-icon-text :as="currentAs"
-            :iconAs="currentIconAs"
-            :iconSize="currentIconSize"
-            :icon="currentIcon"
-            :brand="currentBrand">
-            <p><strong>This is icon-text</strong></p>
-            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
-          </x-icon-text>
-        </x-grid-item>
-        <x-grid-item>
-          <x-icon-text :as="currentAs"
-            :iconAs="currentIconAs"
-            :iconSize="currentIconSize"
-            :icon="currentIcon"
-            :brand="currentBrand">
-            <p><strong>This is icon-text</strong></p>
-            <p>This allows you to write content accompanied by an icon from FontAwesome. It is recommended that you nest icon-text within a <x-link href="#grid">grid</x-link> as seen in this demo.</p>
-          </x-icon-text>
-        </x-grid-item>
-      </x-grid>
+      <x-combo-icon :as="currentAs"
+        :iconAs="currentIconAs"
+        :iconSize="currentIconSize"
+        :icon="currentIcon"
+        :brand="currentBrand">
+        <p><strong>This is combo-icon</strong></p>
+        <p>Combine an icon with text content.</p>
+      </x-combo-icon>
     </div>
     <x-card size="sm" class="margin-top--20">
       <div>
@@ -128,14 +94,14 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-icon-text
+        &lt;x-combo-icon
           <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
           <span v-if="currentIconAs !== defaults.iconAs">iconAs="{{currentIconAs}}"</span>
           <span v-if="currentIconSize !== defaults.iconSize">iconSize="{{currentIconSize}}"</span>
           <span v-if="currentIcon">icon="{{currentIcon}}"</span>
           <span v-if="currentBrand">brand="{{currentBrand}}"</span>&gt;<br>
           &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
-        &lt;/x-icon-text&gt;
+        &lt;/x-combo-icon&gt;
       </x-code>
     </div>
   </div>

@@ -7,13 +7,16 @@ import Card from './components/Card/Card.vue'
 import Carousel from './components/Carousel/Carousel.vue'
 import Content from './components/Content/Content.vue'
 import Code from './components/Code/Code.vue'
+import Combo from './components/Combo/Combo.vue'
+import ComboIcon from './components/Combo-Icon/Combo-Icon.vue'
+import ComboImg from './components/Combo-Img/Combo-Img.vue'
+import ComboText from './components/Combo-Text/Combo-Text.vue'
 import Form from './components/Form/Form.vue'
 import FormInput from './components/Form-Input/Form-Input.vue'
 import FormGroup from './components/Form-Group/Form-Group.vue'
 import FormGroupInput from './components/Form-Group-Input/Form-Group-Input.vue'
 import Group from './components/Group/Group.vue'
 import Icon from './components/Icon/Icon.vue'
-import IconText from './components/Icon-Text/Icon-Text.vue'
 import Item from './components/Item/Item.vue'
 import ImgSection from './components/Img-Section/Img-Section.vue'
 import Grid from './components/Grid/Grid.vue'
@@ -32,6 +35,10 @@ Vue.component('x-card', Card)
 Vue.component('x-carousel', Carousel)
 Vue.component('x-carousel-item', Item)
 Vue.component('x-code', Code)
+Vue.component('x-combo', Combo)
+Vue.component('x-combo-img', ComboImg)
+Vue.component('x-combo-text', ComboText)
+Vue.component('x-combo-icon', ComboIcon)
 Vue.component('x-content', Content)
 Vue.component('x-form', Form)
 Vue.component('x-form-input', FormInput)
@@ -41,7 +48,6 @@ Vue.component('x-grid', Grid)
 Vue.component('x-grid-item', Item)
 Vue.component('x-group', Group)
 Vue.component('x-icon', Icon)
-Vue.component('x-icon-text', IconText)
 Vue.component('x-img-section', ImgSection)
 Vue.component('x-modal', Modal)
 Vue.component('x-map', MapEmbed)

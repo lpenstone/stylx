@@ -1,0 +1,124 @@
+@import '~@/assets/styles/variables'
+
+$sm-size = 100px
+$md-size = 140px
+$lg-size = 180px
+
+.combo__wrap
+  align-items: center
+  display: flex
+  
+>>>.combo__img
+  display: flex
+  align-items: center 
+  justify-content: center
+  overflow: hidden
+
+  img 
+    width: 100%
+    height: auto
+
+>>>.combo__text
+  width: 100%
+
+.combo__img--landscape
+  >>>.combo__img
+    img 
+      height: 100%
+
+.combo__wrap--circle
+  >>>.combo__img
+    border-radius: 50%
+
+.combo__wrap--rounded
+  >>>.combo__img
+    border-radius: $size-radius
+
+.combo__wrap--center
+  align-items: center
+  flex-direction: column
+
+  >>>.combo__text
+    text-align: center
+
+@media(max-width: 767px)
+  .combo__wrap:not(.combo__wrap--card)
+    flex-direction: column
+
+    >>>.combo__text
+      text-align: center
+
+.combo__wrap--card
+  border: 1px solid $standard-xdark
+  overflow: hidden
+  border-radius: 12px
+  align-items: flex-start
+
+  >>>.combo__text
+    overflow: auto
+
+  &.combo__wrap--sm
+    max-height: $sm-size
+
+    >>>.combo__text
+      max-height: $sm-size
+
+  &.combo__wrap--md
+    max-height: $md-size
+
+    >>>.combo__text
+      max-height: $md-size
+
+  &.combo__wrap--lg
+    max-height: $lg-size
+
+    >>>.combo__text
+      max-height: $lg-size
+
+.combo__wrap--sm
+  >>>.combo__img
+    min-width: $sm-size
+    width: $sm-size
+    max-width: $sm-size
+    min-height: $sm-size
+    height: $sm-size
+    max-height: $sm-size
+
+  >>>.combo__text
+    padding: 10px
+
+.combo__wrap--md
+  >>>.combo__img
+    min-width: $md-size
+    width: $md-size
+    max-width: $md-size
+    min-height: $md-size
+    height: $md-size
+    max-height: $md-size
+
+  >>>.combo__text
+    padding: 12px
+
+.combo__wrap--lg
+  >>>.combo__img
+    min-width: $lg-size
+    width: $lg-size
+    max-width: $lg-size
+    min-height: $lg-size
+    height: $lg-size
+    max-height: $lg-size
+
+  >>>.combo__text
+    padding: 15px
+
+@media(max-width: 767px)
+  .combo__wrap--lg
+    >>>.combo__img
+      min-width: $md-size
+      width: $md-size
+      max-width: $md-size
+      min-height: $md-size
+      height: $md-size
+      max-height: $md-size
+
+dump_media_cache()
