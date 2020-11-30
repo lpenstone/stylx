@@ -222,7 +222,8 @@ export default {
 
 #responsive--hidden
   position: absolute
-  left: 50%
+  max-width: 270px
+  left: 58%
   top: 50%
 
 #dark-mode--hidden
