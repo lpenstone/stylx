@@ -87,7 +87,7 @@ export default {
   name: 'index',
   data () {
     return {
-      demoWidth: 650,
+      demoWidth: 900,
       maxWidth: 1000,
       minWidth: 340,
       timer: null,

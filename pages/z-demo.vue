@@ -1,11 +1,11 @@
 <template>
   <div>
-    <x-section>
-      <p class="h3 text-align--center">Canadian Destinations</p>
+    <x-section size="sm">
+      <p class="h4 text-align--center">Canadian Destinations</p>
       <x-card class="margin-top--30" size="sm">
         <x-grid cols="2">
           <x-grid-item>
-            <x-combo as="circle" size="md">
+            <x-combo as="circle" size="sm">
               <x-combo-img>
                 <img src="~@/assets/images/sample1.png" alt="">
               </x-combo-img>
@@ -16,7 +16,7 @@
             </x-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-combo as="circle" size="md">
+            <x-combo as="circle" size="sm">
               <x-combo-img>
                 <img src="~@/assets/images/sample2.png" alt="">
               </x-combo-img>
@@ -27,7 +27,7 @@
             </x-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-combo as="circle" size="md">
+            <x-combo as="circle" size="sm">
               <x-combo-img>
                 <img src="~@/assets/images/sample3.png" alt="">
               </x-combo-img>
@@ -38,7 +38,7 @@
             </x-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-combo as="circle" size="md">
+            <x-combo as="circle" size="sm">
               <x-combo-img>
                 <img src="~@/assets/images/sample4.png" alt="">
               </x-combo-img>
