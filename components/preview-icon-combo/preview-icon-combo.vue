@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h4>Combo #2 (Icon)</h4>
+    <h4>Icon Combo</h4>
     <div class="margin-top--30">
-      <x-combo-icon :as="currentAs"
+      <x-icon-combo :as="currentAs"
         :iconAs="currentIconAs"
         :iconSize="currentIconSize"
         :icon="currentIcon"
         :brand="currentBrand">
-        <p><strong>This is combo-icon</strong></p>
+        <p><strong>This is icon-combo</strong></p>
         <p>Combine an icon with text content.</p>
-      </x-combo-icon>
+      </x-icon-combo>
     </div>
     <x-card size="sm" class="margin-top--20">
       <div>
@@ -94,14 +94,14 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-combo-icon
+        &lt;x-icon-combo
           <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
           <span v-if="currentIconAs !== defaults.iconAs">iconAs="{{currentIconAs}}"</span>
           <span v-if="currentIconSize !== defaults.iconSize">iconSize="{{currentIconSize}}"</span>
           <span v-if="currentIcon">icon="{{currentIcon}}"</span>
           <span v-if="currentBrand">brand="{{currentBrand}}"</span>&gt;<br>
           &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
-        &lt;/x-combo-icon&gt;
+        &lt;/x-icon-combo&gt;
       </x-code>
     </div>
   </div>

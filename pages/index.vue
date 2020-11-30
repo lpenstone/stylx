@@ -40,22 +40,22 @@
       <x-content class="text-align--center">
         <x-grid cols="3">
           <x-grid-item>
-            <x-icon-text as="center" iconAs="secondary" brand="vuejs">
+            <x-icon-combo as="center" iconAs="secondary" brand="vuejs">
               <strong>Use with Vue</strong>
               <p>Stylx integrates into Vue.js or Nuxt.js projects</p>
-            </x-icon-text>
+            </x-icon-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-icon-text as="center" iconAs="secondary" brand="font-awesome-flag">
+            <x-icon-combo as="center" iconAs="secondary" brand="font-awesome-flag">
               <strong>Includes FontAwsome</strong>
               <p>Build your projects with access to 1000+ free icons</p>
-            </x-icon-text>
+            </x-icon-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-icon-text as="center" iconAs="secondary" icon="laptop-code">
+            <x-icon-combo as="center" iconAs="secondary" icon="laptop-code">
               <strong>Preview your elements</strong>
               <p>Style and preview your elements, and copy the generated code</p>
-            </x-icon-text>
+            </x-icon-combo>
           </x-grid-item>
         </x-grid>
       </x-content>
@@ -74,6 +74,7 @@
               @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
+            <iframe id="demo-site" src="https://www.stylx.dev/z-demo" title="demo site"/>
           </x-card>
         </x-group>
       </x-content>
@@ -183,9 +184,9 @@ export default {
   width: 100%
   max-width: 100px
 
-.responsive-iframe
+#demo-site
   width: 100%
-  height: 500px
+  height: 450px
   border: 0
 
 </style>

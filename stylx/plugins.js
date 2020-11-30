@@ -8,7 +8,7 @@ import Carousel from './components/Carousel/Carousel.vue'
 import Content from './components/Content/Content.vue'
 import Code from './components/Code/Code.vue'
 import Combo from './components/Combo/Combo.vue'
-import ComboIcon from './components/Combo-Icon/Combo-Icon.vue'
+import IconCombo from './components/Icon-Combo/Icon-Combo.vue'
 import ComboImg from './components/Combo-Img/Combo-Img.vue'
 import ComboText from './components/Combo-Text/Combo-Text.vue'
 import Form from './components/Form/Form.vue'
@@ -38,7 +38,7 @@ Vue.component('x-code', Code)
 Vue.component('x-combo', Combo)
 Vue.component('x-combo-img', ComboImg)
 Vue.component('x-combo-text', ComboText)
-Vue.component('x-combo-icon', ComboIcon)
+Vue.component('x-icon-combo', IconCombo)
 Vue.component('x-content', Content)
 Vue.component('x-form', Form)
 Vue.component('x-form-input', FormInput)

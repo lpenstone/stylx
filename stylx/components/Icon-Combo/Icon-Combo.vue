@@ -1,5 +1,5 @@
 <template>
-  <div class="combo-icon__wrap" :class="['combo-icon__wrap--' + as, 'combo-icon__wrap--' + iconSize]">
+  <div class="icon-combo__wrap" :class="['icon-combo__wrap--' + as, 'icon-combo__wrap--' + iconSize]">
     <div class="icon__wrap" :class="['icon__wrap--' + as, {'center-padding': iconAs === 'standard'}]">
       <x-icon :as="iconAs" :size="iconSize" :icon="icon" :brand="brand"/>
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Combo-Icon',
+  name: 'Icon-Combo',
   props: {
     as: {
       type: String,
@@ -38,4 +38,4 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus" src="./Combo-Icon.styl">
+<style scoped lang="stylus" src="./Icon-Combo.styl">

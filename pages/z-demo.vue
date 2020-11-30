@@ -1,22 +1,55 @@
 <template>
   <div>
     <x-section>
-      <x-content class="text-align--center">
+      <p class="h3 text-align--center">Canadian Destinations</p>
+      <x-card class="margin-top--30" size="sm">
         <x-grid cols="2">
           <x-grid-item>
-            <x-icon-text as="left" iconAs="secondary" brand="vuejs">
-              <strong>Use with Vue</strong>
-              <p>Stylx integrates into Vue.js or Nuxt.js projects</p>
-            </x-icon-text>
+            <x-combo as="circle" size="md">
+              <x-combo-img>
+                <img src="~@/assets/images/sample1.png" alt="">
+              </x-combo-img>
+              <x-combo-text>
+                <p><strong>Newfoundland</strong></p>
+                <p>Discover the beauty of the Canadian East coast. Explore quaint towns or walk along the Ocean.</p>
+              </x-combo-text>
+            </x-combo>
           </x-grid-item>
           <x-grid-item>
-            <x-icon-text as="left" iconAs="secondary" brand="font-awesome-flag">
-              <strong>Includes FontAwsome</strong>
-              <p>Build your projects with access to 1000+ free icons</p>
-            </x-icon-text>
+            <x-combo as="circle" size="md">
+              <x-combo-img>
+                <img src="~@/assets/images/sample2.png" alt="">
+              </x-combo-img>
+              <x-combo-text>
+                <p><strong>British Columbia</strong></p>
+                <p>Out on the West side of Canada, there are mountains to climb and forests with thousand year old trees.</p>
+              </x-combo-text>
+            </x-combo>
+          </x-grid-item>
+          <x-grid-item>
+            <x-combo as="circle" size="md">
+              <x-combo-img>
+                <img src="~@/assets/images/sample3.png" alt="">
+              </x-combo-img>
+              <x-combo-text>
+                <p><strong>Ontario</strong></p>
+                <p>Visit Toronto, Ontario if you're looking for a multicultural hub with some of the best restaurants in the country.</p>
+              </x-combo-text>
+            </x-combo>
+          </x-grid-item>
+          <x-grid-item>
+            <x-combo as="circle" size="md">
+              <x-combo-img>
+                <img src="~@/assets/images/sample4.png" alt="">
+              </x-combo-img>
+              <x-combo-text>
+                <p><strong>Alberta</strong></p>
+                <p>Offering some of Canada's most picturesque landscapes, Alberta is home to well known gems, such as Banff.</p>
+              </x-combo-text>
+            </x-combo>
           </x-grid-item>
         </x-grid>
-      </x-content>
+      </x-card>
     </x-section>
   </div>
 </template>

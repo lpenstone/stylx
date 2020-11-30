@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Combo #1</h4>
+    <h4>Combo</h4>
     <div class="margin-top--30">
       <x-combo :as="currentAs" :size="currentSize">
         <x-combo-img>

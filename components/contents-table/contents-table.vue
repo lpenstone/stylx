@@ -6,8 +6,8 @@
         <li><x-link @click="clicked()" as="plain" href="#button">Button</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#link">Link</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#icon">Icon</x-link></li>
-        <li><x-link @click="clicked()" as="plain" href="#wrap">Wrap</x-link></li>
-        <li><x-link @click="clicked()" as="plain" href="#icon-and-text">Icon &amp; Text</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#combo">Combo</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#icon-combo">Icon combo</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#accordion">Accordion</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#see-more">See more toggle</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#tag">Tag</x-link></li>

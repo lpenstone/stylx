@@ -44,11 +44,11 @@
         <x-card as="shadow" id="icon" class="margin-top--30">
           <preview-icon></preview-icon>
         </x-card>
-        <x-card as="shadow" id="wrap" class="margin-top--30">
+        <x-card as="shadow" id="combo" class="margin-top--30">
           <preview-combo></preview-combo>
         </x-card>
-        <x-card as="shadow" id="icon-and-text" class="margin-top--30">
-          <preview-combo-icon></preview-combo-icon>
+        <x-card as="shadow" id="icon-combo" class="margin-top--30">
+          <preview-icon-combo></preview-icon-combo>
         </x-card>
         <x-card as="shadow" id="accordion" class="margin-top--30">
           <preview-accordion></preview-accordion>
@@ -154,7 +154,7 @@ import previewGrid from '../components/preview-grid/preview-grid'
 import previewModal from '../components/preview-modal/preview-modal'
 import previewSeeMore from '../components/preview-see-more/preview-see-more'
 import previewCombo from '../components/preview-combo/preview-combo'
-import previewComboIcon from '../components/preview-combo-icon/preview-combo-icon'
+import previewIconCombo from '../components/preview-icon-combo/preview-icon-combo'
 
 
 
@@ -171,7 +171,7 @@ export default {
     'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-icon': previewIcon,
-    'preview-combo-icon': previewComboIcon,
+    'preview-icon-combo': previewIconCombo,
     'preview-accordion': previewAccordion,
     'preview-carousel': previewCarousel,
     'preview-gallery': previewGallery,

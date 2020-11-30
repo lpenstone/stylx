@@ -1,5 +1,5 @@
 <template>
-  <div ref="combo" class="combo__wrap" :class="['combo__wrap--' + asClass, 'combo__wrap--' + size, {'wrap__img--landscape': isLandscape}, {'combo__wrap--center': isCenter}]">
+  <div ref="combo" class="combo__wrap" :class="['combo__wrap--' + asClass, 'combo__wrap--' + size, {'combo__img--landscape': isLandscape}, {'combo__wrap--center': isCenter}]">
     <slot></slot>
   </div>
 </template>
