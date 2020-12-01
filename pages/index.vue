@@ -234,13 +234,13 @@ export default {
     this.getMaxWidth()
     window.addEventListener('resize', this.getMaxWidth)
     this.$refs.resize.addEventListener('touchstart', this.mobileStart, true)
-    this.setSizeClass()
   },
   methods: {
     getMaxWidth: function () {
       let elWidth = this.$refs.resizeContainer.$el.clientWidth
       this.maxWidth = 0.85 * elWidth
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
+      this.setSizeClass()
     },
     start: function (e) {
       this.x1 = e.screenX
