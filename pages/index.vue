@@ -88,22 +88,25 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section size="lg">
+    <x-section>
       <div class="circle-decor circle-decor--3"></div>
       <div class="circle-decor circle-decor--4"></div>
       <x-content ref="resizeContainer">
         <h2 class="h3 text-align--center">Toggle dark mode</h2>
-        <x-grid cols="2" class="margin-top--40">
-          <x-grid-item class="text-align--center">
-            <x-button size="lg" icon="lightbulb" @click="toggleMode()">Turn {{darkMode? 'on': 'off'}} the lights</x-button>
-          </x-grid-item>
-          <x-grid-item>
-            <div id="dark-mode--hidden">
-              <h3 class="heading--accent">That's better!</h3>
+        <x-group as="center" size="sm" class="text-align--center margin-top--50">
+          <x-button size="lg" icon="lightbulb" @click="toggleMode()">Turn {{darkMode? 'on': 'off'}} the lights</x-button>
+          <div class="margin-top--30">
+            <p v-if="!darkMode">Sometimes you can see better in the dark...</p>
+            <div v-else>
+              <p class="h3 heading--accent">Boo!</p>
               <p>Within your custom configuration, you can enable a toggle between light and dark modes. You can also set dark mode as the default.</p>
             </div>
-          </x-grid-item>
-        </x-grid>
+          </div>
+          <!-- <div id="dark-mode--hidden" class="margin-top--30">
+            <h3 class="heading--accent">That's better!</h3>
+            <p>Within your custom configuration, you can enable a toggle between light and dark modes. You can also set dark mode as the default.</p>
+          </div> -->
+        </x-group>
       </x-content>
     </x-section>
     <x-section>
