@@ -123,7 +123,7 @@
             <x-card id="browser-demo"
               :as="demoClass"
               size="md"
-              :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">            
+              :style="`width: ${demoWidth}px;`">            
               <p class="h4 text-align--center heading--title">7-day weather forecast</p>
               <div class="demo__wrap margin-top--20">
                 <div class="icon-combo__wrap" :class="'icon-combo__wrap--' + sizeClass">
