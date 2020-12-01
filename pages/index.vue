@@ -285,6 +285,7 @@ export default {
     setSizeClass: function () {
       if (this.demoWidth < 271) {
         this.demoClass = "phone-shadow"
+        this.sizeClass = "sm"
       } else if (this.demoWidth < 500) {
         this.demoClass = "browser-shadow"
         this.sizeClass = "sm"
