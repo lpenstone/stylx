@@ -5,7 +5,15 @@
       <div class="browser__circle browser__circle--yellow"/>
       <div class="browser__circle browser__circle--green"/>
     </div>
-    <slot></slot>
+    <div v-if="as.indexOf('phone') > -1" class="card__phone-bar">
+      <div class="phone__speaker"/>
+    </div>
+    <div class="card__content">
+      <slot></slot>
+    </div>
+    <div v-if="as.indexOf('phone') > -1" class="card__phone-footer">
+      <div class="phone__btn"/>
+    </div>
   </div>
 </template>
 

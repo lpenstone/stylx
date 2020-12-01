@@ -36,7 +36,7 @@
           <x-grid-item>
             <x-icon-combo as="center" iconAs="secondary" icon="code">
               <strong>Markup only</strong>
-              <p>Build beautiful projects without every touching CSS</p>
+              <p>Build beautiful projects without ever touching CSS</p>
             </x-icon-combo>
           </x-grid-item>
         </x-grid>
@@ -88,7 +88,7 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section>
+    <x-section size="lg">
       <div class="circle-decor circle-decor--3"></div>
       <div class="circle-decor circle-decor--4"></div>
       <x-content ref="resizeContainer">
@@ -102,10 +102,6 @@
               <p>Within your custom configuration, you can enable a toggle between light and dark modes. You can also set dark mode as the default.</p>
             </div>
           </div>
-          <!-- <div id="dark-mode--hidden" class="margin-top--30">
-            <h3 class="heading--accent">That's better!</h3>
-            <p>Within your custom configuration, you can enable a toggle between light and dark modes. You can also set dark mode as the default.</p>
-          </div> -->
         </x-group>
       </x-content>
     </x-section>
@@ -125,7 +121,7 @@
               <x-icon icon="arrows-alt-h"/>
             </button>
             <x-card id="browser-demo"
-              as="browser-shadow"
+              :as="demoClass"
               size="md"
               :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">            
               <p class="h4 text-align--center heading--title">7-day weather forecast</p>
@@ -201,6 +197,14 @@
         </x-group>
       </x-content>
     </x-section>
+    <x-section as="brand-light">
+      <x-content class="text-align--center">
+        <h2 class="h3">Ready to start building with Stylx?</h2>
+        <div class="margin-top--40">
+          <x-link as="standard" size="lg" :to="{name: 'docs'}">Let's go!</x-link>
+        </div>
+      </x-content>
+    </x-section>
   </div>
 </template>
 
@@ -211,13 +215,14 @@ export default {
     return {
       demoWidth: 900,
       maxWidth: 1000,
-      minWidth: 340,
+      minWidth: 260,
       timer: null,
       x1: 0,
       x2: 0,
       currentAs: 'link-alt',
       currentSize: 'lg',
-      sizeClass: 'lg'
+      sizeClass: 'lg',
+      demoClass: 'browser-shadow'
     }
   },
   computed: {
@@ -278,7 +283,10 @@ export default {
       this.$refs.resize.removeEventListener('touchend', this.stop, true)
     },
     setSizeClass: function () {
-      if (this.demoWidth < 500) {
+      if (this.demoWidth < 271) {
+        this.demoClass = "phone-shadow"
+      } else if (this.demoWidth < 500) {
+        this.demoClass = "browser-shadow"
         this.sizeClass = "sm"
       } else if (this.demoWidth < 700) {
         this.sizeClass = "md"
@@ -300,7 +308,7 @@ export default {
 @import '~@/assets/styles/variables'
 
 #browser-demo
-  max-height: 450px
+  max-height: 510px
 
 .icon-combo__wrap
   display: flex
@@ -382,8 +390,8 @@ export default {
     background-color: $brand
 
   &.circle-decor--3
-    width: 300px
-    height: 300px
+    width: 270px
+    height: 270px
     left: 10%
     top: 50px
     background-color: $secondary

@@ -9,7 +9,53 @@
   background-color: $card-standard
   box-shadow: 0px 0px 8px rgba(0,0,0,0.2)
 
-.card--browser-shadow
+.card--phone, .card--phone-shadow
+  border: 4px solid darken($med-grey, 20%)
+  border-radius: 25px
+  overflow: hidden
+  max-width: 270px
+
+  .card__content
+    height: 400px
+    overflow: hidden
+
+  .card__phone-bar, .card__phone-footer
+    width: 100%
+    height: 50px
+    background-color: darken($med-grey, 20%)
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 10px
+
+  .phone__speaker
+    width: 50px
+    height: 5px
+    border-radius: 10px
+    background-color: white
+    opacity: 0.5
+
+  .phone__btn
+    width: 38px
+    height: 38px
+    border: 3px solid white
+    border-radius: 50%
+    opacity: 0.5
+
+  &.card--sm
+    .card__content
+      padding: 0
+
+  &.card--md
+    .card__content
+      padding: 15px 10px
+
+  &.card--lg
+    .card__content
+      padding: 20px 15px
+
+
+.card--browser-shadow, .card--phone-shadow
   box-shadow: 0px 0px 8px rgba(0,0,0,0.4)
 
 .card--browser, .card--browser-shadow
@@ -17,22 +63,12 @@
   overflow: hidden
 
   &.card--sm
-    padding: 0
-    padding-top: 40px
-
-  &.card--md
-    padding-top: 70px
-
-  &.card--lg
-    padding-top: 90px
-
+    .card__content
+      padding: 0
 
   .card__browser-bar
-    position: absolute 
     width: 100%
     height: 40px
-    top: 0
-    left: 0
     background-color: darken($med-grey, 20%)
     display: flex
     align-items: center
@@ -66,13 +102,16 @@
     box-shadow: 0px 0px 8px rgba(0,0,0,0.8)
 
 .card--sm
-  padding: 20px 15px
+  .card__content
+    padding: 20px 15px
 
 .card--md
-  padding: 30px
+  .card__content
+    padding: 30px
 
 .card--lg
-  padding: 40px 60px
+  .card__content
+    padding: 40px 60px
 
 @media(max-width: 767px)
   .card--sm, .card--md, .card--lg

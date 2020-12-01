@@ -24,6 +24,8 @@
           <x-button size="sm" @click="setAs('shadow')" :selected="currentAs === 'shadow'">shadow</x-button>
           <x-button size="sm" @click="setAs('browser')" :selected="currentAs === 'browser'">browser</x-button>
           <x-button size="sm" @click="setAs('browser-shadow')" :selected="currentAs === 'browser-shadow'">browser-shadow</x-button>
+          <x-button size="sm" @click="setAs('phone')" :selected="currentAs === 'phone'">phone</x-button>
+          <x-button size="sm" @click="setAs('phone-shadow')" :selected="currentAs === 'phone-shadow'">phone-shadow</x-button>
         </div>
       </div>
       <div class="margin-top--30">
