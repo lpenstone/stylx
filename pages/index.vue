@@ -123,9 +123,76 @@
             </button>
             <x-card id="browser-demo"
               as="browser-shadow"
-              size="sm"
-              :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">
-              <iframe id="demo-site" src="https://www.stylx.dev/z-demo" scrolling="no" title="demo site"/>
+              size="md"
+              :style="`width: ${demoWidth}px; max-width: 100%; min-width: 300px`">            
+              <p class="h4 text-align--center heading--title">7-day weather forecast</p>
+              <div class="demo__wrap margin-top--20">
+                <div class="icon-combo__wrap" :class="'icon-combo__wrap--' + sizeClass">
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="cloud-showers-heavy"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Monday</p>
+                      <p>Heavy showers into the night.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="cloud-meatball"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Tuesday</p>
+                      <p>Cloudy with a chance of meatballs.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="cloud-sun"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Wednesday</p>
+                      <p>Sunny with overcast.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="sun"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Thursday</p>
+                      <p>Sunny with above-seasonal temperatures.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="snowflake"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Friday</p>
+                      <p>Expected 50cm of snow. Welcome to Canada.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="sun"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Saturday</p>
+                      <p>Sunny with above-seasonal temperatures.</p>
+                    </div>
+                  </div>
+                  <div class="icon-combo">
+                    <div class="icon-wrap">
+                      <x-icon as="brand-alt" icon="cloud"/>
+                    </div>
+                    <div class="text__wrap">
+                      <p class="h5 heading--accent">Sunday</p>
+                      <p>Heavy overcast.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </x-card>
           </div>
         </x-group>
@@ -146,7 +213,8 @@ export default {
       x1: 0,
       x2: 0,
       currentAs: 'link-alt',
-      currentSize: 'lg'
+      currentSize: 'lg',
+      sizeClass: 'lg'
     }
   },
   computed: {
@@ -158,6 +226,7 @@ export default {
     this.getMaxWidth()
     window.addEventListener('resize', this.getMaxWidth)
     this.$refs.resize.addEventListener('touchstart', this.mobileStart, true)
+    this.setSizeClass()
   },
   methods: {
     getMaxWidth: function () {
@@ -179,6 +248,7 @@ export default {
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
       if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth
       this.x1 = this.x2
+      this.setSizeClass()
     },
     mobileStart: function (e) {
       this.x1 = parseInt(e.touches[0].screenX)
@@ -195,6 +265,7 @@ export default {
       if (this.demoWidth > this.maxWidth) this.demoWidth = this.maxWidth
       if (this.demoWidth < this.minWidth) this.demoWidth = this.minWidth
       this.x1 = this.x2
+      this.setSizeClass()
     },
     stop: function (e) {
       window.removeEventListener('mousemove', this.resize)
@@ -202,6 +273,15 @@ export default {
 
       this.$refs.resize.removeEventListener('touchmove', this.resize, true)
       this.$refs.resize.removeEventListener('touchend', this.stop, true)
+    },
+    setSizeClass: function () {
+      if (this.demoWidth < 500) {
+        this.sizeClass = "sm"
+      } else if (this.demoWidth < 700) {
+        this.sizeClass = "md"
+      } else {
+        this.sizeClass = "lg"
+      }
     },
     toggleMode: function () {
       this.$store.commit('toggleMode')
@@ -216,9 +296,51 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
 
+#browser-demo
+  max-height: 450px
+
+.icon-combo__wrap
+  display: flex
+  flex-wrap: wrap
+
+.icon-combo
+  font-size: 0.9em
+  display: flex
+  margin: 10px 0
+
+  .icon__wrap
+    width: 40px
+    display: flex
+    justify-content: center
+
+  .text__wrap
+    margin: 0 10px
+
 .demo-window__wrap
   display: inline-block
   position: relative
+
+.icon-combo__wrap--lg
+  .icon-combo
+    width: 33.33%
+
+.icon-combo__wrap--md
+  .icon-combo
+    width: 50%
+
+.icon-combo__wrap--sm
+  .icon-combo
+    width: 100%
+    flex-direction: column
+    align-items: center
+
+  .icon__wrap
+    margin-bottom: 10px
+
+  .text__wrap
+    text-align: center
+
+// RESPONSIVE
 
 #responsive--hidden
   position: absolute
