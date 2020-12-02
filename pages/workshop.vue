@@ -31,10 +31,10 @@
             <h2 class="h4 text-align--center">Details</h2>
             <div class="margin-top--20">
               <p>
-                <strong><x-icon icon="hand-holding-usd"/> Cost:</strong>
+                <strong><x-icon icon="hand-holding-usd" size="sm"/> Cost:</strong>
                 $30
               </p>
-              <x-see-more label="About the fee">
+              <!-- <x-see-more label="About the fee">
                 <p>The fee goes towards:</p>
                 <ul>
                   <li>Ensuring that the instructors get an industry-standard wage</li>
@@ -42,7 +42,7 @@
                   <li>Compensate the Stylx team so that it can remain as a maintained, open source (free) tool beyond the course.</li>
                   <li>Domain and other fees to keep the Stylx site running</li>
                 </ul>
-              </x-see-more>
+              </x-see-more> -->
               <p class="margin-top--10">
                 <strong><x-icon icon="map-marker-alt" size="sm"/> Location:</strong>
                 Remote via Zoom
@@ -58,17 +58,35 @@
               <p class="margin-top--10">
                 <strong><x-icon icon="chalkboard-teacher" size="sm"/> Instructor(s):</strong>
                 Laura P.
-                <x-see-more label="About Laura">
+                <!-- <x-see-more label="About Laura">
                   <ul>
                     <li>Laura has over 3 years experience as a frontend developer, working on websites seen by 100k+ people daily.</li>
                     <li>She also has over a year's experience teaching at one of Canada's leading tech education companies.</li>
                     <li>(She also built Stylx)</li>
                   </ul>
-                </x-see-more>
+                </x-see-more> -->
               </p>
-              <p class="margin-top--20">
-                The makers of Stylx believe building websites should be accessible to everyone. If you are unable to pay the $30 door fee, please reach out and we will accommodate.
-              </p>
+              <div class="margin-top--20">
+                <x-accordion as="minimal" label="More about the workshop fee">
+                  <p>The fee goes towards:</p>
+                  <ul>
+                    <li>Ensuring that the instructors get an industry-standard wage</li>
+                    <li>Zoom license fee</li>
+                    <li>Compensate the Stylx team so that it can remain as a maintained, open source (free) tool beyond the course.</li>
+                    <li>Domain and other fees to keep the Stylx site running</li>
+                  </ul>
+                  <p class="margin-top--10">
+                    The makers of Stylx believe building websites should be accessible to everyone. If you are unable to pay the $30 door fee, please reach out and we will accommodate.
+                  </p>
+                </x-accordion>
+                <x-accordion as="minimal" label="Learn more about the instructor">
+                  <ul>
+                    <li>Laura has over 3 years experience as a frontend developer, working on websites seen by 100k+ people daily.</li>
+                    <li>She also has over a year's experience teaching at one of Canada's leading tech education companies.</li>
+                    <li>(She also built Stylx)</li>
+                  </ul>
+                </x-accordion>
+              </div>
             </div>
           </x-card>
           <div class="margin-top--50">

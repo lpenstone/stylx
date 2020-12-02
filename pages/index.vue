@@ -4,7 +4,7 @@
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <img class="logo margin-bottom--30" src="~@/assets/images/stylx_logo.png" alt="">
-          <h1 class="margin-bottom--30">Stylx UI framework</h1>
+          <h1 class="margin-bottom--30">Stylx UI library</h1>
           <p class="heading--title margin-bottom--10">The essential development tool for building beautiful UI's fast</p>
           <p>(without a designer)</p>
           <div class="margin-top--40">

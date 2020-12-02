@@ -16,6 +16,7 @@
         <div class="margin-top--10">
           <strong>values:</strong>
           <x-button size="sm" @click="setAs('standard')" :selected="currentAs === 'standard'">standard</x-button>
+          <x-button size="sm" @click="setAs('minimal')" :selected="currentAs === 'minimal'">minimal</x-button>
         </div>
       </div>
       <div class="margin-top--30">

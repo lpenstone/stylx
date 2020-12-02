@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion" :class="[{'accordion--expanded': isExpanded}, 'accordion--' + size]">
+  <div class="accordion" :class="[{'accordion--expanded': isExpanded}, 'accordion--' + as, 'accordion--' + size]">
     <button class="accordion__label" @click="isExpanded = !isExpanded">
       {{label}}
     </button>
@@ -17,7 +17,7 @@ export default {
   props: {
     as: {
       type: String,
-      default: 'link'
+      default: 'standard'
     },
     size: {
       type: String,
