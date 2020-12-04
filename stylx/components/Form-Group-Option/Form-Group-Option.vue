@@ -3,8 +3,10 @@
   <div v-else class="input__wrap">
     <label class="input__label" :for="name">{{label}}
       <input class="input__item"
+        v-model="model"
         :type="inputType"
         :name="groupName"
+        :value="name"
         :id="name">
       <span class="input__selector"
         :class="'input__selector--' + inputType"></span>
@@ -33,7 +35,9 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      model: ''
+    }
   },
   computed: {
     inputType: function () {
@@ -42,8 +46,17 @@ export default {
     groupName: function () {
       return this.$parent._props.name
     }
+  },
+  watch: {
+    model: function (value) {
+      if (this.inputType === 'checkbox') {
+        this.$parent.$emit('modelCheckBox', {name: this.name, value: value})
+      } else {
+        this.$parent.$emit('model', value)
+      }
+    }
   }
 }
 </script>
 
-<style scoped lang="stylus" src="./Form-Group-Input.styl">
+<style scoped lang="stylus" src="./Form-Group-Option.styl">

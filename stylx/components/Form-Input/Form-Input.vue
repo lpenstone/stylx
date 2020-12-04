@@ -1,6 +1,9 @@
 <template>
   <div class="input__wrap">
-    <label v-if="label" class="input__label" :for="name">{{label}}</label>
+    <label v-if="label"
+      class="input__label"
+      :class="{'input__label--error': !valid}"
+      :for="name">{{label}}</label>
     <textarea v-if="inputType === 'textarea'"
       v-model="model"
       :class="['input__item', 'input__item--' + size]"
@@ -16,6 +19,9 @@
       :name="name"
       :id="name"
       :placeholder="placeholder">
+    <div v-if="!valid" class="error__wrap">
+      <p>{{error}}</p>
+    </div>
   </div>
 </template>
 
@@ -44,6 +50,14 @@ export default {
     },
     placeholder: {
       type: String
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: String,
+      default: 'This is a required field'
     }
   },
   data () {
@@ -54,6 +68,10 @@ export default {
   computed: {
     inputType: function () {
       return this.type || this.as
+    },
+    valid: function () {
+      if (this.required) return !!this.model
+      return true
     }
   },
   methods: {

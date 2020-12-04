@@ -1,5 +1,25 @@
 @import '~@/assets/styles/variables'
 
+.error__wrap
+  display: none
+  border-bottom: 2px solid $error
+  color: $error
+  margin-bottom: 30px
+  font-size: 0.9em
+
+  p:last-of-type
+    margin-bottom: 0
+
+.form--errors
+  .error__wrap
+    display: block
+
+  .select__label--error
+    color: $error
+
+  .group__legend--error
+    color: $error
+
 .select__wrap
   position: relative
   margin-bottom: 10px

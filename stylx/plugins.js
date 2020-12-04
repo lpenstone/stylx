@@ -14,7 +14,7 @@ import ComboText from './components/Combo-Text/Combo-Text.vue'
 import Form from './components/Form/Form.vue'
 import FormInput from './components/Form-Input/Form-Input.vue'
 import FormGroup from './components/Form-Group/Form-Group.vue'
-import FormGroupInput from './components/Form-Group-Input/Form-Group-Input.vue'
+import FormGroupOption from './components/Form-Group-Option/Form-Group-Option.vue'
 import Group from './components/Group/Group.vue'
 import Icon from './components/Icon/Icon.vue'
 import Item from './components/Item/Item.vue'
@@ -43,7 +43,7 @@ Vue.component('x-content', Content)
 Vue.component('x-form', Form)
 Vue.component('x-form-input', FormInput)
 Vue.component('x-form-group', FormGroup)
-Vue.component('x-form-group-input', FormGroupInput)
+Vue.component('x-form-group-option', FormGroupOption)
 Vue.component('x-grid', Grid)
 Vue.component('x-grid-item', Item)
 Vue.component('x-group', Group)

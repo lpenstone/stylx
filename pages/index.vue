@@ -197,7 +197,7 @@
         </x-group>
       </x-content>
     </x-section>
-    <x-section as="brand-light">
+    <x-section as="brand-light" size="lg">
       <x-content class="text-align--center">
         <h2 class="h3">Ready to start building with Stylx?</h2>
         <div class="margin-top--40">
