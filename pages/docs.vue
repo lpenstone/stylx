@@ -1,13 +1,13 @@
 <template>
   <div>
-    <x-section as="hero">
+    <!-- <x-section as="hero">
       <x-content class="text-align--center">
-        <h1>Stylx Documentation</h1>
+        <h1>Stylx</h1>
       </x-content>
-    </x-section>
+    </x-section> -->
     <x-section>
       <x-content >
-        <h2 class="h3">Getting started</h2>
+        <h1 class="h3">Getting started with Stylx</h1>
         <p>If you are just starting out and don't have a development environment set up on your local machine, try <x-link href="#fork">forking the Stylx scaffold</x-link>.
         <div class="margin-top--60">
           <h3 class="h4">Installation with npm</h3>

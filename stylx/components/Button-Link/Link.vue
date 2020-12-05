@@ -3,19 +3,19 @@
     @click="clicked()"
     v-if="to"
     :to="to"
-    :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]" 
+    class="btn"
+    :class="['btn--' + as , ' btn--' + size]" 
     :aria-label="as === 'icon' ? icon || brand : false">
-    <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
-    <i v-else-if="brand" :class="['fab', 'fa-' + brand, 'fa-' + size]"></i>
-    <slot></slot>
+    <i v-if="icon" class="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"/>
+    <i v-else-if="brand" class="icon" :class="['fab', 'fa-' + brand, 'fa-' + size]"/><slot></slot>
   </router-link>
   <a v-else-if="href"
     @click="clicked()"
-    :href="href" :class="[{'btn': btn}, 'btn btn--' + as , ' btn--' + size]"
+    class="btn"
+    :href="href" :class="['btn--' + as , ' btn--' + size]"
     :aria-label="as === 'icon' ? icon || brand : false">
-    <i v-if="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"></i>
-    <i v-else-if="brand" :class="['fab', 'fa-' + brand, 'fa-' + size]"></i>
-    <slot></slot>
+    <i v-if="icon" class="icon" :class="['fa', 'fa-' + icon, 'fa-' + size]"/>
+    <i v-else-if="brand" class="icon" :class="['fab', 'fa-' + brand, 'fa-' + size]"/><slot></slot>
   </a>
 </template>
 
@@ -46,11 +46,6 @@ export default {
   },
   data () {
     return {}
-  },
-  computed: {
-    btn: function () {
-      return this.as !== 'link'
-    }
   },
   methods: {
     clicked: function (config) {
