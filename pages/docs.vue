@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- <x-section as="hero">
-      <x-content class="text-align--center">
-        <h1>Stylx</h1>
-      </x-content>
-    </x-section> -->
     <x-section>
       <x-content >
         <h1 class="h3">Getting started with Stylx</h1>
