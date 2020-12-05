@@ -2,22 +2,30 @@
   <div>
     <div v-if="inputType === 'select'" class="select__wrap">
       <label :for="name" class="select__label" :class="{'select__label--error': !valid}">{{label}}</label>
-      <select
-        :id="name"
-        :name="name"
-        v-model="model"
-        class="select">
-        <x-form-group-option name="default" label="Select" selected disabled />
-        <slot></slot>
-      </select>
+      <div class="select-caret__wrap">
+        <select
+          :id="name"
+          :name="name"
+          v-model="model"
+          class="select"
+          :class="{'select--error': !valid}">
+          <x-form-group-option name="default" label="Select" selected disabled />
+          <slot></slot>
+        </select>
+      </div>
+      <div v-if="!valid" class="error__wrap">
+        <p>{{error}}</p>
+      </div>
     </div>
     <fieldset v-else class="group__fieldset">
       <legend class="group__legend" :class="{'group__legend--error': !valid}">{{label}}</legend>
-      <slot></slot>
+      <div>
+        <slot></slot>
+      </div>
+      <div v-if="!valid" class="error__wrap">
+        <p>{{error}}</p>
+      </div>
     </fieldset>
-    <div v-if="!valid" class="error__wrap">
-      <p>{{error}}</p>
-    </div>
   </div>
 </template>
 

@@ -53,9 +53,7 @@
       <div class="margin-top--20">
         <x-tag as="secondary">name</x-tag> <em>*required</em>
         <x-group size="sm" class="margin-top--10">
-          <x-form>
-            <x-form-input name="name-text" size="sm" @model="setName($event)" as=text :placeholder="currentName"></x-form-input>
-          </x-form>
+          <x-form-input name="name-text" size="sm" @model="setName($event)" as=text :placeholder="currentName"/>
         </x-group>
         <p class="margin-top--10">Choose a unique name for your section. No spaces, use hyphens.</p>  
       </div>
@@ -66,9 +64,7 @@
       <div class="margin-top--20">
         <x-tag as="secondary">img src</x-tag> <em>*required</em>
         <x-group size="sm" class="margin-top--10">
-          <x-form>
-            <x-form-input name="src-text" size="sm" @model="setSrc($event)" as=text :placeholder="currentSrc"></x-form-input>
-          </x-form>
+          <x-form-input name="src-text" size="sm" @model="setSrc($event)" as=text :placeholder="currentSrc"/>
         </x-group>
       </div>
     </x-card>

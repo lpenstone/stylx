@@ -48,9 +48,7 @@
           <x-button size="sm" @click="setIcon('clock')" :selected="currentIcon === 'clock'">clock</x-button>
           <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank"> &amp; others...</x-link>
           <x-group size="sm" class="margin-top--10">
-            <x-form>
-              <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"></x-form-input>
-            </x-form>
+            <x-form-input ref="iconInput" name="icon-text" size="sm" @model="setIcon($event)" as=text placeholder="other"/>
           </x-group>
           <p class="margin-top--10">You can include an icon from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free" target="_blank">View available icons</x-link></p>
         </div>
@@ -66,9 +64,7 @@
           <x-button size="sm" @click="setBrand('dribbble')" :selected="currentBrand === 'dribbble'">dribbble</x-button>
           <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">&amp; others...</x-link>
           <x-group size="sm" class="margin-top--10">
-            <x-form>
-              <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"></x-form-input>
-            </x-form>
+            <x-form-input ref="brandInput" name="brand-text" size="sm" @model="setBrand($event)" as=text placeholder="other"/>
           </x-group>
           <p class="margin-top--10">You can include a brand from a long list by FontAwesome. <x-link href="https://fontawesome.com/icons?d=gallery&s=brands&m=free" target="_blank">View available brands</x-link></p>
         </div>

@@ -10,9 +10,7 @@
       <div>
         <h5>Tag text</h5>
         <x-group size="sm">
-          <x-form>
-            <x-form-input @model="currentText = $event" name="button-text" as=text :placeholder="currentText"></x-form-input>
-          </x-form>
+          <x-form-input @model="currentText = $event" name="button-text" as=text :placeholder="currentText"/>
         </x-group>
       </div>
       <div class="margin-top--30">
@@ -29,9 +27,7 @@
           <x-button size="sm" @click="setAs('green')" :selected="currentAs === 'green'">green</x-button>
           <x-button size="sm" @click="setAs('#000000')" :selected="currentAs === '#000000'">#000000</x-button>
           <x-group size="sm" class="margin-top--10">
-            <x-form>
-              <x-form-input name="as-text" size="sm" @model="setAs($event)" as=text placeholder="CSS color"></x-form-input>
-            </x-form>
+            <x-form-input name="as-text" size="sm" @model="setAs($event)" as=text placeholder="CSS color"/>
           </x-group>
           <p class="margin-top--10">You are able to set the "as" attribute to any CSS colour: name, HEX value, RGB value, etc.</p>
         </div>

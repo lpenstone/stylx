@@ -1,9 +1,11 @@
 @import '~@/assets/styles/variables'
 
+$input-size = 18px
+
 .input__wrap
   display: flex
   align-items: center
-  margin-bottom: 10px
+  margin-bottom: 8px
 
   &:last-of-type
     margin-bottom: 0
@@ -13,7 +15,7 @@
   font-size: 1.0em
   display: inline-block
   position: relative
-  padding-left: 35px
+  padding-left: 30px
   cursor: pointer
   -webkit-user-select: none
   -moz-user-select: none
@@ -31,7 +33,7 @@
   font-size: 1.0em
   padding: 0
   margin: 0
-  margin-right: 10px
+  margin-right: 6px
   position: absolute
   opacity: 0
   cursor: pointer
@@ -52,10 +54,10 @@
 
 .input__selector
   position: absolute
-  top: 0
   left: 0
-  height: 25px
-  width: 25px
+  top: 3px
+  height: $input-size
+  width: $input-size
   border-radius: 3px
   background-color: $form-selector
 
@@ -65,12 +67,13 @@
   &:after
     display: none
     content: "\2714"
+    font-size: 14px
     position: absolute
     left: 0px
-    top: 0px
+    bottom: 4px
     color: white
-    width: 25px
-    height: 25px
+    width: $input-size
+    height: $input-size
     text-align: center
 
 

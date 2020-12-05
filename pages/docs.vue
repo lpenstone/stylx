@@ -66,9 +66,9 @@
                   <ol>
                     <li>If you don't have one already, <x-link href="https://github.com/join" icon="external-link-alt">Create a Github account</x-link></li>
                     <li>Fork the <x-link href="https://github.com/lpenstone/stylx-scaffold" icon="external-link-alt">Stylx scaffold</x-link>. The <x-tag as="#555555"><x-icon size="sm" icon="code-branch"/> Fork</x-tag> button is in the top right corner of the window. You will be redirected to your cloned version of the Stylx repo. Copy the URL of this page.</li>
-                    <x-form class="margin-top--10 margin-bottom--20">
+                    <div class="margin-top--10 margin-bottom--20">
                       <x-form-input name="url-text" size="sm" @model="setUrl($event)" as=text label="Paste the URL:" :placeholder="currentUrl"></x-form-input>
-                    </x-form>
+                    </div>
                     <li>Visit <x-link href="https://gitpod.io" icon="external-link-alt">Gitpod</x-link> and sign in by authorizing your Github account.</li>
                     <li>Copy the URL below into your browser window. It will take a few moments to load, but will ultimately open up your Gitpod workspace.</li>
                     <x-code class="margin-top--10">

@@ -29,35 +29,35 @@
     <x-section as="standard">
       <x-content>
         <h2 class="visually-hidden">Table of Contents</h2>
-        <contents-table></contents-table>
+        <contents-table/>
       </x-content>
     </x-section>
     <x-section id="content" size="lg" as="alt">
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Elements</h3>
         <x-card as="shadow" id="button">
-          <preview-button></preview-button>
+          <preview-button/>
         </x-card>
         <x-card as="shadow" id="link" class="margin-top--30">
-          <preview-link></preview-link>
+          <preview-link/>
         </x-card>
         <x-card as="shadow" id="icon" class="margin-top--30">
-          <preview-icon></preview-icon>
+          <preview-icon/>
         </x-card>
         <x-card as="shadow" id="combo" class="margin-top--30">
-          <preview-combo></preview-combo>
+          <preview-combo/>
         </x-card>
         <x-card as="shadow" id="icon-combo" class="margin-top--30">
-          <preview-icon-combo></preview-icon-combo>
+          <preview-icon-combo/>
         </x-card>
         <x-card as="shadow" id="accordion" class="margin-top--30">
-          <preview-accordion></preview-accordion>
+          <preview-accordion/>
         </x-card>
         <x-card as="shadow" id="see-more" class="margin-top--30">
-          <preview-see-more></preview-see-more>
+          <preview-see-more/>
         </x-card>
         <x-card as="shadow" id="tag" class="margin-top--30">
-          <preview-tag></preview-tag>
+          <preview-tag/>
         </x-card>
       </x-content>
     </x-section>
@@ -65,10 +65,10 @@
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Layout</h3>
         <x-card as="shadow" id="section">
-          <preview-section></preview-section>
+          <preview-section/>
         </x-card>
         <x-card as="shadow" id="img-section" class="margin-top--30">
-          <preview-img-section></preview-img-section>
+          <preview-img-section/>
         </x-card>
         <x-card as="shadow" id="content" class="margin-top--30">
           Content
@@ -77,10 +77,10 @@
           <preview-group/>
         </x-card>
         <x-card as="shadow" id="grid" class="margin-top--30">
-          <preview-grid></preview-grid>
+          <preview-grid/>
         </x-card>
         <x-card as="shadow" id="card" class="margin-top--30">
-          <preview-card></preview-card>
+          <preview-card/>
         </x-card>
       </x-content>
     </x-section>
@@ -88,13 +88,13 @@
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Interactive</h3>
         <x-card as="shadow" id="carousel" >
-          <preview-carousel></preview-carousel>
+          <preview-carousel/>
         </x-card>
         <x-card as="shadow" id="modal" class="margin-top--30">
-          <preview-modal></preview-modal>
+          <preview-modal/>
         </x-card>
         <x-card as="shadow" id="gallery" class="margin-top--30">
-          <preview-gallery></preview-gallery>
+          <preview-gallery/>
         </x-card>
       </x-content>
     </x-section>
@@ -102,7 +102,7 @@
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Forms</h3>
         <x-card as="shadow" id="form" >
-          Form
+          <preview-form/>
         </x-card>
         <x-card as="shadow" id="input" class="margin-top--30">
           Form inputs
@@ -142,6 +142,7 @@ import contentsTable from '../components/contents-table/contents-table'
 import previewButton from '../components/preview-button/preview-button'
 import previewCard from '../components/preview-card/preview-card'
 import previewSection from '../components/preview-section/preview-section'
+import previewForm from '../components/preview-form/preview-form'
 import previewGroup from '../components/preview-group/preview-group'
 import previewImgSection from '../components/preview-img-section/preview-img-section'
 import previewLink from '../components/preview-link/preview-link'
@@ -168,6 +169,7 @@ export default {
     'preview-see-more': previewSeeMore,
     'preview-section': previewSection,
     'preview-group': previewGroup,
+    'preview-form': previewForm,
     'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-icon': previewIcon,

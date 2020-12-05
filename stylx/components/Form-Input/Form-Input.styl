@@ -2,9 +2,7 @@
 
 .error__wrap
   display: none
-  border-bottom: 2px solid $error
   color: $error
-  margin-bottom: 30px
   font-size: 0.9em
 
   p:last-of-type
@@ -14,11 +12,16 @@
   .error__wrap
     display: block
 
-  .input__label--error
-    color: $error
+  .input__item--error
+    border-color: $error
+
+.optional
+  font-style: italic
+  font-weight: normal
+  opacity: 0.5
 
 .input__wrap
-  margin-bottom: 10px
+  margin-bottom: 20px
 
 .input__label
   display: inline-block
