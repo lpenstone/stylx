@@ -22,6 +22,7 @@
         <li><x-link @click="clicked()" as="plain" href="#group">Group</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#grid">Grid</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#card">Card</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#device">Device</x-link></li>
       </ul>
     </x-grid-item>
     <x-grid-item>

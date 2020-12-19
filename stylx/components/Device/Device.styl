@@ -1,0 +1,126 @@
+@import '~@/assets/styles/variables'
+
+.device
+  position: relative
+  border-radius: $size-radius
+
+.device--shadow
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2)
+
+.device--phone, .device--phone-shadow
+  border: 4px solid darken($med-grey, 20%)
+  border-radius: 25px
+  overflow: hidden
+  max-width: 270px
+
+  .device__content
+    width: 100%
+    height: 400px
+    overflow: hidden
+
+  .device__phone-bar, .device__phone-footer
+    width: 100%
+    height: 50px
+    background-color: darken($med-grey, 20%)
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 10px
+
+  .phone__speaker
+    width: 50px
+    height: 5px
+    border-radius: 10px
+    background-color: white
+    opacity: 0.5
+
+  .phone__btn
+    width: 38px
+    height: 38px
+    border: 3px solid white
+    border-radius: 50%
+    opacity: 0.5
+
+  &.device--sm
+    .device__content
+      padding: 0
+
+  &.device--md
+    .device__content
+      padding: 15px 10px
+
+  &.device--lg
+    .device__content
+      padding: 20px 15px
+
+@media(max-width: 767px)
+  .device--phone, .device--phone-shadow
+    .device--md, .device--lg
+      .device__content
+        padding: 15px 10px
+
+
+.device--browser-shadow, .device--phone-shadow
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.4)
+
+.device--browser, .device--browser-shadow
+  border: 2px solid darken($med-grey, 20%)
+  overflow: hidden
+
+  &.device--sm
+    .device__content
+      padding: 0
+
+  .device__browser-bar
+    width: 100%
+    height: 40px
+    background-color: darken($med-grey, 20%)
+    display: flex
+    align-items: center
+    padding: 0 10px
+
+    .browser__circle
+      position: relative
+      margin: 0 7px
+      border-radius: 50%
+      width: 12px
+      height: 12px
+
+    .browser__circle--red
+      background-color: #f25753
+      border: 2px solid lighten(#f25753, 20%)
+
+    .browser__circle--yellow
+      background-color: #f6b538
+      border: 2px solid lighten(#f6b538, 20%)
+
+    .browser__circle--green
+      background-color: #40bf53
+      border: 2px solid lighten(#40bf53, 20%)
+
+.mode--dark
+  .device
+    background-color: $device-dm
+
+  .device--shadow
+    background-color: $card-standard-dm
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.8)
+
+.device--sm
+  .device__content
+    padding: 20px 15px
+
+.device--md
+  .device__content
+    padding: 30px
+
+.device--lg
+  .device__content
+    padding: 40px 60px
+
+@media(max-width: 767px)
+  .device--sm, .device--md, .device--lg
+    .device__content
+      padding: 20px 15px
+
+dump_media_cache()

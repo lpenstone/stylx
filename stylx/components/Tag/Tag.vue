@@ -3,6 +3,9 @@
     :class="classType ? 'tag--' + classType : ''"
     :style="color ? `border-color: ${color}; background-color: ${color};` : ''">
     <slot></slot>
+    <div v-if="label" class="tag-label">
+      {{label}}
+    </div>
   </div>
 </template>
 
@@ -13,6 +16,10 @@ export default {
     as: {
       type: String,
       default: 'standard'
+    },
+    label: {
+      type: String,
+      default: ''
     }
   },
   data () {

@@ -82,6 +82,9 @@
         <x-card as="shadow" id="card" class="margin-top--30">
           <preview-card/>
         </x-card>
+        <x-card as="shadow" id="device" class="margin-top--30">
+          <preview-device/>
+        </x-card>
       </x-content>
     </x-section>
     <x-section size="lg" as="alt">
@@ -141,6 +144,7 @@
 import contentsTable from '../components/contents-table/contents-table'
 import previewButton from '../components/preview-button/preview-button'
 import previewCard from '../components/preview-card/preview-card'
+import previewDevice from '../components/preview-device/preview-device'
 import previewSection from '../components/preview-section/preview-section'
 import previewForm from '../components/preview-form/preview-form'
 import previewGroup from '../components/preview-group/preview-group'
@@ -165,6 +169,7 @@ export default {
     'contents-table': contentsTable,
     'preview-button': previewButton,
     'preview-card': previewCard,
+    'preview-device': previewDevice,
     'preview-link': previewLink,
     'preview-see-more': previewSeeMore,
     'preview-section': previewSection,

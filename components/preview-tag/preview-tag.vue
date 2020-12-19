@@ -2,7 +2,7 @@
   <div>
     <h4>Tag</h4>
     <div class="margin-top--30">
-      <x-tag :as="currentAs">
+      <x-tag :as="currentAs" :label="currentLabel">
         {{currentText}}
       </x-tag>
     </div>
@@ -31,13 +31,31 @@
           </x-group>
           <p class="margin-top--10">You are able to set the "as" attribute to any CSS colour: name, HEX value, RGB value, etc.</p>
         </div>
+        <div class="margin-top--20">
+          <x-tag as="secondary">label</x-tag>
+          <x-group size="sm" class="margin-top--10">
+            <x-form-input name="label-text" size="sm" @model="setLabel($event)" as="text" :placeholder="currentLabel"/>
+          </x-group>
+          <p class="margin-top--10">The text that will appear when you hover over the tag.</p>  
+        </div>
       </div>
     </x-card>
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-tag<span v-if="currentAs !== defaults.as"> as="{{currentAs}}"</span>&gt;{{currentText}}&lt;/x-tag&gt;
+        &lt;x-tag<span v-if="currentAs !== defaults.as"> as="{{currentAs}}"</span><span v-if="currentLabel !== defaults.label"> label="{{currentLabel}}"</span>&gt;{{currentText}}&lt;/x-tag&gt;
       </x-code>
+      <div class="margin-top--20">
+        <p>If you need to include links in the label or your want to include longer content, you can include the x-tag-label element:</p>
+        <x-code class="margin-top--10">
+          &lt;x-tag<span v-if="currentAs !== defaults.as"> as="{{currentAs}}"</span>&gt;<br>
+            &nbsp;&nbsp;{{currentText}}<br>
+            &nbsp;&nbsp;&lt;x-tag-label&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;{{currentLabel || '&lt;!-- Your label --&gt;'}}<br>
+            &nbsp;&nbsp;&lt;/x-tag-label&gt;<br>
+          &lt;/x-tag&gt;
+        </x-code>
+      </div>
     </div>
   </div>
 </template>
@@ -48,9 +66,11 @@ export default {
   data () {
     return {
       defaults: {
-        as: 'standard'
+        as: 'standard',
+        label: ''
       },
       currentAs: 'standard',
+      currentLabel: '',
       currentText: 'Sample tag'
     }
   },
@@ -61,6 +81,9 @@ export default {
         return
       }
       this.currentAs = value
+    },
+    setLabel: function (value) {
+      this.currentLabel = value
     }
   }
 }
