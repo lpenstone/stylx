@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Nav',
+  name: 'Map',
   props: {
     as: {
       type: String,
@@ -36,7 +36,12 @@ export default {
   methods: {
     getSource: function () {
       const location = this.url.replace('https://', '').replace('www.', '').replace('google.com', '').replace('/maps/', '').replace('place/', '')
-      this.iframe = `<iframe ref="frame" width="100%" height="${this.heights[this.size]}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=${location}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>`
+      this.iframe = `<iframe id="map-frame" ref="frame" width="100%" height="${this.heights[this.size]}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=${location}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>`
+    }
+  },
+  watch: {
+    size: function (value) {
+      document.getElementById('map-frame').height = this.heights[value]
     }
   }
 }

@@ -124,8 +124,8 @@
         <x-card as="shadow" id="mode-toggle" >
           <preview-mode-toggle/>
         </x-card>
-        <x-card as="shadow" id="nav" class="margin-top--30">
-          Map
+        <x-card as="shadow" id="map" class="margin-top--30">
+          <preview-map/>
         </x-card>
         <x-card as="shadow" id="nav" class="margin-top--30">
           Nav bar
@@ -162,6 +162,7 @@ import previewTag from '../components/preview-tag/preview-tag'
 import previewIcon from '../components/preview-icon/preview-icon'
 import previewGallery from '../components/preview-gallery/preview-gallery'
 import previewGrid from '../components/preview-grid/preview-grid'
+import previewMap from '../components/preview-map/preview-map'
 import previewModal from '../components/preview-modal/preview-modal'
 import previewModeToggle from '../components/preview-dm-toggle/preview-dm-toggle'
 import previewSeeMore from '../components/preview-see-more/preview-see-more'
@@ -193,6 +194,7 @@ export default {
     'preview-carousel': previewCarousel,
     'preview-gallery': previewGallery,
     'preview-grid': previewGrid,
+    'preview-map': previewMap,
     'preview-modal': previewModal,
     'preview-mode-toggle': previewModeToggle,
     'preview-combo': previewCombo
