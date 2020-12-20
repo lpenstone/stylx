@@ -1,9 +1,10 @@
 <template>
-  <div class="tag"
-    :class="classType ? 'tag--' + classType : ''"
+  <div @click="toggleLabel()"
+    class="tag"
+    :class="[classType ? 'tag--' + classType : '', {'tag--pointer': label}]"
     :style="color ? `border-color: ${color}; background-color: ${color};` : ''">
     <slot></slot>
-    <div v-if="label" class="tag-label">
+    <div v-if="label" class="tag-label" :class="{'tag-label--show': showLabel}">
       {{label}}
     </div>
   </div>
@@ -23,7 +24,9 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      showLabel: false
+    }
   },
   computed: {
     classType: function () {
@@ -37,6 +40,11 @@ export default {
         return ''
       }
       return this.as
+    }
+  },
+  methods: {
+    toggleLabel: function () {
+      if (this.label) this.showLabel = !this.showLabel
     }
   }
 }

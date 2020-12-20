@@ -270,7 +270,7 @@ export default {
   left: 0px
   z-index: 3
   overflow: visible
-  transform: translate(0, -110%)
+  transform: translate(0, -120%)
   transition: transform 0.6s ease-in-out
   display: flex
   justify-content: center

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="nav" :class="{'nav--open': isMenuOpen}">
+    <nav class="nav" :class="[{'nav--open': isMenuOpen}, {'scrolled': scrolled}]">
       <div class="nav__wrap">
         <div class="nav__content">
           <div class="nav__items nav__items--left">
@@ -44,7 +44,7 @@
         </div>
       </div>
     </nav>
-    <div class="nav__dummy-bar"></div>
+    <!-- <div class="nav__dummy-bar"></div> -->
   </div>
 </template>
 
@@ -67,8 +67,13 @@ export default {
   data () {
     return {
       routes: this.$router.options.routes,
-      open: false
+      open: false,
+      scrolled: false
     }
+  },
+  mounted: function () {
+    document.addEventListener("scroll", this.scrollHandler)
+    this.scrollHandler()
   },
   computed: {
     name: function () {
@@ -84,6 +89,14 @@ export default {
   methods: {
     toggleMenu: function () {
       this.$store.commit('toggleMenu')
+    },
+    scrollHandler: function () {
+      let y = window.scrollY
+      if (y > 60) {
+        if (!this.scrolled) this.scrolled = true
+      } else {
+        if (this.scrolled) this.scrolled = false
+      }
     }
   }
 }

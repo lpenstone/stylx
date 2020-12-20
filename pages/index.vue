@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section as="hero" id="hero">
+    <x-section as="hero" id="hero" size="lg">
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <img class="logo margin-bottom--30" src="~@/assets/images/stylx_logo.png" alt="">
@@ -18,7 +18,7 @@
         </x-group>
       </x-content>
     </x-section>
-    <x-section as="alt">
+    <x-section size="lg">
       <x-content class="text-align--center">
         <x-grid cols="3">
           <x-grid-item>
@@ -42,7 +42,7 @@
         </x-grid>
       </x-content>
     </x-section>
-    <x-section>
+    <x-section size="lg">
       <div class="circle-decor circle-decor--1"></div>
       <x-content ref="resizeContainer">
         <h2 class="h3 text-align--center">Preview your elements</h2>
@@ -105,7 +105,7 @@
         </x-group>
       </x-content>
     </x-section>
-    <x-section>
+    <x-section size="lg">
       <div class="circle-decor circle-decor--2"></div>
       <x-content ref="resizeContainer">
         <h2 class="h3 text-align--center">Responsive design</h2>
