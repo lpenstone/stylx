@@ -122,13 +122,13 @@
       <x-content>
         <h3 class="text-align--center margin-bottom--30">Specialty</h3>
         <x-card as="shadow" id="mode-toggle" >
-          Mode toggle
-        </x-card>
-        <x-card as="shadow" id="nav" class="margin-top--30">
-          Nav bar
+          <preview-mode-toggle/>
         </x-card>
         <x-card as="shadow" id="nav" class="margin-top--30">
           Map
+        </x-card>
+        <x-card as="shadow" id="nav" class="margin-top--30">
+          Nav bar
         </x-card>
       </x-content>
     </x-section>
@@ -163,6 +163,7 @@ import previewIcon from '../components/preview-icon/preview-icon'
 import previewGallery from '../components/preview-gallery/preview-gallery'
 import previewGrid from '../components/preview-grid/preview-grid'
 import previewModal from '../components/preview-modal/preview-modal'
+import previewModeToggle from '../components/preview-dm-toggle/preview-dm-toggle'
 import previewSeeMore from '../components/preview-see-more/preview-see-more'
 import previewCombo from '../components/preview-combo/preview-combo'
 import previewIconCombo from '../components/preview-icon-combo/preview-icon-combo'
@@ -193,6 +194,7 @@ export default {
     'preview-gallery': previewGallery,
     'preview-grid': previewGrid,
     'preview-modal': previewModal,
+    'preview-mode-toggle': previewModeToggle,
     'preview-combo': previewCombo
   },
   data () {

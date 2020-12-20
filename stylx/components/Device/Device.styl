@@ -42,23 +42,19 @@
     border-radius: 50%
     opacity: 0.5
 
-  &.device--sm
-    .device__content
-      padding: 0
+  .device__content--sm
+    padding: 0
 
-  &.device--md
-    .device__content
-      padding: 15px 10px
+  .device__content--md
+    padding: 15px 10px
 
-  &.device--lg
-    .device__content
-      padding: 20px 15px
+  .device__content--lg
+    padding: 20px 15px
 
 @media(max-width: 767px)
   .device--phone, .device--phone-shadow
-    .device--md, .device--lg
-      .device__content
-        padding: 15px 10px
+    .device__content--md, .device__content--lg
+      padding: 15px 10px
 
 
 .device--browser-shadow, .device--phone-shadow
@@ -107,21 +103,17 @@
     background-color: $card-standard-dm
     box-shadow: 0px 0px 8px rgba(0,0,0,0.8)
 
-.device--sm
-  .device__content
-    padding: 20px 15px
+.device__content--sm
+  padding: 20px 15px
 
-.device--md
-  .device__content
-    padding: 30px
+.device__content--md
+  padding: 30px
 
-.device--lg
-  .device__content
-    padding: 40px 60px
+.device__content--lg
+  padding: 40px 60px
 
 @media(max-width: 767px)
-  .device--sm, .device--md, .device--lg
-    .device__content
-      padding: 20px 15px
+  .device__content--sm, .device__content--md, .device__content--lg
+    padding: 20px 15px
 
 dump_media_cache()

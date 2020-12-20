@@ -1,6 +1,6 @@
 <template>
-  <div class="card" :class="['card--' + as, 'card--' + size]">
-    <div class="card__content">
+  <div class="card" :class="'card--' + as">
+    <div class="card__content" :class="'card__content--' + size">
       <slot></slot>
     </div>
   </div>
