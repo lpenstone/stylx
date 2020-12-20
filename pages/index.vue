@@ -3,11 +3,12 @@
     <x-section as="hero" id="hero" size="lg">
       <x-content class="text-align--center">
         <x-group as="center" size="md">
-          <img class="logo margin-bottom--30" src="~@/assets/images/stylx_logo.png" alt="">
-          <h1 class="margin-bottom--30">Stylx UI library</h1>
-          <p class="heading--title margin-bottom--10">The essential development tool for building beautiful UI's fast</p>
-          <p>(without a designer)</p>
-          <div class="margin-top--40">
+          <div class="stylx-logo" aria-label="style-x">
+            styl
+          </div>
+          <h1 class="margin-bottom--30">UI Library</h1>
+          <p class="heading--title margin-bottom--10">The essential development tool for building beautiful UI's fast.</p>
+          <div class="margin-top--70">
             <x-link as="hollow" size="lg" :to="{name: 'library'}" class="margin-left--5 margin-right--5 margin-bottom--10">
               View library
             </x-link>
@@ -307,6 +308,27 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variables'
+
+.stylx-logo
+  font-family: 'Sacramento', cursive
+  font-size: 60px
+  line-height: 1.5em
+  font-weight: 400
+  margin-bottom: 30px
+  position: relative
+  display: inline-block
+  margin-left: -30px
+
+  &:after
+    content: ''
+    position: absolute
+    right: -45px
+    bottom: 10px
+    display: block
+    width: 70px
+    height: 70px
+    background-image: url('~@/assets/images/x.png')
+    background-size: 70px 70px
 
 #browser-demo
   max-height: 510px

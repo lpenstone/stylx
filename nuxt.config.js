@@ -17,7 +17,8 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: stylx.defaultCopyLink || 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap' },
-      { rel: 'stylesheet', href: stylx.defaultHeadingsLink || 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap' }
+      { rel: 'stylesheet', href: stylx.defaultHeadingsLink || 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Sacramento&display=swap' }
     ]
   },
 

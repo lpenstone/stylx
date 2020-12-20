@@ -19,7 +19,7 @@
         </div>
         <div class="margin-top--40">
           <x-form as="submit" name="notify" netlify action="/workshop">
-            <x-form-input as="email" name="email" label="Get notified when registration opens" placeholder="Email"/>
+            <x-form-input as="email" name="email" label="Get notified when registration opens" placeholder="Email" required/>
           </x-form>
         </div>
       </x-group>

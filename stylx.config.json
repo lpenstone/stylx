@@ -34,7 +34,7 @@
 	"linkStyleUnderline": true,
 	"defaultCopySize": "18px",
 	"defaultHeadingsFamily": "Noto Sans JP",
-	"defaulyHeadingsLink": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap",
+	"defaultHeadingsLink": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap",
 	"defaultCopyFamily": "Nunito",
 	"defaultCopyLink": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap",
 	"socials": {
