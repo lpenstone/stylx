@@ -39,6 +39,7 @@
         <li><x-link @click="clicked()" as="plain" href="#form">Form</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#input">Form Input (text, email, password, number)</x-link></li>
         <li><x-link @click="clicked()" as="plain" href="#groups">Form Groups (radio buttons, checkboxes, select dropdown)</x-link></li>
+        <li><x-link @click="clicked()" as="plain" href="#sample-form">Sample Form</x-link></li>
       </ul>
     </x-grid-item>
     <x-grid-item>

@@ -1,7 +1,7 @@
 <template>
-  <form :ref="name" class="form" :class="{'form--errors': showErrors}" method="POST" @submit.prevent="handleSubmit($event)">
+  <form :ref="name" class="form" :class="{'form--errors': showErrors}" method="POST" @submit.prevent="submit()">
     <slot></slot>
-    <x-button v-if="as === 'submit'" size="lg" type="submit" class="margin--center-block">Submit</x-button>
+    <x-button v-if="as === 'submit'" type="submit" size="lg" class="margin--center-block">Submit</x-button>
   </form>
 </template>
 
@@ -16,24 +16,38 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    prevent: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
-      showErrors: false
+      showErrors: false,
+      formData: {}
     }
   },
+  created: function () {
+    this.$on('formData', function (config) {
+      this.formData[config.name] = config.value
+    })
+  },
   methods: {
-    handleSubmit: function (e) {
+    submit: function () {
       this.showErrors = true
       setTimeout(() => {
         let errorsArray = this.$refs[this.name].getElementsByClassName('error__wrap')
         if (errorsArray.length > 0) {
           return
         } else {
-          e.target.submit()
+          this.$emit('submitted', this.formData)
+          if (!this.prevent) this.formSubmit()
         }
       }, 500)
+    },
+    formSubmit: function () {
+      this.$refs[this.name].submit()
     }
   }
 }

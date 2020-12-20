@@ -120,7 +120,7 @@
               @mouseup="stop">
               <x-icon icon="arrows-alt-h"/>
             </button>
-            <x-card id="browser-demo"
+            <x-device id="browser-demo"
               :as="demoClass"
               size="md"
               :style="`width: ${demoWidth}px;`">            
@@ -192,7 +192,7 @@
                   </div>
                 </div>
               </div>
-            </x-card>
+            </x-device>
           </div>
         </x-group>
       </x-content>

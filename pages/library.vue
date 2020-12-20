@@ -108,10 +108,13 @@
           <preview-form/>
         </x-card>
         <x-card as="shadow" id="input" class="margin-top--30">
-          Form inputs
+          <preview-form-input/>
         </x-card>
         <x-card as="shadow" id="groups" class="margin-top--30">
-          Form groups
+          <preview-form-group/>
+        </x-card>
+        <x-card as="shadow" id="sample-form" class="margin-top--30">
+          <preview-form-sample/>
         </x-card>
       </x-content>
     </x-section>
@@ -147,6 +150,9 @@ import previewCard from '../components/preview-card/preview-card'
 import previewDevice from '../components/preview-device/preview-device'
 import previewSection from '../components/preview-section/preview-section'
 import previewForm from '../components/preview-form/preview-form'
+import previewFormInput from '../components/preview-form-input/preview-form-input'
+import previewFormGroup from '../components/preview-form-group/preview-form-group'
+import previewFormSample from '../components/preview-form-sample/preview-form-sample'
 import previewGroup from '../components/preview-group/preview-group'
 import previewImgSection from '../components/preview-img-section/preview-img-section'
 import previewLink from '../components/preview-link/preview-link'
@@ -175,6 +181,9 @@ export default {
     'preview-section': previewSection,
     'preview-group': previewGroup,
     'preview-form': previewForm,
+    'preview-form-input': previewFormInput,
+    'preview-form-group': previewFormGroup,
+    'preview-form-sample': previewFormSample,
     'preview-img-section': previewImgSection,
     'preview-tag': previewTag,
     'preview-icon': previewIcon,

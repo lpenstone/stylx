@@ -85,6 +85,7 @@ export default {
   watch: {
     model: function (value) {
       this.$emit('model', value)
+      this.$parent.$emit('formData', {name: this.name, value: value})
     }
   }
 }

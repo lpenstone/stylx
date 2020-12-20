@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="inputType === 'select'" class="select__wrap">
-      <label :for="name" class="select__label" :class="{'select__label--error': !valid}">{{label}}</label>
+      <label :for="name" class="select__label" :class="{'select__label--error': !valid}">{{label}} <span v-if="!required" class="optional">(Optional)</span></label>
       <div class="select-caret__wrap">
         <select
           :id="name"
@@ -18,7 +18,7 @@
       </div>
     </div>
     <fieldset v-else class="group__fieldset">
-      <legend class="group__legend" :class="{'group__legend--error': !valid}">{{label}}</legend>
+      <legend class="group__legend" :class="{'group__legend--error': !valid}">{{label}} <span v-if="!required" class="optional">(Optional)</span></legend>
       <div>
         <slot></slot>
       </div>
@@ -63,20 +63,14 @@ export default {
       model: ''
     }
   },
-  mounted: function () {
-    this.$on('model', function (value) {
-      this.model = value
-    })
-
-    if (this.inputType === 'checkbox') this.model = []
-    this.$on('modelCheckBox', function (config) {
-      if (config.value) {
-        this.model.push(config.name)
-      } else {
-        let i = this.model.indexOf(config.name)
-        this.model.splice(i, 1)
-      }
-    })
+  created: function () {
+    if (this.inputType === 'checkbox') {
+      this.setCheckbox()
+    } else {
+      this.$on('model', function (value) {
+        this.model = value
+      })
+    }
   },
   computed: {
     inputType: function () {
@@ -93,10 +87,26 @@ export default {
       return true
     }
   },
+  methods: {
+    setCheckbox: function () {
+      this.model = []
+      this.$on('modelCheckBox', function (config) {
+        if (config.value) {
+          this.model.push(config.name)
+        } else {
+          let i = this.model.indexOf(config.name)
+          this.model.splice(i, 1)
+        }
+      })
+    }
+  },
   watch: {
     model: function (value) {
       this.$emit('model', value)
-      console.log(value)
+      this.$parent.$emit('formData', {name: this.name, value: value})
+    },
+    inputType: function (value) {
+      if (value === 'checkbox') this.setCheckbox()
     }
   }
 }

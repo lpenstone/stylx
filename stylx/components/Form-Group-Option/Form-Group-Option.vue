@@ -7,6 +7,7 @@
         :type="inputType"
         :name="groupName"
         :value="name"
+        :selected="selected"
         :id="name">
       <span class="input__selector"
         :class="'input__selector--' + inputType"></span>
@@ -32,6 +33,14 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    selected: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -45,6 +54,11 @@ export default {
     },
     groupName: function () {
       return this.$parent._props.name
+    }
+  },
+  mounted: function () {
+    if (this.checked) {
+      this.model = this.name
     }
   },
   watch: {

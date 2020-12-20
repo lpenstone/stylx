@@ -1,7 +1,7 @@
 <template>
-  <div class="modal-button__wrap">
-    <div v-if="isModalOpen && name === modalName"
-      ref="modal"
+  <div class="modal-button__wrap" :class="{'modal-button__wrap--none': !label && !isModalVisible}">
+    <div v-if="isModalVisible"
+      :ref="'modal' + name"
       role="dialog"
       class="modal">
       <div @click="isCloseable && closeModal()" class="modal__screen"></div>
@@ -76,6 +76,9 @@ export default {
     },
     modalName: function () {
       return this.$store.state.modal.name
+    },
+    isModalVisible: function () {
+      return this.isModalOpen && this.name === this.modalName
     }
   },
   methods: {
@@ -91,7 +94,8 @@ export default {
       })
     },
     getFocusEls: function () {
-      this.focusableEls = this.$refs.modal.querySelectorAll('button, [href], input, select, textarea, select, textarea [tabindex]:not([tabindex="-1"])')
+      if (!this.$refs.['modal' + this.name]) return
+      this.focusableEls = this.$refs.['modal' + this.name].querySelectorAll('button, [href], input, select, textarea, select, textarea [tabindex]:not([tabindex="-1"])')
       this.topFocusEl = this.focusableEls[0]
       this.bottomFocusEl = this.focusableEls[this.focusableEls.length - 1]
     },
