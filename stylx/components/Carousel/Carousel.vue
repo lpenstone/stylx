@@ -1,14 +1,14 @@
 <template>
   <x-swipe :name="name" @swipeRight="clickPrev()" @swipeLeft="clickNext()">
     <div class="carousel">
+      <div class="carousel__btn carousel__btn--previous">
+        <x-button ref="prevBtn" as="icon" aria-label="previous" @click="clickPrev()"><span class="caret"/></x-button>
+      </div>
       <div ref="carousel" class="carousel__content" :class="'carousel__content-index-' + index" :style="height ? `min-height: ${height}px` : 'min-height: auto'">
         <slot></slot>
       </div>
-      <div class="carousel__btn carousel__btn--previous">
-        <x-button ref="prevBtn" as="icon" aria-label="previous" @click="clickPrev()">&#8701;</x-button>
-      </div>
       <div class="carousel__btn carousel__btn--next">
-        <x-button ref="nextBtn" as="icon" aria-label="next" @click="clickNext()">&#8702;</x-button>
+        <x-button ref="nextBtn" as="icon" aria-label="next" @click="clickNext()"><span class="caret"/></x-button>
       </div>
       <div class="carousel__dots-wrap">
         <div class="carousel__dots">

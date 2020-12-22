@@ -1,12 +1,22 @@
 <template>
-  <div @click="toggleLabel()"
+  <button v-if="isLabel" @click="toggleLabel()"
+    ref="stylxTag"
     class="tag"
-    :class="[classType ? 'tag--' + classType : '', {'tag--pointer': label}]"
+    :class="[classType ? 'tag--' + classType : '', {'tag--pointer': isLabel}, {'tag--show-label': showLabel}]"
+    :style="color ? `border-color: ${color}; background-color: ${color};` : ''">
+    <div role="alert">
+      <slot></slot>
+      <div v-if="label" class="tag-label">
+        {{label}}
+      </div>
+    </div>
+  </button>
+  <div v-else
+    ref="stylxTag"
+    class="tag"
+    :class="[classType ? 'tag--' + classType : '']"
     :style="color ? `border-color: ${color}; background-color: ${color};` : ''">
     <slot></slot>
-    <div v-if="label" class="tag-label" :class="{'tag-label--show': showLabel}">
-      {{label}}
-    </div>
   </div>
 </template>
 
@@ -25,7 +35,8 @@ export default {
   },
   data () {
     return {
-      showLabel: false
+      showLabel: false,
+      isLabelEl: false
     }
   },
   computed: {
@@ -40,11 +51,20 @@ export default {
         return ''
       }
       return this.as
+    },
+    isLabel: function () {
+      return this.label || this.isLabelEl
     }
+  },
+  mounted: function () {
+    if (!this.$refs.stylxTag) return
+    this.isLabelEl = this.$refs.stylxTag.getElementsByClassName('tag-label').length > 0
   },
   methods: {
     toggleLabel: function () {
-      if (this.label) this.showLabel = !this.showLabel
+      if (this.isLabel) {
+        this.showLabel = !this.showLabel
+      }
     }
   }
 }

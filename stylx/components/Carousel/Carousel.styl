@@ -18,6 +18,17 @@
   transition 0.3s transform ease-in-out
   opacity: 0.9
 
+  .caret
+    content: ''
+    width: 0
+    height: 0
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-top: 6px solid transparent
+    border-bottom: 6px solid transparent
+    position: absolute 
+    bottom: 13px
+
   @media(max-width: 676px)
     display: none
 
@@ -27,11 +38,19 @@
   &:hover
     transform: translateX(-7px)
 
+  .caret
+    border-right: 6px solid grey
+    left: 10px
+
 .carousel__btn--next
   right: -10px
 
   &:hover
     transform: translateX(7px)
+
+  .caret
+    border-left: 6px solid grey
+    right: 10px
 
 .carousel__dots-wrap 
   width: 100%
