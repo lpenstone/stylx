@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section as="hero" size="lg">
+    <x-section as="hero" size="lg" class="section--swoosh-bottom">
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <h1 class="margin-bottom--30">Stylx Workshops</h1>

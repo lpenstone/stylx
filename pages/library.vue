@@ -13,7 +13,7 @@
         <div class="expand__caret"></div>
       </x-button>
     </div>
-    <x-section size="lg" as="hero">
+    <x-section size="lg" as="hero" class="section--swoosh-bottom">
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <h1 class="margin-bottom--20">Stylx Library</h1>
