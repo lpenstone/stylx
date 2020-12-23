@@ -1,5 +1,5 @@
 <template>
-  <section class="section" :class="['section--' + size, 'section--bg-' + bg, {'mode--dark': dark}]">
+  <section class="section" :class="['section--' + size, 'section--bg-' + bg, {'mode--dark': dark}, {'top': top}]">
     <div class="section__inner">
       <slot></slot>
     </div>
@@ -17,6 +17,10 @@ export default {
     size: {
       type: String,
       default: 'md'
+    },
+    top: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

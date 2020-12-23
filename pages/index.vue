@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section as="hero" id="hero" size="lg">
+    <x-section as="hero" id="hero" size="lg" class="section--swoosh-bottom">
       <x-content class="text-align--center">
         <x-group as="center" size="md">
           <div class="stylx-logo" aria-label="style-x">
@@ -198,7 +198,7 @@
         </x-group>
       </x-content>
     </x-section>
-    <x-section as="brand-light" size="lg">
+    <x-section as="brand-light" size="lg" class="section--swoosh-top">
       <x-content class="text-align--center">
         <h2 class="h3">Ready to start building with Stylx?</h2>
         <div class="margin-top--40">

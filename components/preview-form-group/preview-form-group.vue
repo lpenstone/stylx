@@ -86,7 +86,7 @@
         &lt;x-form-group
         <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span>
         name="{{currentName}}"
-        label="{{currentLabel}}"<span v-if="currentError !== defaults.error"> error="{{currentError}}"</span><span v-if="currentRequired"> required</span>/&gt;<br>
+        label="{{currentLabel}}"<span v-if="currentError !== defaults.error"> error="{{currentError}}"</span><span v-if="currentRequired"> required</span>&gt;<br>
         &nbsp;&nbsp;&lt;x-form-group-option name="option-1" label="This is option 1"/&gt;<br>
         &nbsp;&nbsp;&lt;x-form-group-option name="option-2" label="This is option 2"/&gt;<br>
         &nbsp;&nbsp;&lt;x-form-group-option name="option-3" label="This is option 3"/&gt;<br>
