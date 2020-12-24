@@ -1,5 +1,5 @@
 <template>
-  <section class="section" :class="['section--' + size, 'section--bg-' + bg, {'mode--dark': dark}, {'top': top}]">
+  <section class="section" :class="['section--' + size, 'section--bg-' + bg, {'mode--dark': dark}, {'top': top}, swoosh ? 'section--swoosh-' + swoosh : '', wave ? 'section--wave-' + wave : '']">
     <div class="section__inner">
       <slot></slot>
     </div>
@@ -21,6 +21,12 @@ export default {
     top: {
       type: Boolean,
       default: false
+    },
+    wave: {
+      type: String
+    },
+    swoosh: {
+      type: String
     }
   },
   computed: {

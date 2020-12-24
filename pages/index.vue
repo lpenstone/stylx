@@ -391,8 +391,6 @@ export default {
 
 .circle-decor
   position: absolute
-  left: 47%
-  top: 15px
   border-radius: 50%
   opacity: 0.15
   display: block
@@ -409,14 +407,14 @@ export default {
     width: 410px
     height: 410px
     left: 18%
-    top: 33px
+    top: -33px
     background-color: $brand
 
   &.circle-decor--3
     width: 270px
     height: 270px
     left: 10%
-    top: 50px
+    top: 10px
     background-color: $secondary
 
   &.circle-decor--4

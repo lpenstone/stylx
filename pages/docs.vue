@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-section size="lg">
+    <x-section size="lg" top>
       <x-content >
         <h1 class="h3">Getting started with Stylx</h1>
         <p>If you are just starting out and don't have a development environment set up on your local machine, try <x-link href="#fork">forking the Stylx scaffold</x-link>.
