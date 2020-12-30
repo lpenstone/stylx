@@ -92,7 +92,7 @@
     <x-section size="lg">
       <div class="circle-decor circle-decor--3"></div>
       <div class="circle-decor circle-decor--4"></div>
-      <x-content ref="resizeContainer">
+      <x-content>
         <h2 class="h3 text-align--center">Toggle dark mode</h2>
         <x-group as="center" size="sm" class="text-align--center margin-top--50">
           <x-button size="lg" icon="lightbulb" @click="toggleMode()">Turn {{darkMode? 'on': 'off'}} the lights</x-button>

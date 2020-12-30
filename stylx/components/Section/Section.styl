@@ -100,14 +100,13 @@
 .section__inner
   position: relative
   width: 100%
-  z-index: 1
 
 /* ----- SWOOSH ----- */
 
 .section--swoosh-bottom, .section--swoosh-all
   padding-bottom: 140px !important
 
-  &:after
+  &:before
     content: ''
     width: 100%
     height: 100%
@@ -118,7 +117,6 @@
     background-repeat: no-repeat
     background-size: 102%
     background-position: left -1px bottom -1px
-    z-index: 0
 
   @media(max-width: 991px)
     padding-bottom: 90px !important
@@ -137,7 +135,6 @@
     background-repeat: no-repeat
     background-size: 102%
     background-position: left -1px top -1px
-    z-index: 0
     padding-top: 200px
 
   @media(max-width: 991px)
@@ -145,7 +142,7 @@
 
 .mode--dark
   .section--swoosh-bottom, .section--swoosh-all
-    &:after
+    &:before
       background-image: url('./svg/swoosh-bottom-dm.svg')
 
   .section--swoosh-top, .section--swoosh-all
@@ -157,7 +154,7 @@
 .section--wave-bottom, .section--wave-all
   padding-bottom: 140px !important
 
-  &:after
+  &:before
     content: ''
     width: 100%
     height: 100%
@@ -168,7 +165,6 @@
     background-repeat: no-repeat
     background-size: 102%
     background-position: left -1px bottom -1px
-    z-index: 0
 
   @media(max-width: 991px)
     padding-bottom: 90px !important
@@ -187,7 +183,6 @@
     background-repeat: no-repeat
     background-size: 102%
     background-position: left -1px top -1px
-    z-index: 0
     padding-top: 200px
 
   @media(max-width: 991px)
@@ -195,7 +190,7 @@
 
 .mode--dark
   .section--wave-bottom, .section--wave-all
-    &:after
+    &:before
       background-image: url('./svg/wave-bottom-dm.svg')
 
   .section--wave-top, .section--wave-all

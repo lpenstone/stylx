@@ -50,7 +50,6 @@
           <x-button size="sm" @click="setSwoosh('')" :selected="currentSwoosh === ''">none</x-button>
           <x-button size="sm" @click="setSwoosh('top')" :selected="currentSwoosh === 'top'">top</x-button>
           <x-button size="sm" @click="setSwoosh('bottom')" :selected="currentSwoosh === 'bottom'">bottom</x-button>
-          <x-button size="sm" @click="setSwoosh('all')" :selected="currentSwoosh === 'all'">all</x-button>
         </div>
       </div>
       <div class="margin-top--30">
@@ -63,7 +62,6 @@
           <x-button size="sm" @click="setWave('')" :selected="currentWave === ''">none</x-button>
           <x-button size="sm" @click="setWave('top')" :selected="currentWave === 'top'">top</x-button>
           <x-button size="sm" @click="setWave('bottom')" :selected="currentWave === 'bottom'">bottom</x-button>
-          <x-button size="sm" @click="setWave('all')" :selected="currentWave === 'all'">all</x-button>
         </div>
       </div>
       <div class="margin-top--20">
@@ -83,8 +81,7 @@
     <div class="margin-top--20">
       <h5>Code</h5>
       <x-code class="margin-top--10">
-        &lt;x-section
-        <span v-if="currentAs !== defaults.as">as="{{currentAs}}"</span><span v-if="currentSwoosh !== defaults.swoosh">swoosh="{{currentSwoosh}}"</span><span v-if="currentWave !== defaults.wave"> wave="{{currentWave}}"</span><span v-if="currentSize !== defaults.size"> size="{{currentSize}}"</span><span v-if="currentTop"> top</span>&gt;<br>
+        &lt;x-section<span v-if="currentAs !== defaults.as"> as="{{currentAs}}"</span><span v-if="currentSwoosh !== defaults.swoosh"> swoosh="{{currentSwoosh}}"</span><span v-if="currentWave !== defaults.wave"> wave="{{currentWave}}"</span><span v-if="currentSize !== defaults.size"> size="{{currentSize}}"</span><span v-if="currentTop"> top</span>&gt;<br>
         &nbsp;&nbsp;&lt;!-- Your content --&gt;<br>
         &lt;/x-section&gt;
       </x-code>
